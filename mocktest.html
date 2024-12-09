@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Python Quiz - Test your knowledge with this responsive quiz.">
+    <title>Python MCQ Quiz</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .quiz-header h1 {
+            font-size: 1.8rem;
+            color: #4CAF50;
+        }
+        .question {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .options button {
+            padding: 10px;
+            background-color: #eaeaea;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .options button:hover {
+            background-color: #ddd;
+        }
+        .options button.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .options button.wrong {
+            background-color: #f44336;
+            color: white;
+        }
+        .next-btn {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .next-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+        }
+        .result h2 {
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
+        .result p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Python MCQ Quiz</h1>
+        </div>
+        <div id="quiz">
+            <!-- Quiz Content Will Be Injected Here -->
+        </div>
+        <button class="next-btn" id="next-btn">Next Question</button>
+    </div>
+
+    <script>
+       const quizData = [
+    // String-related Questions
+    {
+        question: "String immutable hoti hain ya mutable?",
+        options: ["Immutable", "Mutable", "Depends on type", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "What does 'Hello'.upper() return?",
+        options: ["hello", "HELLO", "Hello", "Error"],
+        correct: 1
+    },
+    {
+        question: "String slicing ka output kya hoga: 'Python'[1:4]?",
+        options: ["Pyt", "yth", "tho", "ytho"],
+        correct: 1
+    },
+    {
+        question: "What is the output of: 'Bytecore'.find('e')?",
+        options: ["2", "3", "-1", "Error"],
+        correct: 1
+    },
+    {
+        question: "What does 'abc' + '123' return?",
+        options: ["abc 123", "abc123", "Error", "None"],
+        correct: 1
+    },
+    {
+        question: "What does 'Python'.replace('P', 'J') return?",
+        options: ["Jython", "Python", "Error", "None"],
+        correct: 0
+    },
+
+    // Loops-related Questions
+    {
+        question: "What is the output of: for i in range(3): print(i)?",
+        options: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+        correct: 0
+    },
+    {
+        question: "Which statement skips the current iteration of a loop?",
+        options: ["break", "continue", "pass", "None"],
+        correct: 1
+    },
+    {
+        question: "While loop ka syntax kya hai?",
+        options: [
+            "while condition: block",
+            "while(condition): block",
+            "do: block while condition",
+            "None"
+        ],
+        correct: 0
+    },
+    {
+        question: "What is the output of: while True: break print('Hello')?",
+        options: ["Hello", "Error", "No output", "Infinite loop"],
+        correct: 2
+    },
+    {
+        question: "Nested loops ka use kisliye hota hai?",
+        options: [
+            "Single list traverse karne ke liye",
+            "Multiple dimensions traverse karne ke liye",
+            "Loop stop karne ke liye",
+            "None of the above"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the output of: for i in range(5, 1, -1): print(i)?",
+        options: ["5 4 3 2", "4 3 2", "5 4 3", "Error"],
+        correct: 0
+    },
+
+    // Operators Questions
+    {
+        question: "What is the output of: 3 > 2 and 2 < 1?",
+        options: ["True", "False", "Error", "None"],
+        correct: 1
+    },
+    {
+        question: "What does: not (3 == 3) return?",
+        options: ["True", "False", "Error", "None"],
+        correct: 1
+    },
+    {
+        question: "What is the result of: True or False?",
+        options: ["True", "False", "Error", "None"],
+        correct: 0
+    },
+    {
+        question: "What is the output of: 5 % 2?",
+        options: ["2", "1", "5", "Error"],
+        correct: 1
+    },
+    {
+        question: "What is the result of: 5 ** 2?",
+        options: ["10", "25", "Error", "None"],
+        correct: 1
+    },
+
+    // Calculation-based Questions
+    {
+        question: "What is the output of: sum([1, 2, 3])?",
+        options: ["6", "5", "Error", "None"],
+        correct: 0
+    },
+    {
+        question: "What is the result of: max(3, 5, 2)?",
+        options: ["3", "5", "2", "Error"],
+        correct: 1
+    },
+    {
+        question: "How do you calculate the average of a list?",
+        options: [
+            "sum(list) / len(list)",
+            "sum(list) * len(list)",
+            "list.sum() / len()",
+            "None"
+        ],
+        correct: 0
+    },
+    {
+        question: "What is the result of: 5 // 2?",
+        options: ["2", "2.5", "Error", "None"],
+        correct: 0
+    },
+    {
+        question: "What does abs(-5) return?",
+        options: ["-5", "5", "Error", "None"],
+        correct: 1
+    },
+
+    // Continue, Break, and Pass
+    {
+        question: "What does 'continue' do in a loop?",
+        options: [
+            "Stops the loop",
+            "Skips current iteration",
+            "Exits the loop",
+            "Does nothing"
+        ],
+        correct: 1
+    },
+    {
+        question: "What does 'break' do in a loop?",
+        options: [
+            "Stops the loop",
+            "Skips current iteration",
+            "Repeats current iteration",
+            "None"
+        ],
+        correct: 0
+    },
+    {
+        question: "What does the 'pass' statement do?",
+        options: [
+            "Skips the block without error",
+            "Exits the block",
+            "Continues to next iteration",
+            "None"
+        ],
+        correct: 0
+    },
+
+    // Miscellaneous Questions
+    {
+        question: "What is the output of: len('Bytecore')?",
+        options: ["7", "8", "Error", "None"],
+        correct: 1
+    },
+    {
+        question: "What is the result of: 'Python'[::-1]?",
+        options: ["nohtyP", "Python", "Error", "None"],
+        correct: 0
+    },
+    {
+        question: "What is the output of: print(2, end='')?",
+        options: ["2", "2 and a new line", "Error", "None"],
+        correct: 0
+    },
+    {
+        question: "What is the output of: for i in range(2): print(i, end='')?",
+        options: ["01", "0 1", "2", "Error"],
+        correct: 0
+    },
+    {
+        question: "What does isinstance('Python', str) return?",
+        options: ["True", "False", "Error", "None"],
+        correct: 0
+    },
+    {
+        question: "How do you create a dictionary?",
+        options: [
+            "Using {}",
+            "Using []",
+            "Using ()",
+            "Using {} with key-value pairs"
+        ],
+        correct: 3
+    }
+];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const quiz = document.getElementById("quiz");
+        const nextBtn = document.getElementById("next-btn");
+
+        function loadQuiz() {
+            const currentQuiz = quizData[currentQuestion];
+            quiz.innerHTML = `
+                <div class="question">${currentQuiz.question}</div>
+                <div class="options">
+                    ${currentQuiz.options
+                        .map((option, index) => `<button onclick="selectAnswer(${index})">${option}</button>`)
+                        .join("")}
+                </div>
+            `;
+        }
+
+        function selectAnswer(selected) {
+            const buttons = document.querySelectorAll(".options button");
+            const correct = quizData[currentQuestion].correct;
+            if (selected === correct) {
+                buttons[selected].classList.add("correct");
+                score++;
+            } else {
+                buttons[selected].classList.add("wrong");
+                buttons[correct].classList.add("correct");
+            }
+            buttons.forEach(btn => btn.disabled = true);
+            nextBtn.style.display = "block";
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuiz();
+                nextBtn.style.display = "none";
+            } else {
+                showResult();
+            }
+        });
+
+        function showResult() {
+            quiz.innerHTML = `
+                <div class="result">
+                    <h2>Your Score: ${score}/${quizData.length}</h2>
+                    <p>${score >= quizData.length / 2 ? "Great Job!" : "Better Luck Next Time!"}</p>
+                </div>
+            `;
+            nextBtn.style.display = "none";
+        }
+
+        loadQuiz();
+    </script>
+</body>
+</html>
