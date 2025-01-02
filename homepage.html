@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bytecore Computer Centre - Best Coaching for ADCA, O-Level, CCC, MDCA, and Ethical Hacking. Enroll today to enhance your skills.">
+    <meta name="keywords" content="Bytecore Coaching, ADCA, O-Level, MDCA, Ethical Hacking, Best Computer Coaching">
+    <meta name="author" content="Bytecore Coaching">
+    <title>Bytecore Computer Centre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+        }
+
+        .hero-section {
+            position: relative;
+            text-align: center;
+            padding: 50px 20px;
+            background: url('https://i.postimg.cc/28wFj9x9/Bytecore-Advanced-Logo2.jpg') no-repeat center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-section a {
+            text-decoration: none;
+            color: white;
+            background: #e63946;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        .courses {
+            padding: 50px 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .courses h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        h2{color:black;}
+
+       .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.course-box {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.course-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.course-box .course-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-box .course-image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.course-box:hover .course-image img {
+    transform: scale(1.1);
+}
+
+.course-box h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.course-box p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.course-box a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: #457b9d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.course-box a:hover {
+    background: #e63946;
+}
+
+
+        footer {
+            background: #1d3557;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-content div {
+            text-align: left;
+        }
+
+        footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        footer p, footer a {
+            font-size: 0.9rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f4a261;
+        }
+
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        footer .social-icons a:hover {
+            color: #f4a261;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            footer .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+            .career-impact {
+        padding: 50px 20px;
+        background: #f4f4f4;
+        text-align: center;
+    }
+
+    .career-section, .impact-section {
+        margin-bottom: 50px;
+    }
+
+    .career-section h2, .impact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #1d3557;
+    }
+
+    .career-section p, .impact-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #666;
+    }
+
+    .career-details, .impact-details {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .career-box, .impact-box {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 250px;
+    }
+
+    .career-box h3, .impact-box h3 {
+        font-size: 2.5rem;
+        color: #e63946;
+        margin-bottom: 10px;
+    }
+
+    .career-box p, .impact-box p {
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .career-box, .impact-box {
+            width: 100%;
+        }
+    }
+    /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        h1, h2, p {
+            margin: 0;
+        }
+
+        /* Section Styles */
+        .impact-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #001d4c, #0056b3);
+            color: #fff;
+            text-align: center;
+        }
+        .impact-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        .impact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Cards Grid */
+        .impact-cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .card {
+            position: relative;
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #004aad, #47b8ff);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #fff;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1rem;
+        }
+
+        /* Highlighted Stats */
+        .highlight {
+            color: #ffcc00;
+        }
+
+        /* Images Section */
+        .image-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 50px auto;
+            max-width: 1200px;
+        }
+        .image-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            color: #fff;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .image-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .impact-section h1 {
+                font-size: 2rem;
+            }
+            .impact-section p {
+                font-size: 1rem;
+            }
+            .card h2 {
+                font-size: 2rem;
+            }
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+         body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+   background: linear-gradient(to bottom, #001f3f, #00509e);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+  h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .cards {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cards img {
+      width: 60px;
+      margin-bottom: 15px;
+  
+      transition: transform 0.3s ease;
+    }
+
+    .cards h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .cards a {
+      color: #00d1ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cards:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards:hover img {
+      transform: scale(1.2);
+    }
+
+    .cards:hover a {
+      color: #00ff8a;
+    }
+
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #000;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .modal-content .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .modal-content h2 {
+      margin: 0 0 15px;
+      color: #00509e;
+    }
+
+    .modal-content p {
+      margin: 15px 0;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .enroll-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00509e;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .enroll-btn:hover {
+      background: #00b4d8;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <h1></h1>
+        <p>Your Path to Success Starts Here</p>
+        <a href="#courses">Explore Courses</a>
+    </section>
+
+    <section class="courses" id="courses">
+        <h2>Our Popular Courses</h2>
+        <div class="courses-grid">
+    <div class="course-box">
+        <div class="course-image">
+            <img src="https://i.postimg.cc/htM5XYCD/5af5b02d-781b-438f-b7d4-06fdb99ab397.webp" alt="Bytecore Computer Centre - Professional ADCA course design featuring Tally, MS Office, and computer fundamentals">
+        </div>
+        <h3>ADCA</h3>
+        <p>Advanced Diploma in Computer Applications</p>
+        <a href="https://bytecorecomputercentre.blogspot.com/p/adca-course-bytecore-computer-centre.html">Learn More</a>
+    </div>
+    <div class="course-box">
+        <div class="course-image">
+            <img src="https://i.postimg.cc/5tzpBN1m/3512ad98-5ac0-4949-8f2c-89a000872505.jpg" alt="Bytecore Computer Centre - Advanced O-Level course design with coding, Tally, and MS Office highlights">
+        </div>
+        <h3>O-Level</h3>
+        <p>Foundation Level Computer Certification</p>
+        <a href="https://bytecorecomputercentre.blogspot.com/p/o-level-course-bytecore-computer-centre.html">Learn More</a>
+    </div>
+    <div class="course-box">
+        <div class="course-image">
+            <img src="https://i.postimg.cc/xCgChngr/6bf27149-8144-4e84-8a49-5b959d76149a.webp" alt="Bytecore Computer Centre - Advanced MDCA course layout with programming, database management, and software development focus">
+        </div>
+        <h3>MDCA</h3>
+        <p>Master Diploma in Computer Applications</p>
+        <a href="https://bytecorecomputercentre.blogspot.com/p/mdca-course-bytecore-computer-centre.html">Learn More</a>
+    </div>
+    <div class="course-box">
+        <div class="course-image">
+            <img src="https://i.postimg.cc/MG1X0gLB/0e082a2f-1968-41b5-9fc2-13a1d06e3d90.webp" alt="Modern CCC course layout by Bytecore, showcasing IT literacy, MS Office, and digital basics">
+        </div>
+        <h3>CCC</h3>
+        <p>Course on Computer Concepts</p>
+        <a href=" https://bytecorecomputercentre.blogspot.com/p/ccc-course-bytecore-computer-centre.html ">Learn More</a>
+    </div>
+</div>
+
+    </section>
+      <div class="container">
+    <h1>Unlock Your Career Potential</h1>
+    <p class="subtitle">
+      Discover career paths that truly resonate with your passion & explore mentorship programs
+      that align perfectly with you.
+    </p>
+    <div class="grid">
+      <div class="cards">
+        <img src="https://i.postimg.cc/SKKzRGs1/images-11.jpg" alt="Web Development">
+        <h3>Web Development</h3>
+        <a href="https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html" class="see-program" data-program="Web Development">See Programs &gt;</a>
+      </div>
+      <div class="cards">
+        <img src="https://i.postimg.cc/4xRxjQVH/images-12.jpg" alt="App Development">
+        <h3>App Development</h3>
+        <a href="#" class="see-program" data-program="App Development">See Programs &gt;</a>
+      </div>
+      <div class="cards">
+        <img src="https://i.postimg.cc/3NnJGsWs/cdcbe30b-22c9-4f9a-bd9b-c3e9970450b6.jpg" alt="Data Analytics">
+        <h3>Data Analytics</h3>
+        <a href="#" class="see-program" data-program="Data Analytics">See Programs &gt;</a>
+      </div>
+      <div class="cards">
+        <img src="https://i.postimg.cc/MK5bCV8Z/images-10.png" alt="Digital Marketing">
+        <h3>Digital Marketing</h3>
+        <a href="#" class="see-program" data-program="Digital Marketing">See Programs &gt;</a>
+      </div>
+      <div class="cards">
+        <img src="https://i.postimg.cc/jjzdsw63/20241230-214430.jpg" alt="Cyber Security">
+        <h3>Cyber Security</h3>
+        <a href="#" class="see-program" data-program="Cyber Security">See Programs &gt;</a>
+      </div>
+      <div class="cards">
+        <img src="https://i.postimg.cc/tJPNCzTn/images-13.jpg" alt="Design">
+        <h3>Design</h3>
+        <a href="#" class="see-program" data-program="Design">See Programs &gt;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-text"></p>
+      <a href="#" class="enroll-btn" id="enroll-now">Enroll Now</a>
+    </div>
+  </div>
+    
+<!-- Impact Section -->
+<div class="impact-section">
+    <h1>Our Impact Numbers</h1>
+    <p>Join our rapidly growing learning community and acquire real-world skills</p>
+    <div class="impact-cards">
+        <div class="card">
+            <img src="https://i.postimg.cc/qvZ8Y2Cn/undefined-Imgur.png" alt="Bytecore Computer Centre - Over 150K Students Trained in Advanced IT and Programming Courses. Enroll Now for Expert Guidance">
+            <h2>150K+</h2>
+            <p>Students Trained</p>
+        </div>
+        <div class="card">
+            <img src="https://i.postimg.cc/V6XZmKj2/undefined-Imgur-1.png" alt="Bytecore Computer Centre - Over 150K Students Trained in Advanced IT and Programming Courses. Enroll Now for Expert Guidance">
+            <h2>3K+</h2>
+            <p>Interns</p>
+        </div>
+        <div class="card">
+            <img src="https://i.postimg.cc/gJd6GZBg/pngwing-com.png" alt="Bytecore Computer Centre - Over 150K Students Trained in Advanced IT and Programming Courses. Enroll Now for Expert Guidance">
+            <h2>100+</h2>
+            <p>Training Domains</p>
+        </div>
+        <div class="card">
+            <img src="https://i.postimg.cc/nLFSs5Qt/f758b961-be47-40d7-acce-972ad7ae7982.png" alt="Bytecore Computer Centre - Over 150K Students Trained in Advanced IT and Programming Courses. Enroll Now for Expert Guidance">
+            <h2>3M+ <span class="highlight">YouTube</span></h2>
+            <p>Learners</p>
+        </div>
+    </div>
+</div>
+    <section class="career-impact">
+    <div class="career-section">
+        <h2>Our Career</h2>
+        <p>Empowering students with knowledge and skills to achieve excellence in the field of computer education.</p>
+        <div class="career-details">
+            <div class="career-box">
+                <h3>200+</h3>
+                <p>Courses Available</p>
+            </div>
+            <div class="career-box">
+                <h3>1500+</h3>
+                <p>Successful Students</p>
+            </div>
+            <div class="career-box">
+                <h3>10+</h3>
+                <p>Years of Excellence</p>
+            </div>
+        </div>
+    </div>
+
+  
+</section>
+<!-- Image Cards Section -->
+<div class="image-section">
+    <div class="image-card">
+        <img src="https://i.postimg.cc/Prq2w0xT/me.jpg" alt="Bytecore Computer Centre student">
+        <div class="image-overlay">Learner 1</div>
+    </div>
+    <div class="image-card">
+        <img src="https://i.postimg.cc/9012Ns5c/DSC-6994.jpg" alt="BytecoreComputerCentre">
+        <div class="image-overlay">Learner 2</div>
+    </div>
+    <div class="image-card">
+        <img src="https://i.postimg.cc/ydtYyMHt/IMG-0107.jpg" alt="BytecoreComputerCentre">
+        <div class="image-overlay">Learner 3</div>
+    </div>
+    <div class="image-card">
+        <img src="https://i.postimg.cc/7PKk38xL/IMG-0111.jpg" alt="Afroj ahmad bareilly">
+        <div class="image-overlay">Learner 4</div>
+    </div>
+</div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>About Us</h3>
+                <p>Bytecore Computer Centre is dedicated to providing advanced computer education to help you excel in your career.</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: bytecore.info@gmail.com</p>
+                <p>Phone: +917017733805 <br>6396835709</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="#">Home</a><br>
+                <a href="#courses">Courses</a><br>
+                <a href="#about">About Us</a>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/bytecore_computer_centre/"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/6396835709"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://in.linkedin.com/in/afroj-ahmad-6a626729a"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2024 Bytecore Computer Centre | All Rights Reserved</p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalText = document.getElementById('modal-text');
+      const enrollNowBtn = document.getElementById('enroll-now');
+      const closeModal = modal.querySelector('.close');
+                // Program-specific links
+      const programLinks = {
+        "Web Development": "https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html",
+        "App Development": "https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html",
+        "Digital Marketing": "https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html",
+         "Data Analytics": "https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html",
+        "Cyber Security": "https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html",
+        "Design": "https://bytecorecomputercentre.blogspot.com/p/responsive-glassmorphism-form.html"
+      };
+
+      document.querySelectorAll('.see-program').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const program = link.getAttribute('data-program');
+          modalTitle.textContent = program;
+          modalText.textContent = `Learn more about our ${program} program. This program is designed to help you build a successful career in ${program.toLowerCase()}.`;
+          
+   enrollNowBtn.href = programLinks[program] || '#';
+          modal.style.display = 'flex';
+        });
+      });
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+    </script>
+</body>
+</html>
