@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enroll now at Bytecore Computer Centre for advanced computer courses with a professional touch. Connect with us on WhatsApp for queries.">
+  <meta name="keywords" content="Bytecore Computer Centre, Enrollment Form, Computer Courses, Professional Training">
+  <meta name="author" content="Bytecore Computer Centre">
+  <title>Enroll Now - Bytecore Computer Centre</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    .container h1 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .container p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-group label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 5px;
+      display: block;
+    }
+    .form-group input, 
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      color: #333;
+      outline: none;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .form-group input:focus, 
+    .form-group select:focus {
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: scale(1.05);
+    }
+    .whatsapp-btn {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .whatsapp-btn img {
+      width: 20px;
+      height: 20px;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebe5b;
+      transform: scale(1.1);
+    }
+    .whatsapp-text {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Join Us</h1>
+    <p>Enroll at <strong>Bytecore Computer Centre</strong> for professional courses.</p>
+    <form action="https://getform.io/f/brooepwa" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="course">Select Course</label>
+        <select id="course" name="course" required>
+          <option value="">Choose a course</option>
+          <option value="Basic Computer Training">Basic Computer Training</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Python Programming">Python Programming</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Java Programming">Java Programming</option>
+          <option value="Ethical Hacking">Ethical Hacking</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <a href="https://wa.me/your-whatsapp-number" class="whatsapp-btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      Chat with us on WhatsApp
+    </a>
+    <p class="whatsapp-text">Need help? Click the WhatsApp button to connect with our team instantly!</p>
+  </div>
+</body>
+</html>
