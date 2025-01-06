@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate custom multiline QR codes instantly with Bytecore Computer Centre's advanced QR Code Generator tool.">
+    <meta name="keywords" content="QR Code Generator, Multiline QR Code, QR Download, Bytecore Computer Centre">
+    <meta name="author" content="Bytecore Computer Centre">
+    <title>Multiline QR Code Generator - Bytecore</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #0072ff;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            resize: none;
+            font-size: 16px;
+        }
+
+        textarea:focus {
+            border-color: #0072ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+        }
+
+        button {
+            background: #0072ff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+
+        .download-btn {
+            display: none;
+            background: #28a745;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                max-width: 350px;
+            }
+
+            textarea {
+                height: 100px;
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bytecore QR Code Generator</h2>
+        <textarea id="text-input" placeholder="Enter multiline text..."></textarea>
+        <button onclick="generateQRCode()">Generate QR Code</button>
+        <div id="qrcode"></div>
+        <button class="download-btn" onclick="downloadQRCode()">Download QR Code</button>
+    </div>
+
+    <script>
+        function generateQRCode() {
+            let text = document.getElementById("text-input").value;
+            if (text.trim() === "") {
+                alert("Please enter some text!");
+                return;
+            }
+
+            // Clear previous QR
+            document.getElementById("qrcode").innerHTML = "";
+
+            // Create new QR
+            let qr = new QRCode(document.getElementById("qrcode"), {
+                text: text,
+                width: 250,
+                height: 250,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            // Show download button
+            document.querySelector(".download-btn").style.display = "inline-block";
+        }
+
+        function downloadQRCode() {
+            let qrCanvas = document.querySelector("#qrcode canvas");
+            let qrImage = qrCanvas.toDataURL("image/png");
+
+            let downloadLink = document.createElement("a");
+            downloadLink.href = qrImage;
+            downloadLink.download = "qrcode.png";
+            downloadLink.click();
+        }
+    </script>
+</body>
+</html>
