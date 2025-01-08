@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert up to 1000+ JPG images to high-quality PDF instantly with Bytecore Computer Centre's advanced online tool.">
+    <meta name="keywords" content="JPG to PDF converter, Image to PDF, Free PDF converter, Bytecore Computer Centre, Best JPG to PDF tool">
+    <meta name="author" content="Bytecore Computer Centre">
+    <title>JPG to PDF Converter - Bytecore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        /* Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: linear-gradient(135deg, #1e1e2e, #3a3a5e); color: white; text-align: center; padding: 20px; }
+        .container { max-width: 700px; margin: auto; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+        h1 { font-size: 26px; margin-bottom: 10px; }
+        img.logo { width: 100px; margin-bottom: 10px; }
+        .file-input { border: 2px dashed white; padding: 20px; cursor: pointer; margin: 10px 0; border-radius: 10px; transition: 0.3s; display: block; text-align: center; }
+        .file-input:hover { background: rgba(255, 255, 255, 0.2); }
+        input[type="file"] { display: none; }
+        .convert-btn { 
+            background: #ff9800; 
+            color: white; 
+            padding: 12px 25px; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 18px; 
+            margin-top: 15px; 
+            border-radius: 5px; 
+            transition: 0.3s; 
+            display: block;
+            width: 100%;
+        }
+        .convert-btn:hover { background: #e68900; }
+        
+        /* File List Fix */
+        .file-list { 
+            margin-top: 10px; 
+            max-height: 150px; 
+            overflow-y: auto; 
+            text-align: left; 
+            padding: 5px;
+        }
+        .file-list p { 
+            font-size: 14px; 
+            background: rgba(255, 255, 255, 0.2); 
+            padding: 8px; 
+            border-radius: 5px; 
+            margin: 5px 0; 
+            word-wrap: break-word;
+            white-space: normal;
+            overflow: hidden;
+        }
+        .status { font-size: 14px; margin-top: 10px; color: lightgreen; }
+        
+        /* Responsive Fixes */
+        @media (max-width: 500px) {
+            .container { width: 90%; padding: 15px; }
+            h1 { font-size: 22px; }
+            .file-input { font-size: 14px; padding: 15px; }
+            .convert-btn { font-size: 16px; padding: 10px; }
+            .file-list p { font-size: 12px; padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.postimg.cc/yNQQfDdv/undefined-Imgur.png" alt="Bytecore Computer Centre Logo" class="logo">
+        <h1>JPG to PDF Converter</h1>
+        <label class="file-input">
+            <input type="file" id="imageInput" accept="image/jpeg" multiple>
+            <i class="fas fa-upload"></i> Click or Drag & Drop JPGs (Up to 1000)
+        </label>
+        <div class="file-list" id="fileList"></div>
+        <button class="convert-btn" onclick="convertToPDF()">Convert to PDF</button>
+        <p class="status" id="statusMessage"></p>
+    </div>
+
+    <script>
+        const { jsPDF } = window.jspdf;
+        let selectedFiles = [];
+
+        document.getElementById("imageInput").addEventListener("change", function(event) {
+            selectedFiles = Array.from(event.target.files);
+            let fileListDiv = document.getElementById("fileList");
+            fileListDiv.innerHTML = "";
+            selectedFiles.forEach(file => {
+                let p = document.createElement("p");
+                p.textContent = file.name;
+                fileListDiv.appendChild(p);
+            });
+        });
+
+        function convertToPDF() {
+            if (selectedFiles.length === 0) {
+                alert("Please select at least one JPG image.");
+                return;
+            }
+
+            let pdf = new jsPDF();
+            let count = 0;
+            document.getElementById("statusMessage").textContent = "Processing " + selectedFiles.length + " images...";
+
+            selectedFiles.forEach((file, index) => {
+                let reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function(event) {
+                    let imgData = event.target.result;
+                    let img = new Image();
+                    img.src = imgData;
+                    img.onload = function() {
+                        let imgWidth = 210; // A4 size width in mm
+                        let imgHeight = (img.height * imgWidth) / img.width;
+
+                        if (index !== 0) pdf.addPage();
+                        pdf.addImage(img, "JPEG", 0, 0, imgWidth, imgHeight);
+
+                        count++;
+                        if (count === selectedFiles.length) {
+                            document.getElementById("statusMessage").textContent = "Download Ready!";
+                            pdf.save("converted.pdf");
+                        }
+                    };
+                };
+            });
+        }
+    </script>
+</body>
+</html>
