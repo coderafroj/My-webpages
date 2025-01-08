@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress images with accurate size comparison. ByteCore Computer Centre provides advanced, free image compression.">
+    <meta name="keywords" content="image compression, reduce image size, online image optimizer, ByteCore Computer Centre">
+    <meta name="author" content="ByteCore Computer Centre">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Advanced Image Compression - ByteCore Computer Centre">
+    <meta property="og:description" content="Optimize and compress your images online with size details and high-quality output.">
+    <meta property="og:url" content="https://bytecorecomputercentre.blogspot.com">
+    <meta property="og:image" content="https://bytecorecomputercentre.blogspot.com/logo.png">
+    <title>Image Compressor - ByteCore Computer Centre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #eef2f3, #ffffff);
+            color: #333;
+        }
+        header {
+            background: #0078D7;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            max-height: 50px;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container h2 {
+            color: #0078D7;
+        }
+        .file-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #0078D7;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .file-input:hover {
+            background: #0078D7;
+            color: white;
+        }
+        .file-input input {
+            display: none;
+        }
+        .processing {
+            display: none;
+            margin: 20px 0;
+        }
+        .processing span {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background: #0078D7;
+            margin: 0 5px;
+            border-radius: 50%;
+            animation: bounce 1.5s infinite;
+        }
+        .processing span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .processing span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+        .details {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #0078D7, #005BB5);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-top: 15px;
+            display: none;
+        }
+        .btn:hover {
+            background: #005BB5;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        footer a {
+            color: #0078D7;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.postimg.cc/yNQQfDdv/undefined-Imgur.png" alt="Bytecore Computer Centre Logo" alt="ByteCore Logo">
+        <h1>Image Compressor</h1>
+    </header>
+    <div class="container">
+        <h2>Compress Your Image Instantly</h2>
+        <label class="file-input">
+            <input type="file" accept="image/*" id="imageInput">
+            <span><i class="fas fa-upload"></i> Click or Drag to Upload Image</span>
+        </label>
+        <div class="processing" id="processing">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Processing your image...</p>
+        </div>
+        <div class="details" id="details"></div>
+        <a href="#" class="btn" id="downloadBtn">Download Compressed Image</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 ByteCore Computer Centre | <a href="https://bytecorecomputercentre.blogspot.com">Visit Our Blog</a></p>
+    </footer>
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const processing = document.getElementById('processing');
+        const details = document.getElementById('details');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        imageInput.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const originalSize = (file.size / 1024).toFixed(2); // KB
+                processing.style.display = 'block';
+                details.innerHTML = '';
+                downloadBtn.style.display = 'none';
+
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = async () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        const maxWidth = 600; // Resize to max width 600px
+                        const scale = maxWidth / img.width;
+                        canvas.width = maxWidth;
+                        canvas.height = img.height * scale;
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        const compressedImage = canvas.toDataURL('image/jpeg', 0.7); // Compress to 70% quality
+
+                        const compressedBlob = await fetch(compressedImage).then(res => res.blob());
+                        const compressedSize = (compressedBlob.size / 1024).toFixed(2); // KB
+
+                        processing.style.display = 'none';
+                        details.innerHTML = `Original Size: <b>${originalSize} KB</b> | Compressed Size: <b>${compressedSize} KB</b>`;
+                        downloadBtn.href = compressedImage;
+                        downloadBtn.download = 'compressed-image.jpg';
+                        downloadBtn.style.display = 'inline-block';
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
