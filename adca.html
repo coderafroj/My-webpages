@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ADCA Course Details - Learn MS Word, Excel, Tally, CorelDRAW, Photoshop, and more at Bytecore Computer Centre. Professional courses for students and professionals.">
+    <meta name="keywords" content="ADCA Course, MS Word, MS Excel, Tally, CorelDRAW, Photoshop, Bytecore Computer Centre">
+    <meta name="author" content="Bytecore Computer Centre">
+    <title>ADCA Course - Bytecore Computer Centre</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f4f4f4, #dfe9f3);
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            font-size: 2.8em;
+            color: #007bff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Grid for Courses */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .course-box {
+            background: linear-gradient(135deg, #ffffff, #f3f3f3);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-box::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.15), rgba(0, 123, 255, 0) 60%);
+            z-index: 0;
+            transition: transform 0.5s ease;
+        }
+
+        .course-box:hover::before {
+            transform: translate(33%, 33%);
+        }
+
+        .course-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-box img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        .course-box h2 {
+            font-size: 1.6em;
+            color: #333;
+            margin-bottom: 10px;
+            z-index: 1;
+        }
+
+        .course-box p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+
+        .course-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+
+        .course-box a:hover {
+            background: linear-gradient(90deg, #0056b3, #007bff);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .course-box h2 {
+                font-size: 1.4em;
+            }
+
+            .course-box p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>ADCA Course Details</h1>
+            <p>Explore professional courses at Bytecore Computer Centre</p>
+        </div>
+        <div class="courses">
+            <div class="course-box">
+                <img src="https://img.icons8.com/ios-filled/70/007bff/ms-word.png" alt="MS Word Icon">
+                <h2>MS Word</h2>
+                <p>Create professional documents.</p>
+                <a href="https://bytecorecomputercentre.blogspot.com/p/ms-word-tabs-explained-global-styles.html">View Course</a>
+            </div>
+            <div class="course-box">
+                <img src="https://img.icons8.com/ios-filled/70/007bff/ms-excel.png" alt="MS Excel Icon">
+                <h2>MS Excel</h2>
+                <p>Master data analysis tools.</p>
+                <a href="https://bytecorecomputercentre.blogspot.com/p/excel-course-bytecore-computer-centre.html">View Course</a>
+            </div>
+            <div class="course-box">
+                <img src="https://img.icons8.com/ios-filled/70/007bff/accounting.png" alt="Tally Icon">
+                <h2>Tally 9 & Prime</h2>
+                <p>Learn advanced accounting skills.</p>
+                <a href="https://bytecorecomputercentre.blogspot.com/p/tally-9-course-bytecore-computer-centre.html">View Course</a>
+            </div>
+            <div class="course-box">
+                <img src="https://via.placeholder.com/70/007bff/ffffff?text=C" alt="CorelDRAW Icon">
+                <h2>CorelDRAW</h2>
+                <p>Create stunning graphic designs.</p>
+                <a href="https://bytecorecomputercentre.blogspot.com/p/coreldraw-tools-bytecore-computer.html">View Course</a>
+            </div>
+            <div class="course-box">
+                <img src="https://via.placeholder.com/70/007bff/ffffff?text=P" alt="Photoshop Icon">
+                <h2>Photoshop</h2>
+                <p>Edit images like a pro.</p>
+                <a href="https://bytecorecomputercentre.blogspot.com/p/photoshop-tools-explained-global-styles.html">View Course</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
