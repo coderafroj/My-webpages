@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced CCC Quiz Test - Bytecore Computer Centre">
+    <meta name="keywords" content="CCC Test, Bytecore Computer Centre, Computer Concepts Test, Advanced Quiz, Online Test, Result Submission">
+    <meta name="author" content="Bytecore Computer Centre">
+    <meta property="og:title" content="Advanced CCC Test - Bytecore Computer Centre">
+    <meta property="og:description" content="Test your knowledge with the advanced CCC Quiz! Get instant results and celebrate your success!">
+    <meta property="og:image" content="URL_OF_IMAGE">
+    <meta property="og:url" content="YOUR_PAGE_URL">
+    <title>Advanced CCC Quiz - Bytecore Computer Centre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .question-container {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .option:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        .option.correct {
+            background-color: #4CAF50 !important;
+            color: #fff;
+        }
+
+        .option.incorrect {
+            background-color: #f44336 !important;
+            color: #fff;
+        }
+
+        .result {
+            display: none;
+            text-align: center;
+        }
+
+        .result h2 {
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+
+        .result p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Advanced CCC Quiz</h1>
+    <form id="start-form">
+        <input type="text" id="user-name" placeholder="Enter your name" required>
+        <input type="email" id="user-email" placeholder="Enter your email" required>
+        <button type="submit">Start Quiz</button>
+    </form>
+
+    <div id="quiz-section" style="display: none;">
+        <div class="question-container" id="question-container"></div>
+        <div class="options" id="options-container"></div>
+        <button id="next-btn" style="display: none;">Next Question</button>
+    </div>
+
+    <div class="result" id="result-section">
+        <h2>Congratulations!</h2>
+        <p>Your score is: <span id="final-score"></span></p>
+        <p>Thank you for participating!</p>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        { question: "What is the full form of CCC?", options: ["Course on Computer Concepts", "Computer Communication Course", "Certified Computer Course", "Central Computer Course"], answer: "Course on Computer Concepts" },
+        
+        { question: "What does CPU stand for?", options: ["Central Processing Unit", "Control Panel Unit", "Computer Power Unit", "Central Processing Utility"], answer: "Central Processing Unit" },
+        { question: "What is the capital of India?", options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"], answer: "New Delhi" },
+        { question: "Which is the smallest state in India?", options: ["Goa", "Sikkim", "Tripura", "Meghalaya"], answer: "Goa" }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+
+    const startForm = document.getElementById("start-form");
+    const quizSection = document.getElementById("quiz-section");
+    const questionContainer = document.getElementById("question-container");
+    const optionsContainer = document.getElementById("options-container");
+    const nextBtn = document.getElementById("next-btn");
+    const resultSection = document.getElementById("result-section");
+    const finalScore = document.getElementById("final-score");
+
+    startForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        startForm.style.display = "none";
+        quizSection.style.display = "block";
+        loadQuestion();
+    });
+
+    function loadQuestion() {
+        const currentQuestion = questions[currentIndex];
+        questionContainer.innerText = currentQuestion.question;
+        optionsContainer.innerHTML = "";
+        currentQuestion.options.forEach(option => {
+            const optionEl = document.createElement("div");
+            optionEl.classList.add("option");
+            optionEl.innerText = option;
+            optionEl.onclick = () => selectAnswer(optionEl, option);
+            optionsContainer.appendChild(optionEl);
+        });
+    }
+
+    function selectAnswer(optionEl, selectedOption) {
+        const currentQuestion = questions[currentIndex];
+        if (selectedOption === currentQuestion.answer) {
+            optionEl.classList.add("correct");
+            score++;
+        } else {
+            optionEl.classList.add("incorrect");
+        }
+        Array.from(optionsContainer.children).forEach(el => el.style.pointerEvents = 'none');
+        nextBtn.style.display = "block";
+    }
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex < questions.length) {
+            nextBtn.style.display = "none";
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    });
+
+    function showResults() {
+        quizSection.style.display = "none";
+        resultSection.style.display = "block";
+        finalScore.innerText = `${score} / ${questions.length}`;
+        submitResults();
+    }
+
+    function submitResults() {
+        const userName = document.getElementById("user-name").value;
+        const userEmail = document.getElementById("user-email").value;
+
+        fetch("https://getform.io/f/brooepwa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name: userName, email: userEmail, score: score })
+        }).catch(error => console.error("Error:", error));
+    }
+</script>
+
+</body>
+</html>
