@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ByteCore Computer Centre - AI Text to Speech (TTS) with MP3 Download">
+    <meta name="keywords" content="Text to Speech, AI Voice, MP3 Converter, ByteCore, Speech to Audio">
+    <meta name="author" content="ByteCore Computer Centre">
+    <meta property="og:title" content="Text to Speech Converter - ByteCore">
+    <meta property="og:description" content="Type text and convert it into AI-generated speech with MP3 download.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <title>AI Text to Speech - ByteCore</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        header img {
+            width: 150px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+        }
+        .container {
+            padding: 20px;
+            margin-top: 30px;
+        }
+        textarea {
+            width: 80%;
+            height: 120px;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background: #222;
+            color: white;
+            resize: none;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 255, 100, 0.5);
+            transition: all 0.3s ease-in-out;
+            margin: 10px;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: scale(1.1);
+        }
+        footer {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://i.postimg.cc/yNQQfDdv/undefined-Imgur.png" alt="ByteCore Computer Centre Logo">
+
+
+</header>
+
+<h1>AI Text to Speech Converter</h1>
+
+<div class="container">
+    <textarea id="userText" placeholder="Yahan apna text likho..."></textarea>
+    <div class="buttons">
+        <button id="speakButton">🔊 Convert to Speech</button>
+        <button id="downloadButton" style="display:none;">⬇️ Download MP3</button>
+    </div>
+    <audio id="audioPlayer" controls style="display:none; margin-top: 20px;"></audio>
+</div>
+
+<footer>
+    <p>&copy; 2025 ByteCore Computer Centre</p>
+</footer>
+
+<script>
+    document.getElementById("speakButton").addEventListener("click", function() {
+        let text = document.getElementById("userText").value.trim();
+        if (text === "") {
+            alert("Please enter some text to convert!");
+            return;
+        }
+
+        // Speech Synthesis API (For real-time playback)
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-US";
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
+
+        // Show download button
+        setTimeout(() => {
+            document.getElementById("downloadButton").style.display = "inline-block";
+        }, 3000);
+    });
+
+    document.getElementById("downloadButton").addEventListener("click", function() {
+        let text = document.getElementById("userText").value;
+        
+        // Google TTS API for generating MP3
+        let googleTTSUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${encodeURIComponent(text)}&tl=en`;
+
+        let audioPlayer = document.getElementById("audioPlayer");
+        audioPlayer.src = googleTTSUrl;
+        audioPlayer.style.display = "block";
+
+        // Download MP3
+        let link = document.createElement("a");
+        link.href = googleTTSUrl;
+        link.download = "ByteCore_Speech.mp3";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+</script>
+
+</body>
+</html>
