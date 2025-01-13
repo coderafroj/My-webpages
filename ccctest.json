@@ -1,0 +1,557 @@
+   const questions = [
+    { question: "1. CPU ka full form kya hai?", options: ["Central Processing Unit", "Central Program Unit", "Central Processor Unit", "Control Processing Unit"], answer: "Central Processing Unit" },
+    { question: "2. MS Word me shortcut 'Ctrl + S' ka kya kaam hai?", options: ["Select karna", "Copy karna", "save karna", "Screen capture karna"], answer: "Save karna" },
+    { question: "3. Email ka full form kya hai?", options: ["Electrical Mail", "Electronic Mail", "Easy Mail", "Efficient Mail"], answer: "Electronic Mail" },
+    { question: "4. MS Excel me formula kis symbol se shuru hota hai?", options: ["+", "=", "-", "/"], answer: "=" },
+    { question: "5. Keyboard ka 'Ctrl + V' shortcut kis liye hota hai?", options: ["Save", "Copy", "Undo", "Paste"], answer: "Paste" },
+    { question: "6. Internet ka search engine kaun sa hai?", options: ["Linux", "MS Word", "Google", "Excel"], answer: "Google" },
+    { question: "7. Computer ka brain kise kehte hain?", options: ["CPU", "Mouse", "Monitor", "Keyboard"], answer: "CPU" },
+    { question: "8. MS PowerPoint me slides kaunse format me save hoti hai?", options: [".pptx", ".doc", ".xls", ".ppt"], answer: ".ppt" },
+    { question: "9. Data transfer ke liye kaunsa device use hota hai?", options: ["Pendrive", "Monitor", "Keyboard", "Mouse"], answer: "Pendrive" },
+    { question: "10. Binary number system me kitne digits hote hain?", options: ["8", "2", "10", "16"], answer: "2" },
+    { question: "11. LibreOffice Writer me bold text ka shortcut key kya hai?", options: ["Ctrl + Bold", "Ctrl + I", "Ctrl + U", "Ctrl + B"], answer: "Ctrl + B" },
+    { question: "12. Internet Explorer kya hai?", options: ["Web Browser", "Operating System", "Spreadsheet", "Software"], answer: "Web Browser" },
+    { question: "13. Hard disk ka main use kya hai?", options: ["Data Store karna", "Data Process karna", "Data Transfer karna", "Data Print karna"], answer: "Data Store karna" },
+    { question: "14. MS Excel me rows aur columns ke intersection ko kya kehte hain?", options: ["Cell", "Field", "Data", "Grid"], answer: "Cell" },
+    { question: "15. Printer output ko kya kehte hain?", options: ["Hard Copy", "Soft Copy", "Digital Copy", "None of the above"], answer: "Hard Copy" },
+    { question: "16. LibreOffice Calc me formula bar ka kaam kya hai?", options: ["Values edit karna", "Formulas enter karna", "Both a and b", "None of the above"], answer: "Both a and b" },
+    { question: "17. Email attachments me kaunse file type attach ho sakte hain?", options: ["PDF", "DOCX", "JPEG", "All of the above"], answer: "All of the above" },
+    { question: "18. MS Word me document save karne ka shortcut kya hai?", options: ["Ctrl + S", "Ctrl + C", "Ctrl + V", "Ctrl + X"], answer: "Ctrl + S" },
+    { question: "19. CPU ke kaunse part data process karte hain?", options: ["ALU", "CU", "MU", "None of the above"], answer: "ALU" },
+    { question: "20. LibreOffice Writer me italic text ka shortcut key kya hai?", options: ["Ctrl + B", "Ctrl + I", "Ctrl + U", "Ctrl + P"], answer: "Ctrl + I" },
+    { question: "21. Computer network mein kaunse device data forward karta hai?", options: ["Router", "Monitor", "Keyboard", "Mouse"], answer: "Router" },
+    { question: "22. LibreOffice Calc mein cell ko merge karne ka shortcut kya hai?", options: ["Alt + M", "Ctrl + M", "Alt + Shift + M", "None of the above"], answer: "None of the above" },
+    { question: "23. Operating System ka primary kaam kya hota hai?", options: ["Hardware aur Software ko manage karna", "Internet access provide karna", "Files ko transfer karna", "Game khelna"], answer: "Hardware aur Software ko manage karna" },
+    { question: "24. MS Paint ka primary use kya hai?", options: ["Image editing aur drawing", "Document writing", "Presentation making", "Spreadsheet creation"], answer: "Image editing aur drawing" },
+    { question: "25. Hard disk ka main kaam kya hota hai?", options: ["Data storage", "Data processing", "Data transfer", "Data calculation"], answer: "Data storage" },
+    { question: "26. MS Excel mein formula bar ka kaam kya hota hai?", options: ["Values edit karna", "Formulas enter karna", "Both a and b", "None of the above"], answer: "Both a and b" },
+    { question: "27. Keyboard par F5 key ka use kis ke liye hota hai?", options: ["Refresh karna", "Copy karna", "Paste karna", "Undo karna"], answer: "Refresh karna" },
+    { question: "28. LibreOffice Calc mein cell ka unique address kya kehlata hai?", options: ["Cell Reference", "Cell ID", "Cell Code", "Cell Number"], answer: "Cell Reference" },
+    { question: "29. LibreOffice Impress mein slide show ka shortcut kya hai?", options: ["F5", "Ctrl + S", "Alt + S", "Ctrl + Alt + S"], answer: "F5" },
+    { question: "30. MS Word mein page layout change karne ka option kaunse tab mein hota hai?", options: ["Insert", "View", "Page Layout", "Home"], answer: "Page Layout" }
+    ,
+    { question: "31. MS Word में 'Ctrl + S' का क्या कार्य है?", options: ["सहेजना", "कॉपी करना", "चयन करना", "स्क्रीन कैप्चर करना"], answer: "सहेजना" },
+{ question: "32. MS Excel में 'Ctrl + C' का क्या कार्य है?", options: ["कॉपी करना", "पेस्ट करना", "कट करना", "सहेजना"], answer: "कॉपी करना" },
+{ question: "33. MS PowerPoint में स्लाइड शो शुरू करने के लिए कौन सा कीबोर्ड शॉर्टकट है?", options: ["F5", "Ctrl + F5", "Shift + F5", "Alt + F5"], answer: "F5" },
+{ question: "34. MS Excel में SUM फ़ंक्शन का उपयोग किसके लिए किया जाता है?", options: ["योग जोड़ना", "औसत निकालना", "गणना करना", "डेटा को फ़िल्टर करना"], answer: "योग जोड़ना" },
+{ question: "35. MS Word में 'Ctrl + P' का क्या कार्य है?", options: ["प्रिंट करना", "पेस्ट करना", "पेज सेटअप", "पेज ब्रेक"], answer: "प्रिंट करना" },
+{ question: "36. MS Excel में 'Ctrl + Z' का क्या कार्य है?", options: ["पूर्ववत करना", "पुनः करना", "कट करना", "कॉपी करना"], answer: "पूर्ववत करना" },
+{ question: "37. MS PowerPoint में स्लाइड को डुप्लिकेट करने के लिए कौन सा कीबोर्ड शॉर्टकट है?", options: ["Ctrl + D", "Ctrl + C", "Ctrl + V", "Ctrl + X"], answer: "Ctrl + D" },
+{ question: "38. MS Word में 'Ctrl + B' का क्या कार्य है?", options: ["बोल्ड करना", "इटैलिक करना", "अंडरलाइन करना", "स्ट्राइकथ्रू करना"], answer: "बोल्ड करना" },
+{ question: "39. MS Excel में 'Ctrl + A' का क्या कार्य है?", options: ["सभी सेल्स का चयन करना", "सभी शीट्स का चयन करना", "सभी कॉलम्स का चयन करना", "सभी रोस का चयन करना"], answer: "सभी सेल्स का चयन करना" },
+{ question: "40. MS PowerPoint में स्लाइड को हटाने के लिए कौन सा कीबोर्ड शॉर्टकट है?", options: ["Delete", "Backspace", "Ctrl + D", "Ctrl + X"], answer: "Delete" },
+{ question: "41. MS Word में 'Ctrl + I' का क्या कार्य है?", options: ["इटैलिक करना", "बोल्ड करना", "अंडरलाइन करना", "स्ट्राइकथ्रू करना"], answer: "इटैलिक करना" },
+{ question: "42. MS Excel में 'Ctrl + F' का क्या कार्य है?", options: ["खोज करना", "फिल्टर करना", "फॉर्मेट करना", "सॉर्ट करना"], answer: "खोज करना" },
+{ question: "43. MS PowerPoint में स्लाइड के बीच में नया स्लाइड जोड़ने के लिए कौन सा कीबोर्ड शॉर्टकट है?", options: ["Ctrl + M", "Ctrl + N", "Ctrl + T", "Ctrl + S"], answer: "Ctrl + M" },
+{ question: "44. MS Word में 'Ctrl + U' का क्या कार्य है?", options: ["अंडरलाइन करना", "बोल्ड करना", "इटैलिक करना", "स्ट्राइकथ्रू करना"], answer: "अंडरलाइन करना" },
+{ question: "45. MS Excel में 'Ctrl + P' का क्या कार्य है?", options: ["प्रिंट करना", "पेस्ट करना", "पेज सेटअप", "पेज ब्रेक"], answer: "प्रिंट करना" },
+{ question: "46. MS PowerPoint में स्लाइड शो को रोकने के लिए कौन सा कीबोर्ड शॉर्टकट है?", options: ["Esc", "Ctrl + Break", "Ctrl + Alt + Del", "Ctrl + Shift + Esc"], answer: "Esc" },
+{ question: "47. MS Word में 'Ctrl + X' का क्या कार्य है?", options: ["कट करना", "कॉपी करना", "पेस्ट करना", "सहेजना"], answer: "कट करना" },
+{ question: "48. MS Excel में 'Ctrl + V' का क्या कार्य है?", options: ["पेस्ट करना", "कॉपी करना", "कट करना", "सहेजना"], answer: "पेस्ट करना" },
+{ question: "49. MS PowerPoint में स्लाइड को रिवर्स ऑर्डर में दिखाने के लिए कौन सा कीबोर्ड शॉर्टकट है?", options: ["Shift + F5", "Ctrl + F5", "Alt + F5", "Ctrl + Shift + F5"], answer: "Shift + F5" },
+{ question: "50. MS Word में 'Ctrl + N' का क्या कार्य है?", options: ["नया दस्तावेज़ खोलना", "नया पेज जोड़ना", "नया सेक्शन जोड़ना", "नया पैराग्राफ जोड़ना"], answer: "नया दस्तावेज़ खोलना" },
+//Add 50
+   {
+        question: "51. कंप्यूटर का फुल फॉर्म क्या है?",
+        options: [
+            "Commonly Operated Machine Particularly Used for Technical Education and Research",
+            "Central Operational Machine Used for Technical Research",
+            "Computer Organized Machine",
+            "None of the above"
+        ],
+        answer: "Commonly Operated Machine Particularly Used for Technical Education and Research"
+    },
+    {
+        question: "52. ऑपरेटिंग सिस्टम का प्राथमिक कार्य क्या है?",
+        options: [
+            "हार्डवेयर और सॉफ़्टवेयर को मैनेज करना",
+            "इंटरनेट एक्सेस देना",
+            "डेटा ट्रांसफर करना",
+            "गेम खेलना"
+        ],
+        answer: "हार्डवेयर और सॉफ़्टवेयर को मैनेज करना"
+    },
+    {
+        question: "53. MS Word में 'Ctrl + P' का क्या उपयोग है?",
+        options: [
+            "प्रिंट करना",
+            "सेव करना",
+            "पेस्ट करना",
+            "कॉपी करना"
+        ],
+        answer: "प्रिंट करना"
+    },
+    {
+        question: "54. रैम (RAM) का मुख्य उपयोग क्या है?",
+        options: [
+            "डेटा अस्थायी रूप से स्टोर करना",
+            "डेटा स्थायी रूप से स्टोर करना",
+            "डेटा ट्रांसफर करना",
+            "डेटा प्रोसेस करना"
+        ],
+        answer: "डेटा अस्थायी रूप से स्टोर करना"
+    },
+    {
+        question: "55. कंप्यूटर नेटवर्क में डेटा फॉरवर्ड करने के लिए कौन सा डिवाइस उपयोग होता है?",
+        options: [
+            "राउटर",
+            "मॉनिटर",
+            "कीबोर्ड",
+            "माउस"
+        ],
+        answer: "राउटर"
+    },
+    {
+        question: "56. LibreOffice Writer में टेक्स्ट को Heading 1 करने का शॉर्टकट क्या है?",
+        options: [
+            "Ctrl + H",
+            "Ctrl + 1",
+            "Ctrl + U",
+            "Ctrl + P"
+        ],
+        answer: "Ctrl + 1"
+    },
+    {
+        question: "57. इंटरनेट पर सुरक्षित संचार के लिए किस प्रोटोकॉल का उपयोग होता है?",
+        options: [
+            "HTTP",
+            "HTTPS",
+            "SMTP",
+            "FTP"
+        ],
+        answer: "HTTPS"
+    },
+    {
+        question: "58. MS Excel में सेल के अंदर डेटा जोड़ने के लिए कौन सा फंक्शन उपयोग होता है?",
+        options: [
+            "COMBINE()",
+            "ADD()",
+            "SUM()",
+            "TOTAL()"
+        ],
+        answer: "SUM()"
+    },
+    {
+        question: "59. कंप्यूटर में बूटिंग प्रक्रिया क्या है?",
+        options: [
+            "सिस्टम को स्टार्ट करना",
+            "सॉफ्टवेयर इंस्टॉल करना",
+            "डेटा बैकअप लेना",
+            "नेटवर्क से कनेक्ट करना"
+        ],
+        answer: "सिस्टम को स्टार्ट करना"
+    },
+    {
+        question: "60. MS PowerPoint में स्लाइड शो शुरू करने के लिए कौन सी कुंजी दबाई जाती है?",
+        options: [
+            "F1",
+            "F5",
+            "Ctrl + S",
+            "Alt + F5"
+        ],
+        answer: "F5"
+    },
+    {
+        question: "61. कंप्यूटर वायरस क्या है?",
+        options: [
+            "एक हार्डवेयर डिवाइस",
+            "सॉफ़्टवेयर प्रोग्राम",
+            "नेटवर्क प्रोटोकॉल",
+            "डेटा बैकअप"
+        ],
+        answer: "सॉफ़्टवेयर प्रोग्राम"
+    },
+    {
+        question: "62. LibreOffice Calc में सेल एड्रेस को क्या कहा जाता है?",
+        options: [
+            "सेल रेफरेंस",
+            "सेल एड्रेस",
+            "सेल कोड",
+            "सेल नंबर"
+        ],
+        answer: "सेल रेफरेंस"
+    },
+    {
+        question: "63. कंप्यूटर में डेटा की सबसे छोटी इकाई क्या कहलाती है?",
+        options: [
+            "बिट",
+            "बाइट",
+            "निबल",
+            "किलोबाइट"
+        ],
+        answer: "बिट"
+    },
+    {
+        question: "64. Email का फुल फॉर्म क्या है?",
+        options: [
+            "Electronic Mail",
+            "Electrical Mail",
+            "Efficient Mail",
+            "Easy Mail"
+        ],
+        answer: "Electronic Mail"
+    },
+    {
+        question: "65. MS Excel में कॉलम और रो के इंटरसेक्शन को क्या कहते हैं?",
+        options: [
+            "सेल",
+            "डेटा",
+            "फील्ड",
+            "ग्रिड"
+        ],
+        answer: "सेल"
+    },
+    {
+        question: "66. कौन सा ब्राउज़र सबसे लोकप्रिय है?",
+        options: [
+            "Safari",
+            "Mozilla Firefox",
+            "Google Chrome",
+            "Opera"
+        ],
+        answer: "Google Chrome"
+    },
+    {
+        question: "67. 'Ctrl + S' का उपयोग किसके लिए होता है?",
+        options: [
+            "फाइल सेव करने के लिए",
+            "फाइल कॉपी करने के लिए",
+            "टेक्स्ट को बोल्ड करने के लिए",
+            "स्लाइड शो शुरू करने के लिए"
+        ],
+        answer: "फाइल सेव करने के लिए"
+    },
+    {
+        question: "68. LibreOffice Impress में स्लाइड शो स्टार्ट करने का शॉर्टकट क्या है?",
+        options: [
+            "F5",
+            "Alt + S",
+            "Ctrl + S",
+            "Shift + F5"
+        ],
+        answer: "F5"
+    },
+    {
+        question: "69. MS Word में टेक्स्ट को अंडरलाइन करने का शॉर्टकट क्या है?",
+        options: [
+            "Ctrl + I",
+            "Ctrl + B",
+            "Ctrl + U",
+            "Ctrl + P"
+        ],
+        answer: "Ctrl + U"
+    },
+    {
+        question: "70. इंटरनेट पर डेटा ट्रांसफर करने के लिए कौन सा प्रोटोकॉल उपयोग किया जाता है?",
+        options: [
+            "DNS",
+            "HTTP",
+            "SMTP",
+            "FTP"
+        ],
+        answer: "FTP"
+    },
+    // Add 30 more questions in similar format to reach 50
+
+    {
+        question: "71. कंप्यूटर के मुख्य चार कार्य क्या हैं?",
+        options: [
+            "इनपुट, प्रोसेसिंग, स्टोरेज, आउटपुट",
+            "डेटा एंट्री, गेमिंग, प्रिंटिंग, प्रोसेसिंग",
+            "प्रोसेसिंग, नेटवर्किंग, गेमिंग, स्टोरेज",
+            "इनपुट, नेटवर्किंग, आउटपुट, गेमिंग"
+        ],
+        answer: "इनपुट, प्रोसेसिंग, स्टोरेज, आउटपुट"
+    },
+    {
+        question: "72. कंप्यूटर नेटवर्क में डेटा की ट्रांसमिशन स्पीड को किसमें मापा जाता है?",
+        options: [
+            "GHz",
+            "RPM",
+            "Mbps",
+            "Kbps"
+        ],
+        answer: "Mbps"
+    },
+    {
+        question: "73. USB का फुल फॉर्म क्या है?",
+        options: [
+            "Universal Serial Bus",
+            "Universal System Backup",
+            "Universal Source Buffer",
+            "Unique Serial Bus"
+        ],
+        answer: "Universal Serial Bus"
+    },
+    {
+        question: "74. HTTP का फुल फॉर्म क्या है?",
+        options: [
+            "HyperLink Transfer Protocol",
+            "Hyperlink Transfer Protocol",
+            "HyperText Transfer Protocol",
+            "High Transfer Text Protocol"
+        ],
+        answer: "HyperText Transfer Protocol"
+    },
+    {
+        question: "75. Firewall का उपयोग किसके लिए किया जाता है?",
+        options: [
+            "नेटवर्क को सुरक्षित करने के लिए",
+            "डेटा बैकअप के लिए",
+            "सिस्टम को बूट करने के लिए",
+            "प्रिंटिंग के लिए"
+        ],
+        answer: "नेटवर्क को सुरक्षित करने के लिए"
+    },
+    {
+        question: "76. कंप्यूटर के मुख्य दो प्रकार कौन से हैं?",
+        options: [
+            "डेस्कटॉप और लैपटॉप",
+            "हार्डवेयर और सॉफ्टवेयर",
+            "मैक और विंडोज",
+            "एनालॉग और डिजिटल"
+        ],
+        answer: "एनालॉग और डिजिटल"
+    },
+    {
+        question: "77. SSD का मुख्य उपयोग क्या है?",
+        options: [
+            "डेटा स्टोरेज के लिए",
+            "नेटवर्किंग के लिए",
+            "डिस्प्ले के लिए",
+            "प्रोसेसिंग के लिए"
+        ],
+        answer: "डेटा स्टोरेज के लिए"
+    },
+    {
+        question: "78. कंप्यूटर प्रिंटर को किस प्रकार की डिवाइस कहते हैं?",
+        options: [
+            "इनपुट डिवाइस",
+            "आउटपुट डिवाइस",
+            "स्टोरेज डिवाइस",
+            "प्रोसेसिंग डिवाइस"
+        ],
+        answer: "आउटपुट डिवाइस"
+    },
+    {
+        question: "79. LibreOffice Calc में सेल मर्ज करने का विकल्प कहाँ होता है?",
+        options: [
+            "फॉर्मेट मेन्यू",
+            "इंसर्ट मेन्यू",
+            "डेटा मेन्यू",
+            "फाइल मेन्यू"
+        ],
+        answer: "फॉर्मेट मेन्यू"
+    },
+    {
+        question: "80. क्लाउड स्टोरेज का उदाहरण क्या है?",
+        options: [
+            "RAM",
+            "Hard Disk",
+            "Google Drive",
+            "DVD"
+        ],
+        answer: "Google Drive"
+    },
+    {
+        question: "81. किस प्रकार की मेमोरी डेटा स्थायी रूप से संग्रहीत करती है?",
+        options: [
+            "रजिस्टर",
+            "RAM",
+            "कैश मेमोरी",
+            "ROM"
+        ],
+        answer: "ROM"
+    },
+    {
+        question: "82. MS Excel में ग्राफ या चार्ट बनाने का विकल्प कहाँ होता है?",
+        options: [
+            "इंसर्ट टैब",
+            "होम टैब",
+            "डिजाइन टैब",
+            "फाइल टैब"
+        ],
+        answer: "इंसर्ट टैब"
+    },
+    {
+        question: "83. QR कोड का उपयोग किसके लिए किया जाता है?",
+        options: [
+            "डेटा स्कैन और एक्सेस करने के लिए",
+            "डेटा स्टोर करने के लिए",
+            "डेटा एंट्री करने के लिए",
+            "डेटा को डिलीट करने के लिए"
+        ],
+        answer: "डेटा स्कैन और एक्सेस करने के लिए"
+    },
+    {
+        question: "84. MS Word में 'Find and Replace' का शॉर्टकट क्या है?",
+        options: [
+            "Ctrl + F",
+            "Ctrl + H",
+            "Ctrl + R",
+            "Ctrl + G"
+        ],
+        answer: "Ctrl + H"
+    },
+    {
+        question: "85. कंप्यूटर के किस भाग को 'ब्रेन ऑफ द कंप्यूटर' कहा जाता है?",
+        options: [
+            "CPU",
+            "मदरबोर्ड",
+            "हार्ड डिस्क",
+            "रैम"
+        ],
+        answer: "CPU"
+    },
+    {
+        question: "86. माइक्रोसॉफ्ट ऑफिस का डेवलपर कौन है?",
+        options: [
+            "Microsoft",
+            "Google",
+            "Apple",
+            "IBM"
+        ],
+        answer: "Microsoft"
+    },
+    {
+        question: "87. MS Paint में Image को सेव करने का शॉर्टकट क्या है?",
+        options: [
+            "Ctrl + f",
+            "Ctrl + S",
+            "Ctrl + Shift + S",
+            "Alt + S"
+        ],
+        answer: "Ctrl + S"
+    },
+    {
+        question: "88. कंप्यूटर में वॉलटाइल मेमोरी का उदाहरण क्या है?",
+        options: [
+            "RAM",
+            "ROM",
+            "हार्ड डिस्क",
+            "पेन ड्राइव"
+        ],
+        answer: "RAM"
+    },
+    {
+        question: "89. नेटवर्किंग में IP का फुल फॉर्म क्या है?",
+        options: [
+            "Internet Progress",
+            "Internal Protocol",
+            "Integrated Program",
+            "Internet Protocol"
+        ],
+        answer: "Internet Protocol"
+    },
+    {
+        question: "90. DNS का मुख्य कार्य क्या है?",
+        options: [
+            "ईमेल भेजना",
+            "डेटा स्टोर करना",
+            "डोमेन नेम को IP एड्रेस में बदलना",
+            "फाइल डाउनलोड करना "
+        ],
+        answer: "डोमेन नेम को IP एड्रेस में बदलना"
+    },
+    {
+        question: "91. Bluetooth का उपयोग किसके लिए किया जाता है?",
+        options: [
+            "वायरलेस डेटा ट्रांसफर के लिए",
+            "फाइल स्टोरेज के लिए",
+            "प्रिंटिंग के लिए",
+            "स्कैनिंग के लिए"
+        ],
+        answer: "वायरलेस डेटा ट्रांसफर के लिए"
+    },
+    {
+        question: "92. Ctrl + Z का उपयोग किसके लिए होता है?",
+        options: [
+            "Undo करने के लिए",
+            "Redo करने के लिए",
+            "Save करने के लिए",
+            "Copy करने के लिए"
+        ],
+        answer: "Undo करने के लिए"
+    },
+    {
+        question: "93. कंप्यूटर में बिटमैप फाइल का मुख्य उपयोग क्या है?",
+        options: [
+            "इमेज फाइल स्टोर करने के लिए",
+            "टेक्स्ट फाइल स्टोर करने के लिए",
+            "ऑडियो फाइल स्टोर करने के लिए",
+            "वीडियो फाइल स्टोर करने के लिए"
+        ],
+        answer: "इमेज फाइल स्टोर करने के लिए"
+    },
+    {
+        question: "94. ऑपरेटिंग सिस्टम का उदाहरण क्या है?",
+        options: [
+            "Cpu",
+            "Google Chrome",
+            "MS Office",
+            "Windows"
+        ],
+        answer: "Windows"
+    },
+    {
+        question: "95. हार्डवेयर और सॉफ्टवेयर को जोड़ने का काम कौन करता है?",
+        options: [
+            "ऑपरेटिंग सिस्टम",
+            "ब्राउज़र",
+            "एप्लिकेशन सॉफ्टवेयर",
+            "प्रोग्रामिंग लैंग्वेज"
+        ],
+        answer: "ऑपरेटिंग सिस्टम"
+    },
+    {
+        question: "96. URL का फुल फॉर्म क्या है?",
+        options: [
+            "Unicode Resource Locator",
+            "Uniform Resource Locator",
+            "Unified Resource Locator",
+            "Unique Resource Locator"
+        ],
+        answer: "Uniform Resource Locator"
+    },
+    {
+        question: "97. कंप्यूटर नेटवर्क में WAN का फुल फॉर्म क्या है?",
+        options: [
+            "World Area Network",
+            "Wireless Area Network",
+            "Web Area Network",
+            "Wide Area Network"
+        ],
+        answer: "Wide Area Network"
+    },
+    {
+        question: "98. डेटा सुरक्षा के लिए पासवर्ड कैसा होना चाहिए?",
+        options: [
+            "Strong और यूनिक",
+            "सिर्फ नाम पर आधारित",
+            "सिर्फ नंबर पर आधारित",
+            "सिर्फ छोटे अक्षरों पर आधारित"
+        ],
+        answer: "Strong और यूनिक"
+    },
+    {
+        question: "99. कंप्यूटर में स्प्रेडशीट का उदाहरण क्या है?",
+        options: [
+            "MS paint",
+            "MS Word",
+            "MS PowerPoint",
+            "MS Excel"
+        ],
+        answer: "MS Excel"
+    },
+    {
+        question: "100. MS Word में नए डॉक्यूमेंट के लिए कौन सा शॉर्टकट उपयोग होता है?",
+        options: [
+            "Ctrl + an",
+            "Ctrl + O",
+            "Ctrl + N",
+            "Ctrl + Shift + N"
+        ],
+        answer: "Ctrl + N"
+    }
+
+];

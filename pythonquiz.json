@@ -1,0 +1,1007 @@
+   const questions = [
+
+    {
+        "question": "1. Python mein ek string ko uppercase mein kaise convert karte hain?",
+        "options": [
+            "str.upper()",
+            "str.lower()",
+            "str.capitalize()",
+            "str.title()"
+        ],
+        "answer": "str.upper()"
+    },
+    {
+        "question": "2. Python mein list ke elements kaise add karte hain?",
+        "options": [
+            "list.add(item)",
+            "list.append(item)",
+            "list.insert(item)",
+            "list.push(item)"
+        ],
+        "answer": "list.append(item)"
+    },
+    {
+        "question": "3. Python mein ek dictionary ka value kaise access karte hain?",
+        "options": [
+            "dict.value",
+            "dict.key",
+            "dict.get(key)",
+            "dict.access(key)"
+        ],
+        "answer": "dict.get(key)"
+    },
+    {
+        "question": "4. Python mein for loop ka syntax kya hai?",
+        "options": [
+            "for sequence item in",
+            "foreach item in sequence:",
+            "loop item in sequence:",
+            "for item in sequence:"
+        ],
+        "answer": "for item in sequence:"
+    },
+    {
+        "question": "5. Python mein new list ko sorted order mein kaise convert karte hain?",
+        "options": [
+            "list.sorted()",
+            "sorted(list)",
+            "list.sort()",
+            "sort(list)"
+        ],
+        "answer": "sorted(list)"
+    },
+    {
+        "question": "6. Python mein string ka pehla character capital kaise hota hai?",
+        "options": [
+            "str.upperfirstletter()",
+            "str.upper()",
+            "str.capitalize()",
+            "str.first_upper()"
+        ],
+        "answer": "str.capitalize()"
+    },
+    {
+        "question": "7. Python mein integer ko string mein kaise convert karte hain?",
+        "options": [
+            "int.toString()",
+            "convert(int)",
+            "string(int)",
+            "str(int)"
+        ],
+        "answer": "str(int)"
+    },
+    {
+        "question": "8. Python mein input lene ka function kya hai?",
+        "options": [
+            "imput()",
+            "scanf()",
+            "input()",
+            "read()"
+        ],
+        "answer": "input()"
+    },
+    {
+        "question": "9. Python mein ek string ke length kaise find karte hain?",
+        "options": [
+            "len(string)",
+            "string.len()",
+            "length(string)",
+            "string.length()"
+        ],
+        "answer": "len(string)"
+    },
+    {
+        "question": "10. Python mein None ka kya matlab hota hai?",
+        "options": [
+            "Zero",
+            "Null value",
+            "Empty string",
+            "Boolean False"
+        ],
+        "answer": "Null value"
+    },
+    {
+        "question": "11. Python mein float data type ka use kis liye hota hai?",
+        "options": [
+            "Boolean values ke liye",
+            "Integer values ke liye",
+            "Text values ke liye",
+            "Decimal values ke liye"
+        ],
+        "answer": "Decimal values ke liye"
+    },
+    {
+        "question": "12. Python mein while loop ka correct syntax kya hai?",
+        "options": [
+            "while--condition:",
+            "loop while condition:",
+            "while (condition)",
+            "while condition:"
+        ],
+        "answer": "while condition:"
+    },
+    {
+        "question": "13. Python mein ek dictionary mein value update kaise karte hain?",
+        "options": [
+            "dict[key] = new_value",
+            "dict.add(key, new_value)",
+            "dict.update(key, value)",
+            "dict.modify(key, value)"
+        ],
+        "answer": "dict[key] = new_value"
+    },
+    {
+        "question": "14. Python mein ek function ko define karne ka keyword kya hai?",
+        "options": [
+            "func()",
+            "def",
+            "function",
+            "lambda"
+        ],
+        "answer": "def"
+    },
+    {
+        "question": "15. Python mein ek tuple ko kaise banate hain?",
+        "options": [
+            "(item1, item2)",
+            "[item1, item2]",
+            "{item1, item2}",
+            "tuple(item1, item2)"
+        ],
+        "answer": "(item1, item2)"
+    },
+    {
+        "question": "16. Python mein NoneType object ko kaise check karte hain?",
+        "options": [
+            "if object is empty",
+            "if obj == None:",
+            "if None in obj:",
+            "if obj is None::"
+        ],
+        "answer": "if obj is None:"
+    },
+    {
+        "question": "17. Python mein ek list se duplicate elements kaise remove karte hain?",
+        "options": [
+            "list(set(my_list))",
+            "my_list.remove_duplicates()",
+            "my_list.distinct()",
+            "unique(my_list)"
+        ],
+        "answer": "list(set(my_list))"
+    },
+    {
+        "question": "18. Python mein ek file ko kaise open karte hain?",
+        "options": [
+            "open('filename', 'mode')",
+            "file.open('filename', 'mode')",
+            "open_file('filename')",
+            "openfile('filename', 'mode')"
+        ],
+        "answer": "open('filename', 'mode')"
+    },
+    {
+        "question": "19. Python mein ek list ka last element kaise access karte hain?",
+        "options": [
+            "list.last",
+            "list[len(list)]",
+            "list[-1]",
+            "list[len(list)-1]"
+        ],
+        "answer": "list[-1]"
+    },
+    {
+        "question": "20. Python mein ek string ko reverse kaise karte hain?",
+        "options": [
+            "string[::-1]",
+            "reverse(string)",
+            "string.reverse()",
+            "string[-1::-1]"
+        ],
+        "answer": "string[::-1]"
+    },
+    {
+        "question": "21. Python mein ek variable ko kaise initialize karte hain?",
+        "options": [
+            "variable_name = value",
+            "var variable_name = value",
+            "initialize variable_name = value",
+            "int variable_name = value"
+        ],
+        "answer": "variable_name = value"
+    },
+    {
+        "question": "22. Python mein ek set ka use kis liye hota hai?",
+        "options": [
+            "Unique elements store karne ke liye",
+            "Key-value pairs store karne ke liye",
+            "Ordered collection banane ke liye",
+            "Duplicate values allow karne ke liye"
+        ],
+        "answer": "Unique elements store karne ke liye"
+    },
+    {
+        "question": "23. Python mein lambda function ka use kis liye hota hai?",
+        "options": [
+            "Anonymous function banane ke liye",
+            "Class banane ke liye",
+            "Loop banane ke liye",
+            "File handling ke liye"
+        ],
+        "answer": "Anonymous function banane ke liye"
+    },
+    {
+        "question": "24. Python mein ek string ke characters kaise iterate karte hain?",
+        "options": [
+            "loop char in string:",
+            "foreach char in string:",
+            "for char in string:",
+            "string.forEach(char):"
+        ],
+        "answer": "for char in string:"
+    },
+    {
+        "question": "25. Python mein ek list ko kaise concatenate karte hain?",
+        "options": [
+            "list1 + list2",
+            "list1.append(list2)",
+            "concat(list1, list2)",
+            "list1.add(list2)"
+        ],
+        "answer": "list1 + list2"
+    },
+    {
+        "question": "26. Python mein ek integer ka square root kaise calculate karte hain?",
+        "options": [
+            "sqrt()",
+            "x ** 2",
+            "x.sqrt()",
+            "math.sqrt(x)"
+        ],
+        "answer": "math.sqrt(x)"
+    },
+    {
+        "question": "27. Python mein ek module ko import kaise karte hain?",
+        "options": [
+            "import module_name",
+            "module import module_name",
+            "from module_name import *",
+            "include module_name"
+        ],
+        "answer": "import module_name"
+    },
+    {
+        "question": "28. Python mein string formatting ke liye kaunsa method use hota hai?",
+        "options": [
+            "stringify()",
+            "printf()",
+            "format()",
+            "str.format()"
+        ],
+        "answer": "format()"
+    },
+    {
+        "question": "29. Python mein ek list ke length ko kaise find karte hain?",
+        "options": [
+            "length(list)",
+            "list.len()",
+            "list.length()",
+            "len(list)"
+        ],
+        "answer": "len(list)"
+    },
+    {
+        "question": "30. Python mein ek file ko read mode mein kaise khola jata hai?",
+        "options": [
+            "open_file('filename', 'read')",
+            "open('filename', 'r')",
+            "file.open('filename', 'read')",
+            "openfile('filename', 'r')"
+        ],
+        "answer": "open('filename', 'r')"
+    },
+    
+{
+    "question": "31. Python mein set ke andar duplicate values kaise handle hoti hain?",
+    "options": [
+        "Duplicate values ko remove kar diya jata hai",
+        "Duplicate values ko accept kiya jata hai",
+        "Set mein duplicate values allowed hain",
+        "Set mein duplicates ko count kiya jata hai"
+    ],
+    "answer": "Duplicate values ko remove kar diya jata hai"
+},
+{
+    "question": "32. Python mein range function ka use kis liye hota hai?",
+    "options": [
+        "Numbers ka sequence generate karne ke liye",
+        "List ko generate karne ke liye",
+        "String ko slice karne ke liye",
+        "List ko reverse karne ke liye"
+    ],
+    "answer": "Numbers ka sequence generate karne ke liye"
+},
+{
+    "question": "33. Python mein ek integer ka absolute value kaise nikalte hain?",
+    "options": [
+        "absolute(x)",
+        "abs(x)",
+        "mod(x)",
+        "x.abs()"
+    ],
+    "answer": "abs(x)"
+},
+{
+    "question": "34. Python mein ek string ko lowercase mein kaise convert karte hain?",
+    "options": [
+        "str.capitalize()",
+        "str.upper()",
+        "str.title()",
+        "str.lower()"
+    ],
+    "answer": "str.lower()"
+},
+{
+    "question": "35. Python mein variable ko global bana ne ke liye kaunsa keyword use karte hain?",
+    "options": [
+        "static",
+        "global",
+        "local",
+        "var"
+    ],
+    "answer": "global"
+},
+{
+    "question": "36. Python mein list ke elements ko reverse kaise karte hain?",
+    "options": [
+        "reverse(list, inplace=True)",
+        "reverse(list)",
+        "list[::-1]",
+        "list.reverse()"
+    ],
+    "answer": "list.reverse()"
+},
+{
+    "question": "37. Python mein ek tuple ka element kaise change karte hain?",
+    "options": [
+        "Tuples ke elements ko change nahi kiya ja sakta",
+        "tuple[index] = new_value",
+        "tuple.append(new_value)",
+        "tuple.update(index, new_value)"
+    ],
+    "answer": "Tuples ke elements ko change nahi kiya ja sakta"
+},
+{
+    "question": "38. Python mein dictionary ke keys ko kaise iterate karte hain?",
+    "options": [
+        "for key in dict.keys()",
+        "foreach key in dict:",
+        "dict.each(key)",
+        "for dict.key in dict:"
+    ],
+    "answer": "for key in dict.keys()"
+},
+{
+    "question": "39. Python mein string ko split kaise karte hain?",
+    "options": [
+        "str.split(' ')",
+        "str.slice()",
+        "str.split()",
+        "split(str)"
+    ],
+    "answer": "str.split()"
+},
+{
+    "question": "40. Python mein ek tuple ka length kaise nikalte hain?",
+    "options": [
+        "len(tuple)",
+        "tuple.length()",
+        "tuple.size()",
+        "tuple.len()"
+    ],
+    "answer": "len(tuple)"
+},
+{
+    "question": "41. Python mein for loop ka use kis liye hota hai?",
+    "options": [
+        "Variable ki value ko modify karne ke liye",
+        "Ek function ko call karne ke liye",
+        "Condition check karne ke liye",
+        "Iterate karne ke liye ek sequence ya collection"
+    ],
+    "answer": "Iterate karne ke liye ek sequence ya collection"
+},
+{
+    "question": "42. Python mein break statement ka kya use hai?",
+    "options": [
+        "Loop ko continue karne ke liye",
+        "Loop ko turant stop karne ke liye",
+        "Function ka execution stop karne ke liye",
+        "Condition ko ignore karne ke liye"
+    ],
+    "answer": "Loop ko turant stop karne ke liye"
+},
+{
+    "question": "43. Python mein continue statement ka use kis liye hota hai?",
+    "options": [
+        "Loop ko continue karne ke liye",
+        "Loop ko restart karne ke liye",
+        "Loop ko stop karne ke liye",
+        "Loop ko skip karne ke liye"
+    ],
+    "answer": "Loop ko skip karne ke liye"
+},
+{
+    "question": "44. Python mein ek string ko character list mein kaise convert karte hain?",
+    "options": [
+        "str.split()",
+        "list(str)",
+        "str.to_list()",
+        "list.split(str)"
+    ],
+    "answer": "list(str)"
+},
+{
+    "question": "45. Python mein is keyword ka kya use hai?",
+    "options": [
+        "List ko iterate karne ke liye",
+        "Class ko define karne ke liye",
+        "Object ki identity ko check karne ke liye",
+        "Condition ko test karne ke liye"
+    ],
+    "answer": "Object ki identity ko check karne ke liye"
+},
+{
+    "question": "46. Python mein dictionary ka length kaise find karte hain?",
+    "options": [
+        "dict.size()",
+        "len(dict)",
+        "dict.length()",
+        "dict.count()"
+    ],
+    "answer": "len(dict)"
+},
+{
+    "question": "47. Python mein float values ka rounding kaise karte hain?",
+    "options": [
+        "float.round(x)",
+        "x.round()",
+        "round(x, n)",
+        "round.float(x, n)"
+    ],
+    "answer": "round(x, n)"
+},
+{
+    "question": "48. Python mein list ke index ko kaise find karte hain?",
+    "options": [
+        "list.index()",
+        "list.locate()",
+        "list.find()",
+        "list.loc()"
+    ],
+    "answer": "list.index()"
+},
+{
+    "question": "49. Python mein pass statement ka kya use hai?",
+    "options": [
+        "Function ya loop ko skip karne ke liye",
+        "Loop ko break karne ke liye",
+        "Syntax error ko handle karne ke liye",
+        "Empty block create karne ke liye"
+    ],
+    "answer": "Empty block create karne ke liye"
+},
+{
+    "question": "50. Python mein ek set ka length kaise find karte hain?",
+    "options": [
+        "set.size()",
+        "len(set)",
+        "set.count()",
+        "set.length()"
+    ],
+    "answer": "len(set)"
+},
+
+{
+    "question": "51. Python mein variable ka type kaise check karte hain?",
+    "options": [
+        "type(variable)",
+        "variable.type()",
+        "check_type(variable)",
+        "type_of(variable)"
+    ],
+    "answer": "type(variable)"
+},
+{
+    "question": "52. Python mein ek list ka element remove kaise karte hain?",
+    "options": [
+        "list.pop(element)",
+        "remove.list(element)",
+        "list.remove(element)",
+        "list.del(element)"
+    ],
+    "answer": "list.remove(element)"
+},
+{
+    "question": "53. Python mein type casting ka use kis liye hota hai?",
+    "options": [
+        "Ek variable ka value change karna",
+        "Ek data type ko doosre data type mein convert karna",
+        "Data ko list mein convert karna",
+        "String ko number mein convert karna"
+    ],
+    "answer": "Ek data type ko doosre data type mein convert karna"
+},
+{
+    "question": "54. Python mein ek function ko define kaise karte hain?",
+    "options": [
+        "def function_name():",
+        "function_name() def",
+        "function function_name():",
+        "define function_name():"
+    ],
+    "answer": "def function_name():"
+},
+{
+    "question": "55. Python mein arguments aur parameters mein kya difference hai?",
+    "options": [
+        "Arguments aur parameters sirf default values ke liye hote hain",
+        "Arguments function definition mein hote hain, parameters function call mein hote hain",
+        "Arguments aur parameters ka koi difference nahi hota",
+        "Arguments function call ke waqt diye jate hain, parameters function definition mein hote hain"
+    ],
+    "answer": "Arguments function call ke waqt diye jate hain, parameters function definition mein hote hain"
+},
+{
+    "question": "56. Python mein recursion ka kya use hota hai?",
+    "options": [
+        "Ek function ko ek baar hi execute karna",
+        "Function ko apne aap call karna",
+        "Recursive functions ko optimize karna",
+        "Function ko repeat karna"
+    ],
+    "answer": "Function ko apne aap call karna"
+},
+{
+    "question": "57. Python mein ek function se value kaise return karte hain?",
+    "options": [
+        "function.return()",
+        "value return",
+        "function.return(value)",
+        "return value"
+    ],
+    "answer": "return value"
+},
+{
+    "question": "58. Python mein default arguments ka kya use hai?",
+    "options": [
+        "Function ke arguments ko default value dena",
+        "Function ko call karte waqt argument dena",
+        "Function ko ek baar define karna",
+        "Function ko recursively call karna"
+    ],
+    "answer": "Function ke arguments ko default value dena"
+},
+{
+    "question": "59. Python mein lambda function kya hota hai?",
+    "options": [
+        "Ek function jo sirf ek value return kare",
+        "Ek anonymous function",
+        "Ek function jo multiple values return kare",
+        "Ek predefined function"
+    ],
+    "answer": "Ek anonymous function"
+},
+{
+    "question": "60. Python mein list comprehension ka use kis liye hota hai?",
+    "options": [
+        "List ko reverse karne ke liye",
+        "List ko efficiently banane ke liye",
+        "List ke elements ko filter karne ke liye",
+        "List ko directly print karne ke liye"
+    ],
+    "answer": "List ko efficiently banane ke liye"
+},
+{
+    "question": "61. Python mein break statement kis liye use hota hai?",
+    "options": [
+        "Loop ko repeat karne ke liye",
+        "Loop ko continue karne ke liye",
+        "Loop ko turant terminate karne ke liye",
+        "Loop ko optimize karne ke liye"
+    ],
+    "answer": "Loop ko turant terminate karne ke liye"
+},
+{
+    "question": "62. Python mein 'and' operator ka kya role hai?",
+    "options": [
+        "Ek condition ko skip karna",
+        "Do conditions ko ek saath check karna",
+        "Condition ko negate karna",
+        "Do conditions ko logically combine karna"
+    ],
+    "answer": "Do conditions ko ek saath check karna"
+},
+{
+    "question": "63. Python mein 'or' operator ka kya use hai?",
+    "options": [
+        "Do conditions ko logically check karna",
+        "Ek condition ko reverse karna",
+        "Do conditions ko combine karna",
+        "Do conditions mein se kisi ek ko true hona chahiye"
+    ],
+    "answer": "Do conditions mein se kisi ek ko true hona chahiye"
+},
+{
+    "question": "64. Python mein 'not' operator kis liye use hota hai?",
+    "options": [
+        "Condition ko reverse karne ke liye",
+        "Ek function ko skip karne ke liye",
+        "Condition ko ignore karne ke liye",
+        "Loop ko terminate karne ke liye"
+    ],
+    "answer": "Condition ko reverse karne ke liye"
+},
+{
+    "question": "65. Python mein ek function ko execute kaise karte hain?",
+    "options": [
+        "Function name likhkar call karte hain",
+        "Function ko manually run karte hain",
+        "Function ke argument ko pass karte hain",
+        "Function ko console mein likhte hain"
+    ],
+    "answer": "Function name likhkar call karte hain"
+},
+{
+    "question": "66. Python mein global variable ka scope kya hota hai?",
+    "options": [
+        "Global variable ko function ke bahar se access kiya ja sakta hai",
+        "Global variable sirf function ke andar access hota hai",
+        "Global variable sirf function ke bahar access hota hai",
+        "Global variable ka koi scope nahi hota"
+    ],
+    "answer": "Global variable ko function ke bahar se access kiya ja sakta hai"
+},
+{
+    "question": "67. Python mein isinstance() function ka kya kaam hai?",
+    "options": [
+        "Object ko change karna",
+        "Object ke type ko check karna",
+        "Object ko convert karna",
+        "Object ko validate karna"
+    ],
+    "answer": "Object ke type ko check karna"
+},
+{
+    "question": "68. Python mein dictionary ko kaise iterate karte hain?",
+    "options": [
+        "for item in dict:",
+        "for key in dict.keys()",
+        "for value in dict.values()",
+        "for key, value in dict.items()"
+    ],
+    "answer": "for key, value in dict.items()"
+},
+{
+    "question": "69. Python mein list ko shuffle kaise karte hain?",
+    "options": [
+        "random.shuffle(list)",
+        "list.shuffle()",
+        "import random; random.shuffle(list)",
+        "list.random_shuffle()"
+    ],
+    "answer": "import random; random.shuffle(list)"
+},
+{
+    "question": "70. Python mein enumerate() function ka use kis liye hota hai?",
+    "options": [
+        "List ko reverse karna",
+        "List ko shuffle karna",
+        "List ke index ke saath element ko iterate karna",
+        "List ke elements ko filter karna"
+    ],
+    "answer": "List ke index ke saath element ko iterate karna"
+},
+{
+    "question": "71. Python mein zip() function ka kya kaam hai?",
+    "options": [
+        "Do ya zyada lists ko combine karna",
+        "List ke elements ko zip karna",
+        "List ko reverse karna",
+        "String ko zip karna"
+    ],
+    "answer": "Do ya zyada lists ko combine karna"
+},
+{
+    "question": "72. Python mein eval() function ka use kis liye hota hai?",
+    "options": [
+        "String ko evaluate karne ke liye",
+        "String ko calculate karne ke liye",
+        "String ko code mein execute karne ke liye",
+        "String ko evaluate karna aur result dena"
+    ],
+    "answer": "String ko code mein execute karne ke liye"
+},
+{
+    "question": "73. Python mein sorted() function ka kya kaam hai?",
+    "options": [
+        "List ko copy karna",
+        "List ko reverse karna",
+        "List ko shuffle karna",
+        "List ko sort karna"
+    ],
+    "answer": "List ko sort karna"
+},
+{
+    "question": "74. Python mein list ke index ko set karne ka tarika kya hai?",
+    "options": [
+        "list[index] = value",
+        "list.set(index, value)",
+        "list.update(index, value)",
+        "list.append(index, value)"
+    ],
+    "answer": "list[index] = value"
+},
+{
+    "question": "75. Python mein method chaining ka matlab kya hota hai?",
+    "options": [
+        "Multiple methods ko ek saath call karna",
+        "Ek method ko repeatedly call karna",
+        "Ek method ko function ke andar call karna",
+        "Method ko chaining mein link karna"
+    ],
+    "answer": "Multiple methods ko ek saath call karna"
+},
+{
+    "question": "76. Python mein set ka intersection kaise karte hain?",
+    "options": [
+        "set1 & set2",
+        "set1.intersect(set2)",
+        "set1.intersection(set2)",
+        "set1.intersect()"
+    ],
+    "answer": "set1 & set2"
+},
+{
+    "question": "77. Python mein del keyword ka use kis liye hota hai?",
+    "options": [
+        "Variable ki value ko change karna",
+        "Object ya variable ko delete karna",
+        "Object ko define karna",
+        "Variable ko assign karna"
+    ],
+    "answer": "Object ya variable ko delete karna"
+},
+{
+    "question": "78. Python mein isdigit() function ka use kis liye hota hai?",
+    "options": [
+        "String ko check karna agar woh special character hai",
+        "String ko check karna agar woh alphabet hai",
+        "String ko check karna agar woh number hai",
+        "String ko validate karna"
+    ],
+    "answer": "String ko check karna agar woh number hai"
+},
+{
+    "question": "79. Python mein string ke characters ko count kaise karte hain?",
+    "options": [
+        "string.count(char)",
+        "char.count(string)",
+        "string.char()",
+        "string.count()"
+    ],
+    "answer": "string.count(char)"
+},
+{
+    "question": "80. Python mein str() function ka use kis liye hota hai?",
+    "options": [
+        "String ko integer mein convert karna",
+        "Object ko string mein convert karna",
+        "String ko float mein convert karna",
+        "Object ko list mein convert karna"
+    ],
+    "answer": "Object ko string mein convert karna"
+},
+{
+    "question": "81. Python mein dictionary comprehension ka use kis liye hota hai?",
+    "options": [
+        "Dictionary ko sort karna",
+        "List ko dictionary mein convert karna",
+        "Set ko dictionary mein convert karna",
+        "Dictionary ko efficiently create karna"
+    ],
+    "answer": "Dictionary ko efficiently create karna"
+},
+{
+    "question": "82. Python mein set comprehension ka use kis liye hota hai?",
+    "options": [
+        "Set ko efficiently create karna",
+        "List ko set mein convert karna",
+        "Set ko dictionary mein convert karna",
+        "Set ko sort karna"
+    ],
+    "answer": "Set ko efficiently create karna"
+},
+{
+    "question": "83. Python mein tuple ko immutable kyun mana jata hai?",
+    "options": [
+        "Tuple mein values ko delete kiya ja sakta hai",
+        "Kyuki tuple ko sirf ek baar define kiya ja sakta hai",
+        "Kyuki tuple ka size fix hota hai aur usme elements ko modify nahi kiya ja sakta",
+        "Tuple sirf ek type ka data store karta hai"
+    ],
+    "answer": "Kyuki tuple ka size fix hota hai aur usme elements ko modify nahi kiya ja sakta"
+},
+{
+    "question": "84. Python mein variable-length arguments ko kaise handle karte hain?",
+    "options": [
+        "By using *args for non-keyword arguments and **kwargs for keyword arguments",
+        "By using args[] and kwargs[]",
+        "By using ...",
+        "By using varargs()"
+    ],
+    "answer": "By using *args for non-keyword arguments and **kwargs for keyword arguments"
+},
+{
+    "question": "85. Python mein unpacking ka kya use hai?",
+    "options": [
+        "List, tuple ya dictionary ke values ko variables mein assign karna",
+        "List ko sort karna",
+        "Dictionary ko convert karna",
+        "Set ko modify karna"
+    ],
+    "answer": "List, tuple ya dictionary ke values ko variables mein assign karna"
+},
+{
+    "question": "86. Python mein iterable object ka kya matlab hai?",
+    "options": [
+        "Object jisko loop ke through access kiya ja sakta hai",
+        "Object jo sirf ek value return karta hai",
+        "Object jo list ke saath hi hota hai",
+        "Object jo set ke saath hota hai"
+    ],
+    "answer": "Object jisko loop ke through access kiya ja sakta hai"
+},
+{
+    "question": "87. Python mein 'is' operator ka use kis liye hota hai?",
+    "options": [
+        "Variable ko assign karna",
+        "Value ko compare karna",
+        "Object ki identity ko compare karna",
+        "Object ke attributes ko compare karna"
+    ],
+    "answer": "Object ki identity ko compare karna"
+},
+{
+    "question": "88. Python mein slicing ka use kis liye hota hai?",
+    "options": [
+        "List, tuple ya string ke ek portion ko access karna",
+        "List ko reverse karna",
+        "String ko uppercase mein convert karna",
+        "Tuple ko modify karna"
+    ],
+    "answer": "List, tuple ya string ke ek portion ko access karna"
+},
+{
+    "question": "89. Python mein any() function ka kya kaam hai?",
+    "options": [
+        "Iterable object ko check karna",
+        "Iterable object mein agar koi ek item True ho toh True return karna",
+        "Iterable object ke items ko filter karna",
+        "Iterable object ko sort karna"
+    ],
+    "answer": "Iterable object mein agar koi ek item True ho toh True return karna"
+},
+{
+    "question": "90. Python mein all() function ka kya kaam hai?",
+    "options": [
+        "Iterable object ko sum karna",
+        "Iterable object mein sabse bada item return karna",
+        "Iterable object ke har item ko check karna agar wo True ho toh True return karna",
+        "Iterable object ko filter karna"
+    ],
+    "answer": "Iterable object ke har item ko check karna agar wo True ho toh True return karna"
+},
+{
+    "question": "91. Python mein 'while' loop ka use kis liye hota hai?",
+    "options": [
+        "Code ko ek specific condition ke bina execute karne ke liye",
+        "Ek baar code ko execute karne ke liye",
+        "Code ko reverse order mein execute karne ke liye",
+        "Jab tak ek condition True ho, tab tak code ko repeat karna"
+    ],
+    "answer": "Jab tak ek condition True ho, tab tak code ko repeat karna"
+},
+{
+    "question": "92. Python mein for-else loop ka kya use hai?",
+    "options": [
+        "Loop ke complete hone par else block ko execute karna",
+        "Else block ko loop ke andar call karna",
+        "Loop ko terminate karte waqt else block ko execute karna",
+        "Loop ke through har item ko execute karna"
+    ],
+    "answer": "Loop ke complete hone par else block ko execute karna"
+},
+{
+    "question": "93. Python mein generator function kis liye use hota hai?",
+    "options": [
+        "Multiple values ko ek function se return karna",
+        "Function ke result ko return karna",
+        "Loop ke through iterate karna",
+        "Lazy evaluation ko implement karna"
+    ],
+    "answer": "Lazy evaluation ko implement karna"
+},
+{
+    "question": "94. Python mein yield keyword ka kya kaam hai?",
+    "options": [
+        "Function se value ko return karna",
+        "Function ko generator function mein convert karna",
+        "Loop ko continue karna",
+        "Function ko terminate karna"
+    ],
+    "answer": "Function ko generator function mein convert karna"
+},
+{
+    "question": "95. Python mein filter() function ka kya kaam hai?",
+    "options": [
+        "Iterable object ke items ko filter karna",
+        "List ko sort karna",
+        "List ke items ko remove karna",
+        "Set ko create karna"
+    ],
+    "answer": "Iterable object ke items ko filter karna"
+},
+{
+    "question": "96. Python mein map() function ka use kis liye hota hai?",
+    "options": [
+        "Iterable object ke items ko filter karna",
+        "Iterable object ko reverse karna",
+        "Function ko iterable object ke har item par apply karna",
+        "Iterable object ko modify karna"
+    ],
+    "answer": "Function ko iterable object ke har item par apply karna"
+},
+{
+    "question": "97. Python mein reduce() function ka kya use hai?",
+    "options": [
+        "Iterable object ko reverse karna",
+        "Iterable object ko modify karna",
+        "Iterable object ko filter karna",
+        "Function ko iterable object ke saare items par cumulatively apply karna"
+    ],
+    "answer": "Function ko iterable object ke saare items par cumulatively apply karna"
+},
+{
+    "question": "98. Python mein recursive function ka kya use hai?",
+    "options": [
+        "Function ko multiple times call karna",
+        "Function ko apne aap call karna",
+        "Function ko loop mein chalana",
+        "Function ko filter karna"
+    ],
+    "answer": "Function ko apne aap call karna"
+},
+{
+    "question": "99. Python mein tuple unpacking kis tarah kaam karta hai?",
+    "options": [
+        "Tuple ko set mein convert karna",
+        "Tuple ko list mein convert karna",
+        "Tuple ke elements ko reverse karna",
+        "Tuple ke elements ko individual variables mein assign karna"
+    ],
+    "answer": "Tuple ke elements ko individual variables mein assign karna"
+},
+{
+    "question": "100. Python mein list ka append() aur extend() method mein kya difference hai?",
+    "options": [
+        "append() list ko modify karta hai, extend() list ko create karta hai",
+        "append() ek iterable ko add karta hai, extend() ek item ko add karta hai",
+        "append() ek item ko add karta hai, extend() ek iterable ko add karta hai",
+        "append() aur extend() dono same hote hain"
+    ],
+    "answer": "append() ek item ko add karta hai, extend() ek iterable ko add karta hai"
+}
+
+
+];
