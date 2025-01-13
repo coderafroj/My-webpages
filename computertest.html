@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced CCC Quiz Test - Bytecore Computer Centre">
+    <meta name="keywords" content="CCC Test, Bytecore Computer Centre, Computer Concepts Test, Advanced Quiz, Online Test, Result Submission">
+    <meta name="author" content="Bytecore Computer Centre">
+    <meta property="og:title" content="Advanced CCC Test - Bytecore Computer Centre">
+    <meta property="og:description" content="Test your knowledge with the advanced CCC Quiz! Get instant results and celebrate your success!">
+    <meta property="og:image" content="URL_OF_IMAGE">
+    <meta property="og:url" content="YOUR_PAGE_URL">
+    <title>Advanced CCC Quiz - Bytecore Computer Centre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .question-container {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .option:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        .option.correct {
+            background-color: #4CAF50 !important;
+            color: #fff;
+        }
+
+        .option.incorrect {
+            background-color: #f44336 !important;
+            color: #fff;
+        }
+
+        .result {
+            display: none;
+            text-align: center;
+        }
+
+        .result h2 {
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+
+        .result p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Advanced CCC Quiz</h1>
+    <form id="start-form">
+        <input type="text" id="user-name" placeholder="Enter your name" required>
+        <input type="email" id="user-email" placeholder="Enter your email" required>
+        <button type="submit">Start Quiz</button>
+    </form>
+
+    <div id="quiz-section" style="display: none;">
+        <div class="question-container" id="question-container"></div>
+        <div class="options" id="options-container"></div>
+        <button id="next-btn" style="display: none;">Next Question</button>
+    </div>
+
+    <div class="result" id="result-section">
+        <h2>Congratulations!</h2>
+        <p>Your score is: <span id="final-score"></span></p>
+        <p>Thank you for participating!</p>
+    </div>
+</div>
+
+<script>
+   const questions = [
+
+    {
+        "question": "1. Computer ka full form kya hai?",
+        "options": [
+            "Commonly Operated Machine Particularly Used for Technical and Educational Research",
+            "Central Operating Machine Particularly Used for Technical and Educational Research",
+            "Common Operating Machine Particularly Used for Technical and Educational Research",
+            "Commonly Operating Machine Particularly Used for Testing Education Research"
+        ],
+        "answer": "Common Operating Machine Particularly Used for Technical and Educational Research"
+    },
+    {
+        "question": "2. CPU ka main function kya hai?",
+        "options": [
+            "Input data", 
+            "Process data", 
+            "Store data", 
+            "Output data"
+        ],
+        "answer": "Process data"
+    },
+    {
+        "question": "3. ROM ka full form kya hai?",
+        "options": [
+            "Read Online Memory", 
+            "Random Output Memory", 
+            "Read Only Memory", 
+            "Read Original Memory"
+        ],
+        "answer": "Read Only Memory"
+    },
+    {
+        "question": "4. Hard disk ka primary function kya hota hai?",
+        "options": [
+            "Data input karna", 
+            "Data process karna", 
+            "Data store karna", 
+            "Data output karna"
+        ],
+        "answer": "Data store karna"
+    },
+    {
+        "question": "5. ALU ka full form kya hai?",
+        "options": [
+            "Arithmetic Logic Unit", 
+            "Array Logic Unit", 
+            "Application Logic Unit", 
+            "Arithmetic Layer Unit"
+        ],
+        "answer": "Arithmetic Logic Unit"
+    },
+    {
+        "question": "6. GUI ka full form kya hai?",
+        "options": [
+            "Graphical User Interface", 
+            "Graphical User Interaction", 
+            "Graphical Utility Interface", 
+            "Graph Utility Interaction"
+        ],
+        "answer": "Graphical User Interface"
+    },
+    {
+        "question": "7. Kaunsa ek output device hai?",
+        "options": [
+            "Monitor", 
+            "Keyboard", 
+            "Mouse", 
+            "Scanner"
+        ],
+        "answer": "Monitor"
+    },
+    {
+        "question": "8. Kon sa storage device hai?",
+        "options": [
+            "Printer", 
+            "RAM", 
+            "Hard Disk", 
+            "Scanner"
+        ],
+        "answer": "Hard Disk"
+    },
+    {
+        "question": "9. Computer ka brain kise kaha jata hai?",
+        "options": [
+            "RAM", 
+            "Hard Disk", 
+            "CPU", 
+            "Monitor"
+        ],
+        "answer": "CPU"
+    },
+    {
+        "question": "10. Kaunsa ek programming language hai?",
+        "options": [
+            "Windows", 
+            "Python", 
+            "Google", 
+            "Excel"
+        ],
+        "answer": "Python"
+    },
+    {
+        "question": "11. Printer ka function kya hai?",
+        "options": [
+            "Data store karna", 
+            "Data print karna", 
+            "Data input karna", 
+            "Data process karna"
+        ],
+        "answer": "Data print karna"
+    },
+    {
+        "question": "12. Kaunsa ek input device hai?",
+        "options": [
+            "Monitor", 
+            "Mouse", 
+            "Speaker", 
+            "Printer"
+        ],
+        "answer": "Mouse"
+    },
+    {
+        "question": "13. RAM ka full form kya hai?",
+        "options": [
+            "Read And Memory", 
+            "Random Access Memory", 
+            "Random Area Memory", 
+            "Read All Memory"
+        ],
+        "answer": "Random Access Memory"
+    },
+    {
+        "question": "14. Software ka ek example kya hai?",
+        "options": [
+            "Monitor", 
+            "Keyboard", 
+            "Windows", 
+            "Hard disk"
+        ],
+        "answer": "Windows"
+    },
+    {
+        "question": "15. Kaunsa ek storage device hai?",
+        "options": [
+            "CPU", 
+            "Monitor", 
+            "Hard Disk", 
+            "RAM"
+        ],
+        "answer": "Hard Disk"
+    },
+    {
+        "question": "16. Byte ka size kitna hota hai?",
+        "options": [
+            "1 bit", 
+            "8 bits", 
+            "16 bits", 
+            "2 bits"
+        ],
+        "answer": "8 bits"
+    },
+    {
+        "question": "17. Database ka full form kya hai?",
+        "options": [
+            "Data Based Storage", 
+            "Data Block Storage", 
+            "Data Base Storage", 
+            "Data Backup Storage"
+        ],
+        "answer": "Data Base Storage"
+    },
+    {
+        "question": "18. Microprocessor ka size kitna hota hai?",
+        "options": [
+            "64 bits", 
+            "128 bits", 
+            "8 bits", 
+            "32 bits"
+        ],
+        "answer": "32 bits"
+    },
+    {
+        "question": "19. Software ko kis language mein likha jata hai?",
+        "options": [
+            "Machine Language", 
+            "Assembly Language", 
+            "High Level Language", 
+            "All of the above"
+        ],
+        "answer": "All of the above"
+    },
+    {
+        "question": "20. Monitor ka primary function kya hai?",
+        "options": [
+            "Display data", 
+            "Input data", 
+            "Process data", 
+            "Store data"
+        ],
+        "answer": "Display data"
+    },
+    {
+        "question": "21. Web browser ka ek example kya hai?",
+        "options": [
+            "Microsoft Word", 
+            "Google Chrome", 
+            "Excel", 
+            "PowerPoint"
+        ],
+        "answer": "Google Chrome"
+    },
+    {
+        "question": "22. Disk ka full form kya hai?",
+        "options": [
+            "Drive Input Storage Key", 
+            "Data Information Storage Kit", 
+            "Disk Input Storage Key", 
+            "Disk Information Storage Kit"
+        ],
+        "answer": "Disk Information Storage Kit"
+    },
+    {
+        "question": "23. Laser Printer ka full form kya hai?",
+        "options": [
+            "Light Amplification by Stimulated Emission of Radiation", 
+            "Laser Amplification Stimulated Emission Radiation", 
+            "Laser Angle Source for Emitting Radiation", 
+            "Long Access Source for Emitting Radiation"
+        ],
+        "answer": "Light Amplification by Stimulated Emission of Radiation"
+    },
+    {
+        "question": "24. File ka extension kya hota hai?",
+        "options": [
+            "The last part of the filename", 
+            "The first part of the filename", 
+            "The middle part of the filename", 
+            "All of the above"
+        ],
+        "answer": "The last part of the filename"
+    },
+    {
+        "question": "25. Windows ka full form kya hai?",
+        "options": [
+            "Wide Integrated Network Development Operating System", 
+            "World Integrated Network Design Operating System", 
+            "Windows Integrated Development Operating System", 
+            "None of the above"
+        ],
+        "answer": "None of the above"
+    },
+    {
+        "question": "26. File system ka kya function hai?",
+        "options": [
+            "Store data", 
+            "Organize data", 
+            "Delete data", 
+            "None of the above"
+        ],
+        "answer": "Organize data"
+    },
+    {
+        "question": "27. Computer ke main parts kaunse hain?",
+        "options": [
+            "CPU, Monitor, Keyboard", 
+            "Monitor, Mouse, Speaker", 
+            "CPU, Keyboard, Speaker", 
+            "All of the above"
+        ],
+        "answer": "CPU, Monitor, Keyboard"
+    },
+    {
+        "question": "28. Web ka full form kya hai?",
+        "options": [
+            "Wide Electronic Bank", 
+            "World Electronic Bank", 
+            "World Wide Web", 
+            "World Website"
+        ],
+        "answer": "World Wide Web"
+    },
+    {
+        "question": "29. Operating System ka role kya hota hai?",
+        "options": [
+            "Data backup", 
+            "File Management", 
+            "Memory Management", 
+            "All of the above"
+        ],
+        "answer": "All of the above"
+    },
+    {
+        "question": "30. CPU ko kaunsa device control karta hai?",
+        "options": [
+            "Memory Device", 
+            "Storage Device", 
+            "Input Device", 
+            "Output Device"
+        ],
+        "answer": "Memory Device"
+    },
+    
+   
+    {
+        "question": "31. TCP/IP ka full form kya hai?",
+        "options": [
+            "Transmission Control Protocol/Internet Protocol", 
+            "Transfer Control Protocol/Internet Protocol", 
+            "Transmission Communication Protocol/Internet Protocol", 
+            "Transfer Communication Protocol/Internet Protocol"
+        ],
+        "answer": "Transmission Control Protocol/Internet Protocol"
+    },
+    {
+        "question": "32. IP address ka full form kya hai?",
+        "options": [
+            "Internet Protocol address", 
+            "Internal Protocol address", 
+            "Internet Provider address", 
+            "Internal Provider address"
+        ],
+        "answer": "Internet Protocol address"
+    },
+    {
+        "question": "33. LAN ka full form kya hai?",
+        "options": [
+            "Local Area Network", 
+            "Local Area Node", 
+            "Local Access Network", 
+            "Low Area Network"
+        ],
+        "answer": "Local Area Network"
+    },
+    {
+        "question": "34. Router ka primary function kya hota hai?",
+        "options": [
+            "Data processing", 
+            "Data routing", 
+            "Data storing", 
+            "Data transmission"
+        ],
+        "answer": "Data routing"
+    },
+    {
+        "question": "35. Switch ka role kya hota hai?",
+        "options": [
+            "Switch data between devices in a LAN", 
+            "Store data", 
+            "Secure data", 
+            "Transfer data between LAN and WAN"
+        ],
+        "answer": "Switch data between devices in a LAN"
+    },
+    {
+        "question": "36. DNS ka full form kya hai?",
+        "options": [
+            "Domain Name Service", 
+            "Dynamic Name Service", 
+            "Domain Network Service", 
+            "Dynamic Network Service"
+        ],
+        "answer": "Domain Name Service"
+    },
+    {
+        "question": "37. A router connects which of the following?",
+        "options": [
+            "LAN to LAN", 
+            "LAN to WAN", 
+            "WAN to WAN", 
+            "All of the above"
+        ],
+        "answer": "LAN to WAN"
+    },
+    {
+        "question": "38. IP address kitne parts mein hota hai?",
+        "options": [
+            "2", 
+            "4", 
+            "6", 
+            "8"
+        ],
+        "answer": "4"
+    },
+    {
+        "question": "39. IPv4 address size kitna hota hai?",
+        "options": [
+            "16 bits", 
+            "32 bits", 
+            "64 bits", 
+            "128 bits"
+        ],
+        "answer": "32 bits"
+    },
+    {
+        "question": "40. WAN ka full form kya hai?",
+        "options": [
+            "Wide Area Network", 
+            "Wide Access Network", 
+            "Wireless Area Network", 
+            "Wireless Access Network"
+        ],
+        "answer": "Wide Area Network"
+    },
+    {
+        "question": "41. Hub ka primary function kya hota hai?",
+        "options": [
+            "Direct data to specific devices", 
+            "Broadcast data to all devices", 
+            "Store data", 
+            "Connect networks"
+        ],
+        "answer": "Broadcast data to all devices"
+    },
+    {
+        "question": "42. Firewall ka kaam kya hota hai?",
+        "options": [
+            "Protect data from unauthorized access", 
+            "Store data securely", 
+            "Transfer data between LANs", 
+            "None of the above"
+        ],
+        "answer": "Protect data from unauthorized access"
+    },
+    {
+        "question": "43. What is the function of a modem?",
+        "options": [
+            "Convert digital data to analog signals", 
+            "Convert analog signals to digital data", 
+            "Store data", 
+            "Encrypt data"
+        ],
+        "answer": "Convert digital data to analog signals"
+    },
+    {
+        "question": "44. MAC address ka full form kya hai?",
+        "options": [
+            "Machine Access Control", 
+            "Media Access Control", 
+            "Memory Access Control", 
+            "Machine Address Control"
+        ],
+        "answer": "Media Access Control"
+    },
+    {
+        "question": "45. Which of the following is not a networking device?",
+        "options": [
+            "Router", 
+            "Switch", 
+            "Firewall", 
+            "Monitor"
+        ],
+        "answer": "Monitor"
+    },
+    {
+        "question": "46. SSL ka full form kya hai?",
+        "options": [
+            "Secure Socket Layer", 
+            "System Security Layer", 
+            "Simple Security Layer", 
+            "Security System Layer"
+        ],
+        "answer": "Secure Socket Layer"
+    },
+    {
+        "question": "47. What is the function of a gateway in a network?",
+        "options": [
+            "Translate between different communication protocols", 
+            "Store data", 
+            "Connect devices within the same network", 
+            "Transfer data between LAN and WAN"
+        ],
+        "answer": "Translate between different communication protocols"
+    },
+    {
+        "question": "48. VPN ka full form kya hai?",
+        "options": [
+            "Virtual Private Network", 
+            "Virtual Public Network", 
+            "Virtual Protected Network", 
+            "Virtual Personal Network"
+        ],
+        "answer": "Virtual Private Network"
+    },
+    {
+        "question": "49. Wi-Fi ka full form kya hai?",
+        "options": [
+            "Wireless Fidelity", 
+            "Wide Fidelity", 
+            "Wireless Functionality", 
+            "Wide Functionality"
+        ],
+        "answer": "Wireless Fidelity"
+    },
+    {
+        "question": "50. The OSI model has how many layers?",
+        "options": [
+            "5", 
+            "6", 
+            "7", 
+            "8"
+        ],
+        "answer": "7"
+    },
+    
+    {
+        "question": "51. OSI model ke kaun se layer ko data link layer bhi kaha jata hai?",
+        "options": [
+            "Layer 1", 
+            "Layer 2", 
+            "Layer 3", 
+            "Layer 4"
+        ],
+        "answer": "Layer 2"
+    },
+    {
+        "question": "52. DNS (Domain Name System) ka kaam kya hota hai?",
+        "options": [
+            "IP address ko URL mein convert karna", 
+            "URL ko IP address mein convert karna", 
+            "Data ko encrypt karna", 
+            "Data ko route karna"
+        ],
+        "answer": "URL ko IP address mein convert karna"
+    },
+    {
+        "question": "53. BGP (Border Gateway Protocol) kis protocol ke roop mein kaam karta hai?",
+        "options": [
+            "Routing protocol", 
+            "Application protocol", 
+            "Session protocol", 
+            "Transport protocol"
+        ],
+        "answer": "Routing protocol"
+    },
+    {
+        "question": "54. The main purpose of a proxy server is to?",
+        "options": [
+            "Improve network security", 
+            "Route data packets", 
+            "Store data", 
+            "Monitor network traffic"
+        ],
+        "answer": "Improve network security"
+    },
+    {
+        "question": "55. A VPN (Virtual Private Network) does which of the following?",
+        "options": [
+            "Provides encrypted communication over a public network", 
+            "Transmits data without encryption", 
+            "Filters internet traffic", 
+            "None of the above"
+        ],
+        "answer": "Provides encrypted communication over a public network"
+    },
+    {
+        "question": "56. IPsec (Internet Protocol Security) kis layer pe operate karta hai?",
+        "options": [
+            "Layer 1", 
+            "Layer 2", 
+            "Layer 3", 
+            "Layer 4"
+        ],
+        "answer": "Layer 3"
+    },
+    {
+        "question": "57. What is the difference between TCP and UDP?",
+        "options": [
+            "TCP is connection-oriented, UDP is connectionless", 
+            "TCP is connectionless, UDP is connection-oriented", 
+            "TCP is faster than UDP", 
+            "None of the above"
+        ],
+        "answer": "TCP is connection-oriented, UDP is connectionless"
+    },
+    {
+        "question": "58. Which protocol is used to send email?",
+        "options": [
+            "SMTP", 
+            "HTTP", 
+            "FTP", 
+            "POP3"
+        ],
+        "answer": "SMTP"
+    },
+    {
+        "question": "59. What is the primary function of a switch in networking?",
+        "options": [
+            "Route data between different networks", 
+            "Forward data to the correct device within the same network", 
+            "Connect LAN to WAN", 
+            "Encrypt data for secure transmission"
+        ],
+        "answer": "Forward data to the correct device within the same network"
+    },
+    {
+        "question": "60. What does the term 'Subnetting' refer to?",
+        "options": [
+            "Dividing a larger network into smaller sub-networks", 
+            "Converting a URL into an IP address", 
+            "Connecting different LANs", 
+            "None of the above"
+        ],
+        "answer": "Dividing a larger network into smaller sub-networks"
+    },
+    {
+        "question": "61. What is the maximum transmission unit (MTU) size for Ethernet?",
+        "options": [
+            "128 bytes", 
+            "512 bytes", 
+            "1500 bytes", 
+            "2048 bytes"
+        ],
+        "answer": "1500 bytes"
+    },
+    {
+        "question": "62. What is the function of ARP (Address Resolution Protocol)?",
+        "options": [
+            "Mapping a MAC address to an IP address", 
+            "Transmitting data across a network", 
+            "Encrypting data", 
+            "Routing data packets"
+        ],
+        "answer": "Mapping a MAC address to an IP address"
+    },
+    {
+        "question": "63. What is a 'private IP address'?",
+        "options": [
+            "An IP address that is used for communication within a private network", 
+            "An IP address used by the ISP", 
+            "An IP address assigned to public servers", 
+            "None of the above"
+        ],
+        "answer": "An IP address that is used for communication within a private network"
+    },
+    {
+        "question": "64. What is the function of a Load Balancer in networking?",
+        "options": [
+            "Distribute network traffic across multiple servers", 
+            "Store data", 
+            "Filter malicious network traffic", 
+            "Encrypt network packets"
+        ],
+        "answer": "Distribute network traffic across multiple servers"
+    },
+    {
+        "question": "65. What is the main difference between IPv4 and IPv6?",
+        "options": [
+            "IPv6 has a larger address space than IPv4", 
+            "IPv4 is more secure than IPv6", 
+            "IPv6 is used for private networks", 
+            "IPv4 uses longer addresses than IPv6"
+        ],
+        "answer": "IPv6 has a larger address space than IPv4"
+    },
+    {
+        "question": "66. What is the full form of NAT (Network Address Translation)?",
+        "options": [
+            "Network Address Translation", 
+            "Network Authorization Translation", 
+            "Network Area Translation", 
+            "None of the above"
+        ],
+        "answer": "Network Address Translation"
+    },
+    {
+        "question": "67. Which protocol is used to translate domain names into IP addresses?",
+        "options": [
+            "DNS", 
+            "HTTP", 
+            "FTP", 
+            "SMTP"
+        ],
+        "answer": "DNS"
+    },
+    {
+        "question": "68. Which of the following is a key feature of a MAN (Metropolitan Area Network)?",
+        "options": [
+            "It connects devices over a large geographical area", 
+            "It is typically smaller than a LAN", 
+            "It connects devices across cities or countries", 
+            "It connects devices within a small office"
+        ],
+        "answer": "It connects devices over a large geographical area"
+    },
+    {
+        "question": "69. What is a VLAN (Virtual Local Area Network)?",
+        "options": [
+            "A network created within a physical LAN", 
+            "A network that connects two different LANs", 
+            "A network that uses IP addresses", 
+            "A network for connecting a WAN"
+        ],
+        "answer": "A network created within a physical LAN"
+    },
+    {
+        "question": "70. What is the main function of a firewall?",
+        "options": [
+            "Monitor and filter incoming/outgoing network traffic", 
+            "Store sensitive data", 
+            "Provide encryption", 
+            "Route data across networks"
+        ],
+        "answer": "Monitor and filter incoming/outgoing network traffic"
+    },
+    {
+        "question": "71. What is a common use of ICMP (Internet Control Message Protocol)?",
+        "options": [
+            "Error reporting and diagnostics", 
+            "Data transfer", 
+            "File sharing", 
+            "Routing data"
+        ],
+        "answer": "Error reporting and diagnostics"
+    },
+    {
+        "question": "72. What does the term 'Throughput' refer to in networking?",
+        "options": [
+            "The amount of data successfully transmitted over a network", 
+            "The time taken for a data packet to reach its destination", 
+            "The maximum capacity of a network", 
+            "The amount of data lost in transmission"
+        ],
+        "answer": "The amount of data successfully transmitted over a network"
+    },
+    {
+        "question": "73. Which protocol is used for transferring files over the Internet?",
+        "options": [
+            "FTP", 
+            "SMTP", 
+            "HTTP", 
+            "IMAP"
+        ],
+        "answer": "FTP"
+    },
+    {
+        "question": "74. What is the purpose of the ICMP 'Ping' command?",
+        "options": [
+            "Test the availability of a network host", 
+            "Send an encrypted message", 
+            "Route data to a remote location", 
+            "Transfer files between hosts"
+        ],
+        "answer": "Test the availability of a network host"
+    },
+    {
+        "question": "75. Which of the following is a private IP address range?",
+        "options": [
+            "192.168.0.0 - 192.168.255.255", 
+            "10.0.0.0 - 10.255.255.255", 
+            "172.16.0.0 - 172.31.255.255", 
+            "All of the above"
+        ],
+        "answer": "All of the above"
+    },
+    {
+        "question": "76. What does the term 'QoS' (Quality of Service) refer to in networking?",
+        "options": [
+            "Management of network traffic to ensure performance", 
+            "A security protocol", 
+            "A data encryption method", 
+            "A routing protocol"
+        ],
+        "answer": "Management of network traffic to ensure performance"
+    },
+    {
+        "question": "77. Which type of attack involves overwhelming a system with traffic?",
+        "options": [
+            "Denial of Service (DoS)", 
+            "Phishing", 
+            "Man-in-the-middle", 
+            "SQL Injection"
+        ],
+        "answer": "Denial of Service (DoS)"
+    },
+    {
+        "question": "78. What is the difference between a public and a private IP address?",
+        "options": [
+            "Public IPs are routable over the internet, private IPs are not", 
+            "Private IPs are routable over the internet, public IPs are not", 
+            "Public IPs are only used for local networks", 
+            "None of the above"
+        ],
+        "answer": "Public IPs are routable over the internet, private IPs are not"
+    },
+    {
+        "question": "79. What is a 'Port Number' used for in networking?",
+        "options": [
+            "Identifying specific services or processes", 
+            "Encrypting data packets", 
+            "Determining the destination of a network packet", 
+            "Routing packets across networks"
+        ],
+        "answer": "Identifying specific services or processes"
+    },
+    {
+        "question": "80. Which network topology connects all devices to a central point (hub/switch)?",
+        "options": [
+            "Star", 
+            "Bus", 
+            "Ring", 
+            "Mesh"
+        ],
+        "answer": "Star"
+    },
+    
+    
+    {
+        "question": "81. Linux me sabse pehle kaunsa kernel release kiya gaya tha?",
+        "options": [
+            "Linux 1.0", 
+            "Linux 2.0", 
+            "Linux 3.0", 
+            "Linux 4.0"
+        ],
+        "answer": "Linux 1.0"
+    },
+    {
+        "question": "82. Linux me kaunsa command system ke sabhi files ko dikhata hai?",
+        "options": [
+            "ls", 
+            "pwd", 
+            "cd", 
+            "echo"
+        ],
+        "answer": "ls"
+    },
+    {
+        "question": "83. Linux me file ka path kaise dikhaya jata hai?",
+        "options": [
+            "/home/user/filename", 
+            "C:/user/filename", 
+            "user/home/filename", 
+            "D:/home/filename"
+        ],
+        "answer": "/home/user/filename"
+    },
+    {
+        "question": "84. Linux ka root user kiske roop mein jaana jata hai?",
+        "options": [
+            "Superuser", 
+            "Administrator", 
+            "System User", 
+            "Guest"
+        ],
+        "answer": "Superuser"
+    },
+    {
+        "question": "85. Linux me kaunsa command file ya directory ko delete karne ke liye use hota hai?",
+        "options": [
+            "rm", 
+            "del", 
+            "remove", 
+            "erase"
+        ],
+        "answer": "rm"
+    },
+    {
+        "question": "86. OS ka 'Kernel' kis kaam ke liye responsible hota hai?",
+        "options": [
+            "Hardware aur software ke beech interaction ko manage karna", 
+            "File storage ko manage karna", 
+            "User interfaces ko control karna", 
+            "Network connections manage karna"
+        ],
+        "answer": "Hardware aur software ke beech interaction ko manage karna"
+    },
+    {
+        "question": "87. Linux me kaunsa command system ko restart karta hai?",
+        "options": [
+            "reboot", 
+            "shutdown", 
+            "restart", 
+            "poweroff"
+        ],
+        "answer": "reboot"
+    },
+    {
+        "question": "88. Linux me kaunsa command system ka memory usage show karta hai?",
+        "options": [
+            "free", 
+            "df", 
+            "ps", 
+            "top"
+        ],
+        "answer": "free"
+    },
+    {
+        "question": "89. Operating System ka primary function kya hai?",
+        "options": [
+            "User applications ko run karna", 
+            "System resources ka management karna", 
+            "Network connections handle karna", 
+            "Data ko encrypt karna"
+        ],
+        "answer": "System resources ka management karna"
+    },
+    {
+        "question": "90. Linux me user ko root access dene wala command kaunsa hai?",
+        "options": [
+            "sudo", 
+            "root", 
+            "admin", 
+            "su"
+        ],
+        "answer": "sudo"
+    },
+    {
+        "question": "91. OS ke 'Virtual Memory' ka main purpose kya hota hai?",
+        "options": [
+            "RAM ko extend karna", 
+            "Hard disk ko fast banaana", 
+            "Application ko install karna", 
+            "Network ko optimize karna"
+        ],
+        "answer": "RAM ko extend karna"
+    },
+    {
+        "question": "92. Operating System ke kaunse part ka naam 'Shell' hai?",
+        "options": [
+            "Command-line interface", 
+            "User Interface", 
+            "Device Driver", 
+            "File Manager"
+        ],
+        "answer": "Command-line interface"
+    },
+    {
+        "question": "93. Linux ka kaunsa command current working directory ko show karta hai?",
+        "options": [
+            "pwd", 
+            "ls", 
+            "cd", 
+            "echo"
+        ],
+        "answer": "pwd"
+    },
+    {
+        "question": "94. 'Processes' ko monitor karne ke liye kaunsa command use hota hai?",
+        "options": [
+            "top", 
+            "ps", 
+            "uptime", 
+            "cat"
+        ],
+        "answer": "top"
+    },
+    {
+        "question": "95. OS ka kaunsa component input/output devices ke liye driver provide karta hai?",
+        "options": [
+            "Kernel", 
+            "Shell", 
+            "GUI", 
+            "System calls"
+        ],
+        "answer": "Kernel"
+    },
+    {
+        "question": "96. Linux me kaunsa command file ka content dikhata hai?",
+        "options": [
+            "cat", 
+            "more", 
+            "echo", 
+            "head"
+        ],
+        "answer": "cat"
+    },
+    {
+        "question": "97. Linux me file permissions ko change karne ke liye kaunsa command use hota hai?",
+        "options": [
+            "chmod", 
+            "chown", 
+            "chmod -R", 
+            "chgrp"
+        ],
+        "answer": "chmod"
+    },
+    {
+        "question": "98. 'Multitasking' ka matlab OS mein kya hota hai?",
+        "options": [
+            "Multiple programs ko ek sath execute karna", 
+            "Ek hi program ko execute karna", 
+            "Files ko manage karna", 
+            "Data ko encrypt karna"
+        ],
+        "answer": "Multiple programs ko ek sath execute karna"
+    },
+    {
+        "question": "99. Linux me system ka status dekhne ke liye kaunsa command use hota hai?",
+        "options": [
+            "top", 
+            "status", 
+            "uptime", 
+            "sysinfo"
+        ],
+        "answer": "uptime"
+    },
+    {
+        "question": "100. Operating System ka 'Scheduler' kis kaam ke liye responsible hota hai?",
+        "options": [
+            "Process ko CPU time dena", 
+            "User ko files dekhna", 
+            "Network ko handle karna", 
+            "Storage ka management karna"
+        ],
+        "answer": "Process ko CPU time dena"
+    }
+
+
+
+];
+
+
+    let currentIndex = 0;
+    let score = 0;
+
+    const startForm = document.getElementById("start-form");
+    const quizSection = document.getElementById("quiz-section");
+    const questionContainer = document.getElementById("question-container");
+    const optionsContainer = document.getElementById("options-container");
+    const nextBtn = document.getElementById("next-btn");
+    const resultSection = document.getElementById("result-section");
+    const finalScore = document.getElementById("final-score");
+
+    startForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        startForm.style.display = "none";
+        quizSection.style.display = "block";
+        loadQuestion();
+    });
+
+    function loadQuestion() {
+        const currentQuestion = questions[currentIndex];
+        questionContainer.innerText = currentQuestion.question;
+        optionsContainer.innerHTML = "";
+        currentQuestion.options.forEach(option => {
+            const optionEl = document.createElement("div");
+            optionEl.classList.add("option");
+            optionEl.innerText = option;
+            optionEl.onclick = () => selectAnswer(optionEl, option);
+            optionsContainer.appendChild(optionEl);
+        });
+    }
+
+    function selectAnswer(optionEl, selectedOption) {
+        const currentQuestion = questions[currentIndex];
+        if (selectedOption === currentQuestion.answer) {
+            optionEl.classList.add("correct");
+            score++;
+        } else {
+            optionEl.classList.add("incorrect");
+        }
+        Array.from(optionsContainer.children).forEach(el => el.style.pointerEvents = 'none');
+        nextBtn.style.display = "block";
+    }
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex < questions.length) {
+            nextBtn.style.display = "none";
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    });
+
+    function showResults() {
+        quizSection.style.display = "none";
+        resultSection.style.display = "block";
+        finalScore.innerText = `${score} / ${questions.length}`;
+        submitResults();
+    }
+
+    function submitResults() {
+        const userName = document.getElementById("user-name").value;
+        const userEmail = document.getElementById("user-email").value;
+
+        fetch("https://getform.io/f/brooepwa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name: userName, email: userEmail, score: score })
+        }).catch(error => console.error("Error:", error));
+    }
+</script>
+
+</body>
+</html>
