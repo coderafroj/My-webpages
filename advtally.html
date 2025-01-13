@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Accounting & Tally Prime</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #eef2ff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .toggle-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Basics of Accounting & Tally Prime</h1>
+<!-- Advanced Bank Reconciliation Calculator Section -->
+<div class="section">
+    <h2>📊 Bank Reconciliation Calculator</h2>
+    <p>Use this tool to calculate your bank reconciliation. Fill in the values below:</p>
+    <form id="reconciliation-form">
+        <label for="cashBookBalance">Cash Book Balance (₹):</label>
+        <input type="number" id="cashBookBalance" name="cashBookBalance" required><br>
+
+        <label for="bankStatementBalance">Bank Statement Balance (₹):</label>
+        <input type="number" id="bankStatementBalance" name="bankStatementBalance" required><br>
+
+        <label for="outstandingCheques">Outstanding Cheques (₹):</label>
+        <input type="number" id="outstandingCheques" name="outstandingCheques" required><br>
+
+        <label for="bankCharges">Bank Charges (₹):</label>
+        <input type="number" id="bankCharges" name="bankCharges" required><br>
+
+        <button type="button" onclick="calculateReconciliation()">Calculate</button>
+    </form>
+
+    <h3>Adjusted Bank Balance:</h3>
+    <p id="adjustedBalance">₹0</p>
+</div>
+
+<!-- Visual Aids: Graph Section -->
+<div class="section">
+    <h2>📈 Bank Reconciliation Visual Aid</h2>
+    <p>This chart shows the comparison between the Cash Book balance and the Bank Statement balance, along with the necessary adjustments.</p>
+    <canvas id="reconciliationChart" width="400" height="200"></canvas>
+</div>
+
+<!-- Common Bank Reconciliation Errors and Solutions -->
+<div class="section">
+    <h2>⚠️ Common Bank Reconciliation Errors & Solutions</h2>
+    <p>Here are some common errors and how you can solve them:</p>
+    <ul>
+        <li><b>Error:</b> Unrecorded transactions in the Cash Book<br>
+            <b>Solution:</b> Check for any missing deposits or payments that have been reflected in the bank statement but not recorded in the Cash Book.</li>
+        <li><b>Error:</b> Bank charges or interest not recorded<br>
+            <b>Solution:</b> Review your bank statement for any charges or interest and update your Cash Book accordingly.</li>
+        <li><b>Error:</b> Incorrect bank statement entries<br>
+            <b>Solution:</b> If there is a bank error, notify the bank to correct the issue. Ensure that the bank has made the proper adjustment.</li>
+        <li><b>Error:</b> Outstanding cheques that haven’t cleared<br>
+            <b>Solution:</b> Ensure that these cheques are recorded in both the bank statement and the Cash Book when they clear.</li>
+    </ul>
+</div>
+
+<!-- Export Bank Reconciliation as PDF Section 
+<div class="section">
+    <h2>📤 Export Bank Reconciliation Report</h2>
+    <p>Download your bank reconciliation statement as a PDF for future reference:</p>
+    <button onclick="exportToPDF()">Download PDF</button>
+</div>-->
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 <b>Bytecore Computer Centre</b>. All Rights Reserved.</p>
+        <p>Visit us at: <a href="https://bytecorecomputercentre.blogspot.com" target="_blank">bytecorecomputercentre.blogspot.com</a></p>
+    </div>
+</footer>
+
+<!-- JavaScript for Interactive Features -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    function calculateReconciliation() {
+        var cashBookBalance = parseFloat(document.getElementById("cashBookBalance").value);
+        var bankStatementBalance = parseFloat(document.getElementById("bankStatementBalance").value);
+        var outstandingCheques = parseFloat(document.getElementById("outstandingCheques").value);
+        var bankCharges = parseFloat(document.getElementById("bankCharges").value);
+
+        var adjustedBalance = bankStatementBalance + outstandingCheques - bankCharges;
+        document.getElementById("adjustedBalance").innerHTML = "₹" + adjustedBalance;
+
+        // Update the visual chart based on the entered values
+        updateChart(cashBookBalance, bankStatementBalance, adjustedBalance);
+    }
+
+    // Visual Aid: Chart.js to show Bank Reconciliation comparison
+    var ctx = document.getElementById('reconciliationChart').getContext('2d');
+    var reconciliationChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Cash Book Balance', 'Bank Statement Balance', 'Adjusted Bank Balance'],
+            datasets: [{
+                label: '₹ Amount',
+                data: [0, 0, 0],
+                backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)'],
+                borderColor: ['rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    function updateChart(cashBookBalance, bankStatementBalance, adjustedBalance) {
+        reconciliationChart.data.datasets[0].data = [cashBookBalance, bankStatementBalance, adjustedBalance];
+        reconciliationChart.update();
+    }
+
+    function exportToPDF() {
+        // This function can be used to export the bank reconciliation report to PDF
+        alert('Export functionality coming soon!');
+    }
+</script>
+
+</body>
+</html>

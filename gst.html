@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Accounting & Tally Prime</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #eef2ff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .toggle-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Basics of Accounting & Tally Prime</h1>
+<div class="section">
+    <h2>📌 GST (Goods and Services Tax) - क्या है?</h2>
+    <p>GST (Goods and Services Tax) भारत में एक <b>indirect tax</b> है जो Goods (सामान) और Services (सेवाओं) की supply पर लागू होता है। यह एक <b>single tax</b> है जिसे पूरे देश में समान रूप से लागू किया जाता है। GST का उद्देश्य पहले से मौजूद कई अन्य indirect taxes (जैसे VAT, Service Tax, Excise Duty) को एकत्रित करना और business को एक समान platform देना है।</p>
+
+    <h3>🔹 GST के प्रकार:</h3>
+    <ul>
+        <li><b>CGST (Central Goods and Services Tax):</b> यह टैक्स केंद्रीय सरकार द्वारा लिया जाता है।</li>
+        <li><b>SGST (State Goods and Services Tax):</b> यह टैक्स राज्य सरकार द्वारा लिया जाता है।</li>
+        <li><b>IGST (Integrated Goods and Services Tax):</b> यह टैक्स अंतर-राज्यीय (interstate) व्यापार के लिए लागू होता है।</li>
+    </ul>
+
+    <h3>🔹 GST Calculation Example:</h3>
+    <p>मान लीजिए एक वस्तु की कीमत ₹1,000 है, और उस पर 18% GST लागू होता है:</p>
+    <p><b>GST Amount = (GST Rate × Price) / 100</b></p>
+    <p><b>GST Amount = (18 × 1000) / 100 = ₹180</b></p>
+    <p>अतः, वस्तु की कुल कीमत होगी ₹1,180 (₹1,000 + ₹180 GST)।</p>
+</div>
+
+<!-- 📌 Taxation Overview Section -->
+<div class="section">
+    <h2>📌 Taxation - टैक्सेशन क्या है?</h2>
+    <p><b>Taxation</b> किसी भी देश की सरकार द्वारा एकत्रित की जाने वाली <b>revenue</b> है, जिसका उपयोग सामाजिक कल्याण, इन्फ्रास्ट्रक्चर, और अन्य सरकारी कार्यों के लिए किया जाता है। टैक्स दो मुख्य प्रकार के होते हैं:</p>
+
+    <ul>
+        <li><b>Direct Taxes:</b> जो सीधे व्यक्ति की आय या संपत्ति पर लगाए जाते हैं। उदाहरण: Income Tax, Wealth Tax।</li>
+        <li><b>Indirect Taxes:</b> जो goods और services की supply पर लगाए जाते हैं। उदाहरण: GST, Customs Duty।</li>
+    </ul>
+
+    <h3>🔹 Income Tax:</h3>
+    <p><b>Income Tax</b> सरकार द्वारा व्यक्तिगत और कॉर्पोरेट आय (income) पर लिया जाता है। यह <b>progressive tax</b> होता है, जिसका मतलब है कि उच्च आय वालों से अधिक कर लिया जाता है।</p>
+
+    <h3>🔹 Example of Income Tax Calculation:</h3>
+    <p>मान लीजिए एक व्यक्ति की आय ₹5,00,000 है और income tax slab 5% पर लागू है:</p>
+    <p><b>Tax = (Taxable Income × Tax Rate) / 100</b></p>
+    <p><b>Tax = (5,00,000 × 5) / 100 = ₹25,000</b></p>
+    <p>इस व्यक्ति को ₹25,000 का Income Tax देना होगा।</p>
+
+    <h3>🔹 Corporate Tax:</h3>
+    <p><b>Corporate Tax</b> कंपनियों के मुनाफे पर लागू होता है। यह भी सरकार द्वारा तय की गई दरों पर लिया जाता है।</p>
+</div>
+
+<!-- 📌 GST Registration and Filing Section -->
+<div class="section">
+    <h2>📌 GST Registration और Filing</h2>
+    <p>GST के तहत व्यापारियों और कंपनियों को <b>GST Registration</b> करवाना अनिवार्य है, यदि उनकी सालाना turnover ₹40 लाख (₹20 लाख for North Eastern States) से अधिक हो। GST Filing की प्रक्रिया सरल है और online portal के माध्यम से होती है।</p>
+
+    <h3>🔹 GST Registration Steps:</h3>
+    <ol>
+        <li>GST Portal पर जाएं और <b>Register</b> करें।</li>
+        <li>अपने PAN और अन्य दस्तावेज़ों की जानकारी भरें।</li>
+        <li>आपके business की details भरकर GSTIN (GST Identification Number) प्राप्त करें।</li>
+    </ol>
+
+    <h3>🔹 GST Filing:</h3>
+    <p>GST Filing का उद्देश्य GST collected और GST paid को reconcile करना है। यह monthly या quarterly filing हो सकती है:</p>
+    <ul>
+        <li><b>GSTR-1:</b> Sales return (outward supply).</li>
+        <li><b>GSTR-3B:</b> Monthly GST return (summary of sales and purchases).</li>
+        <li><b>GSTR-9:</b> Annual return for GST filers.</li>
+    </ul>
+</div>
+
+<!-- 📌 Taxation Examples Section -->
+<div class="section">
+    <h2>📌 Taxation Example and Calculation</h2>
+    <h3>🔹 Example of GST Calculation:</h3>
+    <p>मान लीजिए आप ₹50,000 के माल की खरीद करते हैं और GST @18% लागू है:</p>
+    <p><b>GST Amount = (18 × ₹50,000) / 100 = ₹9,000</b></p>
+    <p>आपको ₹9,000 GST pay करना होगा। यदि आप इसे बेचते हैं, तो आप इस amount को GSTIN के माध्यम से सरकार को जमा करेंगे।</p>
+
+    <h3>🔹 Example of Tax Deducted at Source (TDS):</h3>
+    <p>मान लीजिए एक व्यक्ति ₹10,000 की सेवा के लिए पेमेंट कर रहा है और TDS @10% लागू है:</p>
+    <p><b>TDS Amount = (10 × ₹10,000) / 100 = ₹1,000</b></p>
+    <p>वह व्यक्ति ₹1,000 TDS के रूप में कटवाएगा और ₹9,000 आपको भुगतान करेगा।</p>
+</div>
+
+<!-- 📌 Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 <b>Bytecore Computer Centre</b>. All Rights Reserved.</p>
+        <p>Visit us at: <a href="https://bytecorecomputercentre.blogspot.com" target="_blank">bytecorecomputercentre.blogspot.com</a></p>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+</html>

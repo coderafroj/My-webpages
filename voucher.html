@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Accounting & Tally Prime</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #eef2ff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .toggle-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Basics of Accounting & Tally Prime</h1>
+<div class="section">
+    <h2>📌 Purchase Order (PO) - क्या होता है?</h2>
+    <p><b>Purchase Order</b> (PO) एक official document होता है जो किसी <b>buyer</b> (खरीददार) द्वारा <b>seller</b> (विक्रेता) को भेजा जाता है। यह इस बात का लिखित प्रमाण होता है कि buyer ने seller से specific goods या services खरीदने की अनुमति दी है।</p>
+
+    <h3>🔹 Purchase Order क्यों जरूरी है?</h3>
+    <ul>
+        <li>Supplier और Buyer के बीच <b>लेन-देन</b> का written proof होता है।</li>
+        <li><b>Inventory management</b> और stock tracking के लिए उपयोगी होता है।</li>
+        <li>Budgeting में मदद करता है, जिससे खर्चे को control किया जा सकता है।</li>
+        <li>Legal proof होता है कि खरीदारी approved थी, जिससे disputes को रोका जा सकता है।</li>
+    </ul>
+
+    <h3>🔹 Purchase Order में क्या-क्या Details होती हैं?</h3>
+    <p>एक <b>standard purchase order</b> में निम्नलिखित जानकारियाँ होती हैं:</p>
+
+    <ul>
+        <li><b>PO Number:</b> हर purchase order का unique identification number।</li>
+        <li><b>Date:</b> Purchase order जारी करने की तारीख।</li>
+        <li><b>Supplier Name:</b> जिससे सामान खरीदा जा रहा है।</li>
+        <li><b>Item Details:</b> खरीदी जाने वाली वस्तुओं का नाम, quantity और price।</li>
+        <li><b>Payment Terms:</b> Payment कब और कैसे किया जाएगा।</li>
+        <li><b>Delivery Date:</b> सामान की delivery की निर्धारित तारीख।</li>
+    </ul>
+
+    <h3>🔹 Example of Purchase Order</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>PO Number</th>
+                <th>Date</th>
+                <th>Supplier Name</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price (₹)</th>
+                <th>Total (₹)</th>
+            </tr>
+            <tr>
+                <td>PO-101</td>
+                <td>10 Jan</td>
+                <td>ABC Traders</td>
+                <td>HP Laptop</td>
+                <td>5</td>
+                <td>45,000</td>
+                <td>2,25,000</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>📌 Purchase - क्या होता है?</h2>
+    <p><b>Purchase</b> का मतलब किसी <b>business</b> द्वारा <b>goods या services</b> को खरीदना है। यह purchase order से अलग होता है क्योंकि यह एक वास्तविक transaction होता है।</p>
+
+    <h3>🔹 Purchase की Types:</h3>
+    <ul>
+        <li><b>Cash Purchase:</b> जब सामान की payment तुरंत cash में कर दी जाती है।</li>
+        <li><b>Credit Purchase:</b> जब सामान उधार (credit) पर खरीदा जाता है और payment बाद में किया जाता है।</li>
+        <li><b>Capital Purchase:</b> जब कोई business लंबी अवधि के लिए asset (जैसे मशीनरी) खरीदता है।</li>
+        <li><b>Revenue Purchase:</b> जब daily business operations के लिए सामान खरीदा जाता है।</li>
+    </ul>
+
+    <h3>🔹 Example of Purchase Entry</h3>
+    <p>अगर कोई company 100 pens ₹10 per pen की rate से खरीदती है तो entry होगी:</p>
+    <p><b>Purchase A/c Dr. ₹1,000</b> <br> <b>To Cash A/c ₹1,000</b></p>
+</div>
+
+<div class="section">
+    <h2>📌 Sales Order - क्या होता है?</h2>
+    <p><b>Sales Order</b> एक document होता है जिसे seller अपने customer को भेजता है जब कोई purchase order accept हो जाता है। यह proof होता है कि supplier order को fulfill करने के लिए तैयार है।</p>
+
+    <h3>🔹 Sales Order की जरूरत क्यों होती है?</h3>
+    <ul>
+        <li>Buyer और Seller के बीच agreement का proof होता है।</li>
+        <li>Delivery और payment terms को define करता है।</li>
+        <li>Sales forecast और production planning में मदद करता है।</li>
+    </ul>
+
+    <h3>🔹 Example of Sales Order</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>SO Number</th>
+                <th>Date</th>
+                <th>Buyer Name</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price (₹)</th>
+                <th>Total (₹)</th>
+            </tr>
+            <tr>
+                <td>SO-205</td>
+                <td>12 Jan</td>
+                <td>XYZ Enterprises</td>
+                <td>HP Printer</td>
+                <td>10</td>
+                <td>7,000</td>
+                <td>70,000</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>📌 Sales - क्या होता है?</h2>
+    <p><b>Sales</b> का मतलब business द्वारा अपने customers को goods या services बेचना होता है। यह revenue generate करने का सबसे बड़ा source होता है।</p>
+
+    <h3>🔹 Sales की Types:</h3>
+    <ul>
+        <li><b>Cash Sales:</b> जब product की payment तुरंत कर दी जाती है।</li>
+        <li><b>Credit Sales:</b> जब product उधार (credit) पर बेचा जाता है और payment बाद में किया जाता है।</li>
+        <li><b>Wholesale Sales:</b> जब bulk में सामान बेचा जाता है।</li>
+        <li><b>Retail Sales:</b> जब सामान छोटे ग्राहकों को बेचा जाता है।</li>
+    </ul>
+
+    <h3>🔹 Example of Sales Entry</h3>
+    <p>अगर कोई company 50 books ₹200 per book की rate से बेचती है तो entry होगी:</p>
+    <p><b>Cash A/c Dr. ₹10,000</b> <br> <b>To Sales A/c ₹10,000</b></p>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 <b>Bytecore Computer Centre</b>. All Rights Reserved.</p>
+        <p>Visit us at: <a href="https://bytecorecomputercentre.blogspot.com" target="_blank">bytecorecomputercentre.blogspot.com</a></p>
+    </div>
+</footer>
+
+
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Accounting & Tally Prime</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #eef2ff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .toggle-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Basics of Accounting & Tally Prime</h1>
+<div class="section">
+    <h2>📌 Financial Report - क्या होता है?</h2>
+    <p>Financial Report एक <b>आर्थिक दस्तावेज</b> होता है जो किसी business की <b>financial performance</b> और <b>financial position</b> को दिखाता है। यह तीन मुख्य parts में divide होता है:</p>
+
+    <ul>
+        <li><b>Balance Sheet:</b> कंपनी की संपत्ति (Assets), देनदारियाँ (Liabilities) और मालिक की पूंजी (Equity) को दर्शाता है।</li>
+        <li><b>Profit & Loss Statement:</b> कंपनी के मुनाफे (Profit) और खर्चों (Expenses) की जानकारी देता है।</li>
+        <li><b>Cash Flow Statement:</b> कंपनी में नकदी आने और जाने का रिकॉर्ड रखता है।</li>
+    </ul>
+</div>
+
+<!-- 📌 Balance Sheet Section -->
+<div class="section">
+    <h2>📌 Balance Sheet - क्या होता है?</h2>
+    <p>Balance Sheet <b>Assets (संपत्ति)</b>, <b>Liabilities (देयताएँ)</b>, और <b>Owner’s Equity (मालिक की पूंजी)</b> को दर्शाता है। यह किसी भी business की financial स्थिति को बताने वाला एक मुख्य document होता है।</p>
+
+    <h3>🔹 Balance Sheet Formula:</h3>
+    <p><b>Assets = Liabilities + Owner’s Equity</b></p>
+
+    <h3>🔹 Example of Balance Sheet</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Assets (संपत्ति)</th>
+                <th>Liabilities (देयताएँ)</th>
+                <th>Owner’s Equity (मालिक की पूंजी)</th>
+            </tr>
+            <tr>
+                <td>Cash: ₹50,000</td>
+                <td>Bank Loan: ₹20,000</td>
+                <td>Capital: ₹30,000</td>
+            </tr>
+            <tr>
+                <td>Inventory: ₹1,00,000</td>
+                <td>Creditors: ₹40,000</td>
+                <td>Retained Earnings: ₹60,000</td>
+            </tr>
+            <tr>
+                <td><b>Total: ₹1,50,000</b></td>
+                <td><b>Total: ₹60,000</b></td>
+                <td><b>Total: ₹90,000</b></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- 📌 Profit & Loss Statement Section -->
+<div class="section">
+    <h2>📌 Profit & Loss Statement (Income Statement) - क्या होता है?</h2>
+    <p>Profit & Loss Statement किसी भी business के <b>income</b> और <b>expenses</b> को दर्शाता है। इससे कंपनी के <b>Net Profit</b> या <b>Net Loss</b> का पता चलता है।</p>
+
+    <h3>🔹 Profit & Loss Formula:</h3>
+    <p><b>Net Profit = Total Revenue - Total Expenses</b></p>
+
+    <h3>🔹 Example of Profit & Loss Statement</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Revenue (आय)</th>
+                <th>Expenses (खर्च)</th>
+                <th>Net Profit/Loss (कुल लाभ/हानि)</th>
+            </tr>
+            <tr>
+                <td>Sales: ₹2,00,000</td>
+                <td>Rent: ₹20,000</td>
+                <td rowspan="2"><b>₹1,50,000</b></td>
+            </tr>
+            <tr>
+                <td>Services: ₹50,000</td>
+                <td>Electricity: ₹5,000</td>
+            </tr>
+            <tr>
+                <td>Total Revenue: ₹2,50,000</td>
+                <td>Total Expenses: ₹1,00,000</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- 📌 Cash Flow Statement Section -->
+<div class="section">
+    <h2>📌 Cash Flow Statement - क्या होता है?</h2>
+    <p>Cash Flow Statement यह दिखाता है कि किसी business में नकदी (Cash) कहाँ से आई और कहाँ खर्च हुई। इसे तीन भागों में divide किया जाता है:</p>
+
+    <ul>
+        <li><b>Operating Activities:</b> Business के daily operations से जुड़ा cash inflow और outflow।</li>
+        <li><b>Investing Activities:</b> Business द्वारा की गई long-term investments।</li>
+        <li><b>Financing Activities:</b> Business में loans, capital, और dividend payments।</li>
+    </ul>
+
+    <h3>🔹 Example of Cash Flow Statement</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Activity</th>
+                <th>Cash Inflow (₹)</th>
+                <th>Cash Outflow (₹)</th>
+            </tr>
+            <tr>
+                <td>Sales Revenue</td>
+                <td>₹2,00,000</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Equipment Purchase</td>
+                <td>-</td>
+                <td>₹50,000</td>
+            </tr>
+            <tr>
+                <td>Loan Received</td>
+                <td>₹1,00,000</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Salary Payment</td>
+                <td>-</td>
+                <td>₹80,000</td>
+            </tr>
+            <tr>
+                <td><b>Net Cash Flow</b></td>
+                <td><b>₹3,00,000</b></td>
+                <td><b>₹1,30,000</b></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- 📌 Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 <b>Bytecore Computer Centre</b>. All Rights Reserved.</p>
+        <p>Visit us at: <a href="https://bytecorecomputercentre.blogspot.com" target="_blank">bytecorecomputercentre.blogspot.com</a></p>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+</html>

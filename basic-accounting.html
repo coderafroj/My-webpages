@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Accounting & Tally Prime</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #eef2ff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .toggle-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Basics of Accounting & Tally Prime</h1>
+
+    <div class="section">
+        <h2>📌 Introduction to Accounting</h2>
+        <p>Accounting ek financial language hai jo business ki transactions ko systematically record, classify aur summarize karta hai.</p>
+    </div>
+
+    <div class="section">
+        <h2>📌 Basic Accounting Principles</h2>
+        <ul>
+            <li><b>Business Entity Concept:</b> Business aur owner alag-alag hote hain.</li>
+            <li><b>Money Measurement Concept:</b> Sirf monetary transactions record hote hain.</li>
+            <li><b>Going Concern Concept:</b> Business long-term tak chalega.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📌 Golden Rules of Accounting</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Rule</th>
+                </tr>
+                <tr>
+                    <td>Personal Account</td>
+                    <td>Debit the receiver, Credit the giver</td>
+                </tr>
+                <tr>
+                    <td>Real Account</td>
+                    <td>Debit what comes in, Credit what goes out</td>
+                </tr>
+                <tr>
+                    <td>Nominal Account</td>
+                    <td>Debit all expenses & losses, Credit all incomes & gains</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📌 Introduction to Tally Prime</h2>
+        <p>Tally Prime ek accounting software hai jo businesses ko easy bookkeeping aur GST filing provide karta hai.</p>
+    </div>
+
+    <div class="section">
+        <h2>📌 Tally Prime Features</h2>
+        <ul>
+            <li>Easy Accounting & Invoicing</li>
+            <li>GST & Tax Compliance</li>
+            <li>Inventory Management</li>
+            <li>Multi-User Support</li>
+        </ul>
+    </div>
+
+<!--    <div class="toggle-btn">
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+        -->
+    </div>
+</div>
+
+
+<div class="section">
+    <h2>📌 Ledger in Accounting</h2>
+    <p><b>Ledger</b> ek book ya system hai jisme sabhi transactions record kiye jate hain, jo specific accounts se related hote hain.</p>
+    
+    <h3>🔹 Importance of Ledger</h3>
+    <ul>
+        <li>Business ki financial position track karne me madad karta hai.</li>
+        <li>Sabhi transactions systematically record hote hain.</li>
+        <li>Trial Balance aur Final Accounts banane ke liye zaroori hota hai.</li>
+    </ul>
+
+    <h3>🔹 Types of Ledger</h3>
+    <ul>
+        <li><b>General Ledger:</b> Sabhi accounts ka complete record hota hai.</li>
+        <li><b>Debtors Ledger (Sales Ledger):</b> Customers se related transactions hoti hain.</li>
+        <li><b>Creditors Ledger (Purchase Ledger):</b> Suppliers se related transactions hoti hain.</li>
+    </ul>
+
+    <h3>🔹 Ledger Format Example</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Particulars</th>
+                <th>Debit (₹)</th>
+                <th>Credit (₹)</th>
+                <th>Balance (₹)</th>
+            </tr>
+            <tr>
+                <td>01 Jan</td>
+                <td>Cash A/C</td>
+                <td>10,000</td>
+                <td>-</td>
+                <td>10,000 Dr</td>
+            </tr>
+            <tr>
+                <td>05 Jan</td>
+                <td>Purchase A/C</td>
+                <td>-</td>
+                <td>5,000</td>
+                <td>5,000 Dr</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>📌 Voucher in Accounting</h2>
+    <p><b>Voucher</b> ek document hota hai jo kisi transaction ka proof provide karta hai.</p>
+
+    <h3>🔹 Importance of Vouchers</h3>
+    <ul>
+        <li>Transactions ka written proof hota hai.</li>
+        <li>Audit ke time zaroori documents hote hain.</li>
+        <li>Business transparency maintain karne me madad karta hai.</li>
+    </ul>
+
+    <h3>🔹 Types of Vouchers</h3>
+    <ul>
+        <li><b>Cash Voucher:</b> Cash transactions ke liye use hota hai.</li>
+        <li><b>Bank Voucher:</b> Bank se related transactions ke liye.</li>
+        <li><b>Purchase Voucher:</b> Purchases record karne ke liye.</li>
+        <li><b>Sales Voucher:</b> Sales record karne ke liye.</li>
+    </ul>
+
+    <h3>🔹 Voucher Format Example</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Voucher No</th>
+                <th>Date</th>
+                <th>Particulars</th>
+                <th>Amount (₹)</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td>02 Jan</td>
+                <td>Purchase of Goods</td>
+                <td>5,000</td>
+                <td>Purchase Voucher</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>06 Jan</td>
+                <td>Cash Received from Ram</td>
+                <td>8,000</td>
+                <td>Cash Voucher</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="section">
+    <h2>📌 Group in Accounting</h2>
+    <p><b>Group</b> accounting ka ek important concept hai jo similar nature wale accounts ko categorize karne me madad karta hai.</p>
+
+    <h3>🔹 Importance of Groups</h3>
+    <ul>
+        <li>Sabhi accounts ko systematic tarike se organize karta hai.</li>
+        <li>Trial Balance aur Financial Statements banane me madad milti hai.</li>
+        <li>Profit aur Loss Analysis karna easy ho jata hai.</li>
+    </ul>
+
+    <h3>🔹 Major Groups in Accounting</h3>
+    <p>Accounting me groups ko **Real, Personal, aur Nominal Accounts** ke basis par categorize kiya jata hai. Ye mainly **Balance Sheet aur Profit & Loss Account** me divide hote hain.</p>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Group Name</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Assets</td>
+                <td>Business ki properties ya resources</td>
+                <td>Cash, Bank, Machinery</td>
+            </tr>
+            <tr>
+                <td>Liabilities</td>
+                <td>Business ki obligations ya udhaar</td>
+                <td>Loan, Creditors</td>
+            </tr>
+            <tr>
+                <td>Capital</td>
+                <td>Owner dwara invest kiya gaya paisa</td>
+                <td>Owner’s Equity</td>
+            </tr>
+            <tr>
+                <td>Revenue</td>
+                <td>Business ki income</td>
+                <td>Sales, Service Income</td>
+            </tr>
+            <tr>
+                <td>Expenses</td>
+                <td>Business ke kharche</td>
+                <td>Rent, Salary, Electricity</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>🔹 Groups in Tally Prime</h3>
+    <p>Tally Prime me predefined aur user-defined groups hote hain jo transactions ko better manage karne me madad karte hain.</p>
+
+    <ul>
+        <li><b>Primary Groups:</b> Predefined hote hain, jaise **Assets, Liabilities, Capital, Revenue, aur Expenses**.</li>
+        <li><b>Sub-Groups:</b> Primary Groups ke andar aate hain, jaise **Fixed Assets, Current Assets, Sundry Debtors, Sundry Creditors**.</li>
+    </ul>
+
+    <h3>🔹 How to Create a Group in Tally Prime?</h3>
+    <ol>
+        <li>Tally Prime open karein aur <b>Gateway of Tally</b> me jayein.</li>
+        <li><b>Accounts Info</b> option select karein.</li>
+        <li><b>Groups</b> me jayein aur "Create" select karein.</li>
+        <li>Group ka naam enter karein aur relevant primary group select karein.</li>
+        <li>Save karein aur exit karein.</li>
+    </ol>
+
+    <h3>🔹 Example of Group in Tally</h3>
+    <p>Agar aap **"Sundry Debtors"** ka group create kar rahe hain to uska parent group **"Current Assets"** hoga.</p>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 <b>Bytecore Computer Centre</b>. All Rights Reserved.</p>
+        <p>Visit us at: <a href="https://bytecorecomputercentre.blogspot.com" target="_blank">bytecorecomputercentre.blogspot.com</a></p>
+    </div>
+</footer>
+
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+</html>
