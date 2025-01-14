@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Web Design - Bytecore Computer Centre">
+    <meta name="keywords" content="Web Design, Advanced CSS, HTML, JavaScript, SEO, Bytecore Computer Centre">
+    <meta name="author" content="Bytecore Computer Centre">
+    <title>Advanced Web Design | Bytecore Computer Centre</title>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #00c8ff;
+            text-shadow: 0 0 20px rgba(0, 200, 255, 1);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .hexagon {
+            position: relative;
+            width: 220px;
+            height: 250px;
+            background: linear-gradient(135deg, #003366, #0055aa);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.4s ease-in-out, box-shadow 0.5s ease-in-out;
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.8);
+        }
+
+        .hexagon:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 1);
+        }
+
+        .hexagon img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hexagon h2 {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .hexagon a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 2px solid white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .hexagon a:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Bytecore Logo */
+        .logo {
+            width: 160px;
+            margin-bottom: 20px;
+        }
+
+        /* Smooth Entry Animation */
+        .hexagon {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .hexagon {
+                width: 190px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            .hexagon {
+                width: 170px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bytecore Logo -->
+    <img src="https://i.postimg.cc/yNQQfDdv/undefined-Imgur.png" alt="Bytecore Logo" class="logo">
+
+    <h1>Advanced Web Design</h1>
+
+    <div class="container">
+        <div class="hexagon">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML Icon">
+            <h2>HTML</h2>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="hexagon">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS Icon">
+            <h2>CSS</h2>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="hexagon">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript Icon">
+            <h2>JavaScript</h2>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="hexagon">
+            <img src="https://i.postimg.cc/ZnrTJ4xZ/undefined-Imgur-2.png" alt="SEO Icon">
+            <h2>Git&Gihub</h2>
+            <a href="#">Learn More</a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Smooth Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let elements = document.querySelectorAll(".hexagon");
+            elements.forEach((box, index) => {
+                setTimeout(() => {
+                    box.style.animation = "fadeIn 0.8s ease forwards";
+                }, index * 250);
+            });
+        });
+    </script>
+
+</body>
+</html>
