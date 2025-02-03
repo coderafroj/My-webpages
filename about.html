@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - ByteCore Computer Centre</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="ByteCore Computer Centre is a hub of innovation, expertise, and passion for technology. Discover our story, mission, team, and core values." />
+  <meta name="keywords" content="ByteCore, Computer Centre, IT solutions, cybersecurity, full-stack development, technology, innovation" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About Us - ByteCore Computer Centre" />
+  <meta property="og:description" content="Discover our story, mission, and team at ByteCore Computer Centre, where innovation meets excellence." />
+  <meta property="og:image" content="https://i.postimg.cc/yNQQfDdv/undefined-Imgur.png" />
+  <meta property="og:type" content="website" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    html {
+      font-size: 62%;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: silver;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgb(77, 71, 71);
+      transition: all 0.3s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(53, 50, 50);
+    }
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+      z-index: 100;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+    .logo:hover {
+      transform: scale(1.1);
+    }
+    nav.desktop {
+      /* Adding role for accessibility */
+      display: flex;
+    }
+    nav.desktop a {
+      font-size: 1.8rem;
+      color: rgb(177, 165, 165);
+      margin-right: 2.5rem;
+      transition: 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+    nav.desktop a:hover,
+    nav.desktop a.active {
+      color: whitesmoke;
+      border-bottom: 3px solid #fff;
+    }
+    /* Dropdown for Mobile */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn i {
+      display: none;
+      font-size: 2vw;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: -49px;
+      width: 150px;
+      background: rgba(61, 59, 59, 0.9);
+      padding: 1rem 0;
+      z-index: 101;
+    }
+    .dropdown-content a {
+      color: #fff;
+      font-size: 1.4rem;
+      padding: 12px 16px;
+      display: block;
+      transition: background 0.3s;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    @media(max-width:1300px) {
+      nav.desktop {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgb(29, 28, 28);
+        width: 400px;
+        border-left: 3px solid whitesmoke;
+        border-bottom: 3px solid #fff;
+        border-bottom-left-radius: 1rem;
+        padding: 1rem;
+        display: none;
+      }
+      nav.desktop.active {
+        display: block;
+      }
+      nav.desktop a {
+        display: block;
+        font-size: 2rem;
+        margin: 2rem 0;
+      }
+      .dropbtn i {
+        display: block;
+      }
+    }
+    /* Section Base Style – Reduced gaps */
+    section {
+      padding: 4rem 5% 3rem;
+      min-height: auto;
+      animation: appear 1.5s;
+    }
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(0.4);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    /* About Hero Section */
+    .about-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      justify-content: center;
+      position: relative;
+      margin-top: 5rem; /* Header ke niche le aaya */
+    }
+    .about-hero .hero-img {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .about-hero .hero-img img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 15px silver;
+      transition: transform 0.8s ease-in;
+      margin-top: 3rem; /* Header se halka overlap */
+    }
+    .about-hero .hero-img img:hover {
+      transform: scale(1.05);
+    }
+    .about-hero .hero-content {
+      flex: 1 1 300px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .about-hero .hero-content h1 {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+    }
+    .about-hero .hero-content p {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    /* Company Overview */
+    .company-overview {
+      margin: 2rem auto;
+      text-align: center;
+      max-width: 900px;
+      padding: 1rem;
+    }
+    .company-overview h2 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+    }
+    .company-overview p {
+      font-size: 1.7rem;
+      line-height: 1.5;
+    }
+    /* Company History / Timeline */
+    .company-history {
+      margin: 2rem auto;
+      padding: 1.5rem 0;
+      border-top: 1px solid #444;
+      max-width: 900px;
+    }
+    .company-history h2 {
+      font-size: 3.8rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #fff;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      text-align: left;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0.5rem;
+      width: 15px;
+      height: 15px;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .timeline-item h3 {
+      font-size: 2.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-item span {
+      font-size: 1.3rem;
+      color: #ccc;
+    }
+    .timeline-item p {
+      font-size: 1.5rem;
+      margin-top: 0.4rem;
+    }
+    /* Core Values Section */
+    .core-values {
+      margin: 2rem auto;
+      text-align: center;
+      max-width: 900px;
+      padding: 1rem;
+    }
+    .core-values h2 {
+      font-size: 3.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .value-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .value-item:hover {
+      transform: scale(1.03);
+    }
+    .value-item h3 {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .value-item p {
+      font-size: 1.5rem;
+    }
+    /* Team Section */
+    .team {
+      margin: 2rem auto;
+      text-align: center;
+      max-width: 1000px;
+      padding: 1rem;
+    }
+    .team h2 {
+      font-size: 3.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .member {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .member:hover {
+      transform: scale(1.03);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .member img {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0px 0px 10px silver;
+    }
+    .member h3 {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .member p {
+      font-size: 1.5rem;
+      color: #ddd;
+    }
+    /* Testimonials Section with Images */
+    .testimonials {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem 1rem;
+      border-radius: 10px;
+      max-width: 1000px;
+      text-align: center;
+    }
+    .testimonials h2 {
+      font-size: 3.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid #444;
+      margin-bottom: 1rem;
+    }
+    .testimonial-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .testimonial-img {
+      flex: 0 0 70px;
+      width: 70px;
+      height: 70px;
+    }
+    .testimonial-img img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0px 0px 8px silver;
+    }
+    .testimonial-content {
+      flex: 1;
+      text-align: left;
+    }
+    .testimonial-content p {
+      font-size: 1.6rem;
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+    .testimonial-content span {
+      font-size: 1.3rem;
+      color: #ccc;
+    }
+    /* Call-to-Action Section */
+    .cta {
+      margin: 2rem auto;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .cta h2 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+    }
+    .cta .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      border: 2px solid #fff;
+      color: #ddd;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.3rem;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+    .cta .btn:hover {
+      background: rgb(39, 39, 39);
+      transform: scale(1.03);
+      box-shadow: 0px 0px 5px silver;
+    }
+    /* Footer */
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <a href="index.html" class="logo">ByteCore Computer Centre</a>
+    <nav class="desktop" role="navigation" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="dropdown">
+      <button id="dropdownbtn" class="dropbtn" aria-haspopup="true" aria-controls="dropdowncontent" aria-expanded="false">
+        <i class="fa-solid fa-bars hamburg"></i>
+      </button>
+      <div id="dropdowncontent" class="dropdown-content" role="menu">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="#projects" role="menuitem">Projects</a>
+        <a href="#skills" role="menuitem">Skills</a>
+        <a href="#experience" role="menuitem">Experience</a>
+        <a href="#education" role="menuitem">Education</a>
+        <a href="about.html" role="menuitem">About Us</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="hero-img">
+        <!-- Update with your About Us image or logo -->
+        <img src="https://i.postimg.cc/yNQQfDdv/undefined-Imgur.png" alt="About Us" loading="lazy" />
+      </div>
+      <div class="hero-content">
+        <h1>About Us</h1>
+        <p>
+          Welcome to ByteCore Computer Centre – a hub of innovation, expertise, and passion for technology. We are dedicated to delivering cutting-edge IT solutions and fostering a collaborative environment that drives creativity.
+        </p>
+        <p>
+          Our mission is to empower individuals and businesses through advanced technology and quality IT services.
+        </p>
+      </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="company-overview">
+      <h2>Our Story &amp; Mission</h2>
+      <p>
+        Established in 2010, ByteCore Computer Centre started as a small startup and has grown into a leading technology solutions provider. We specialize in cybersecurity, full-stack development, and IT consulting – always striving for excellence and lasting relationships with our clients.
+      </p>
+    </section>
+
+    <!-- Company History / Timeline -->
+    <section class="company-history">
+      <h2>Our Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>2010</h3>
+          <span>Inception</span>
+          <p>ByteCore was founded with a vision to revolutionize IT services.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2013</h3>
+          <span>Milestone</span>
+          <p>Launched our flagship cybersecurity solution that set new industry standards.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2017</h3>
+          <span>Expansion</span>
+          <p>Expanded our services to include full-stack development and IT consulting.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2022</h3>
+          <span>Global Recognition</span>
+          <p>Received multiple awards for innovation and excellence in IT solutions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="core-values">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>Innovation</h3>
+          <p>We embrace change and drive innovation to stay ahead in the tech world.</p>
+        </div>
+        <div class="value-item">
+          <h3>Integrity</h3>
+          <p>Our work is built on honesty, transparency, and a commitment to excellence.</p>
+        </div>
+        <div class="value-item">
+          <h3>Customer Focus</h3>
+          <p>Our clients are at the heart of everything we do.</p>
+        </div>
+        <div class="value-item">
+          <h3>Collaboration</h3>
+          <p>Teamwork and open communication drive our success and growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+      <h2>Meet Our Team</h2>
+      <div class="team-members">
+        <div class="member">
+          <img src="https://i.ibb.co/nM58Z7Cy/undefined-Imgur-1.jpg"" alt="Afroj" loading="lazy" />
+          <h3>Firoj</h3>
+          <p>Founder &amp; Lead Developer</p>
+        </div>
+        <div class="member">
+          <img src="https://i.ibb.co/RG69VswM/afroj-img.jpg"" alt="afroj" loading="lazy" />
+          <h3>Afroj</h3>
+          <p>Cybersecurity Expert</p>
+        </div>
+        <div class="member">
+          <img src="https://i.postimg.cc/3w5R1x9n/member3.jpg" alt="Arjun" loading="lazy" />
+          <h3>Arjun</h3>
+          <p>UI/UX Designer</p>
+        </div><!--
+        <div class="member">
+          <img src="https://i.postimg.cc/L6pSbzNw/member4.jpg" alt="Neha" loading="lazy" />
+          <h3>Neha</h3>
+          <p>Digital Marketing Specialist</p>
+        </div>-->
+      </div>
+    </section>
+
+    <!-- Testimonials Section with Images -->
+    <section class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-item">
+        <div class="testimonial-img">
+          <img src="https://i.ibb.co/5xTMWBNz/afroj-img.png" alt="Client A" loading="lazy" />
+        </div>
+        <div class="testimonial-content">
+          <p>
+            "ByteCore has transformed our business with their innovative solutions and exceptional service."
+          </p>
+          <span>- Client A, CEO</span>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <div class="testimonial-img">
+          <img src="https://i.ibb.co/5xTMWBNz/afroj-img.png" alt="Client B" loading="lazy" />
+        </div>
+        <div class="testimonial-content">
+          <p>
+            "Working with ByteCore was a game changer. Their dedication to quality is unmatched."
+          </p>
+          <span>- Client B, Manager</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta">
+      <h2>Ready to Transform Your Business?</h2>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ByteCore Computer Centre. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Mobile Dropdown Navigation -->
+  <script>
+    const dropdownbtn = document.getElementById("dropdownbtn");
+    const dropdowncon = document.getElementById("dropdowncontent");
+
+    dropdownbtn.addEventListener("click", (e) => {
+      // Toggle dropdown only on mobile screens
+      if (window.innerWidth < 1300) {
+        const isDisplayed = dropdowncon.style.display === "block";
+        dropdowncon.style.display = isDisplayed ? "none" : "block";
+        // Update aria-expanded attribute for accessibility
+        dropdownbtn.setAttribute("aria-expanded", !isDisplayed);
+      }
+      e.stopPropagation();
+    });
+
+    // Close dropdown if user clicks outside
+    window.addEventListener("click", (e) => {
+      if (!e.target.closest(".dropdown")) {
+        dropdowncon.style.display = "none";
+        dropdownbtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+</body>
+</html>
+
