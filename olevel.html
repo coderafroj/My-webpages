@@ -1,175 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join O-Level Course at Bytecore Computer Centre and master skills like MS Word, MS Excel, Photoshop, Python, Web Design, Problem Solving, and Computer Basics.">
-    <meta name="keywords" content="O-Level Course, MS Word, MS Excel, Photoshop, Python, Web Design, Problem Solving Skills, Computer Basics, Bytecore Computer Centre">
-    <meta name="author" content="Bytecore Computer Centre">
-    <meta name="robots" content="index, follow">
-    <meta name="og:title" content="O-Level Course at Bytecore Computer Centre">
-    <meta name="og:description" content="Explore the O-Level course and develop professional skills in MS Word, Excel, Photoshop, Python, and more.">
-    <meta name="og:image" content="https://your-image-link.com/o-level-banner.png">
-    <title>O-Level Course - Bytecore Computer Centre</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(120deg, #f0f8ff, #e6f7ff);
-            color: #333;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        .heading {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .heading h1 {
-            font-size: 3em;
-            color: #0056b3;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .heading p {
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        /* Grid for Courses */
-        .courses {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .course-box {
-         
-            background: linear-gradient(135deg, #e0f7fa, #b3e5fc);
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .course-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-               background: linear-gradient(135deg, #ffffff, #f7f7f7);
-        }
-
-        .course-box img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .course-box:hover img {
-            transform: scale(1.2);
-        }
-
-        .course-box h2 {
-            font-size: 1.6em;
-            color: #0056b3;
-            margin-bottom: 10px;
-        }
-
-        .course-box p {
-            font-size: 1em;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .course-box a {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #fff;
-            background: linear-gradient(90deg, #0056b3, #007bff);
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .course-box a:hover {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .course-box h2 {
-                font-size: 1.4em;
-            }
-
-            .course-box p {
-                font-size: 0.9em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join O-Level Course at Bytecore Computer Centre and master skills like MS Word, MS Excel, Photoshop, Python, Web Design, Problem Solving, and Computer Basics." />
+  <meta name="keywords" content="O-Level Course, MS Word, MS Excel, Photoshop, Python, Web Design, Problem Solving Skills, Computer Basics, Bytecore Computer Centre" />
+  <meta name="author" content="Bytecore Computer Centre" />
+  <meta name="robots" content="index, follow" />
+  <meta name="og:title" content="O-Level Course at Bytecore Computer Centre" />
+  <meta name="og:description" content="Explore the O-Level course and develop professional skills in MS Word, Excel, Photoshop, Python, and more." />
+  <meta name="og:image" content="https://your-image-link.com/o-level-banner.png" />
+  <title>O-Level Course - Bytecore Computer Centre</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    /* Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(120deg, #f0f8ff, #e6f7ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Header Styling */
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
+    }
+    header .logo {
+      font-size: 1.8rem;
+      color: #0056b3;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+    header nav a {
+      color: #0056b3;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #003f7f;
+    }
+    /* Hamburger Icon for Mobile */
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      color: #0056b3;
+      cursor: pointer;
+    }
+    
+    /* Sidebar Styling (Mobile) */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -260px; /* hidden by default */
+      width: 260px;
+      height: 100%;
+      background-color: #fff;
+      padding: 80px 20px 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      transition: left 0.4s ease;
+      z-index: 999;
+    }
+    #sidebar.active {
+      left: 0;
+    }
+    #sidebar nav a {
+      display: block;
+      color: #0056b3;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    #sidebar nav a:hover {
+      color: #003f7f;
+    }
+    
+    /* Main Content Area */
+    #main-content {
+      margin-top: 80px; /* header height */
+      padding: 20px;
+      transition: margin-left 0.4s ease;
+    }
+    /* Desktop view: show header nav and hide sidebar */
+    @media (min-width: 992px) {
+      .hamburger {
+        display: none;
+      }
+      header nav {
+        display: flex;
+      }
+      #sidebar {
+        display: none;
+      }
+      #main-content {
+        margin: 100px auto 20px;
+        max-width: 1200px;
+      }
+    }
+    /* Mobile view: hide header nav and show hamburger icon */
+    @media (max-width: 991px) {
+      header nav {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+      #main-content {
+        margin-left: 0;
+      }
+    }
+    
+    /* Container & O-Level Course Page Styling */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .heading h1 {
+      font-size: 3em;
+      color: #0056b3;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .heading p {
+      font-size: 1.2em;
+      color: #555;
+    }
+    
+    /* Grid for Courses */
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .course-box {
+      background: linear-gradient(135deg, #e0f7fa, #b3e5fc);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    /* When course-box comes into view */
+    .course-box.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .course-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    }
+    .course-box img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    .course-box:hover img {
+      transform: scale(1.2);
+    }
+    .course-box h2 {
+      font-size: 1.6em;
+      color: #0056b3;
+      margin-bottom: 10px;
+    }
+    .course-box p {
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .course-box a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      background: linear-gradient(90deg, #0056b3, #007bff);
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .course-box a:hover {
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      transform: scale(1.1);
+    }
+    
+    /* Responsive Text Adjustments */
+    @media (max-width: 768px) {
+      .course-box h2 {
+        font-size: 1.4em;
+      }
+      .course-box p {
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="heading">
-            <h1>O-Level Course Details</h1>
-            <p>Explore professional courses at Bytecore Computer Centre</p>
-        </div>
-        <div class="courses">
-            <div class="course-box">
-                <img src="https://img.icons8.com/ios-filled/70/007bff/ms-word.png" alt="MS Word Icon">
-                <h2>MS Word</h2>
-                <p>Create professional documents.</p>
-                <a href="https://bytecorecomputercentre.blogspot.com/p/ms-word-tabs-explained-global-styles.html">View Course</a>
-            </div>
-            <div class="course-box">
-                <img src="https://img.icons8.com/ios-filled/70/007bff/ms-excel.png" alt="MS Excel Icon">
-                <h2>MS Excel</h2>
-                <p>Master data analysis tools.</p>
-                <a href="https://bytecorecomputercentre.blogspot.com/p/excel-course-bytecore-computer-centre.html">View Course</a>
-            </div>
-            <div class="course-box">
-                <img src="https://via.placeholder.com/70/0056b3/ffffff?text=P" alt="Photoshop Icon">
-                <h2>Photoshop</h2>
-                <p>Edit images like a pro.</p>
-                <a href="https://bytecorecomputercentre.blogspot.com/p/photoshop-tools-explained-global-styles.html">View Course</a>
-            </div>
-            <div class="course-box">
-                <img src="https://via.placeholder.com/70/0056b3/ffffff?text=Py" alt="Python Icon">
-                <h2>Python</h2>
-                <p>Learn the basics of Python programming.</p>
-                <a href="https://bytecorecomputercentre.blogspot.com/p/python-course.html">View Course</a>
-            </div>
-            <div class="course-box">
-                <img src="https://via.placeholder.com/70/0056b3/ffffff?text=W" alt="Web Design Icon">
-                <h2>Web Design</h2>
-                <p>Design modern and responsive websites.</p>
-                <a href="web-design.html">View Course</a>
-            </div>
-            <div class="course-box">
-                <img src="https://via.placeholder.com/70/0056b3/ffffff?text=PS" alt="Problem Solving Icon">
-                <h2>Problem Solving</h2>
-                <p>Develop logical and analytical skills.</p>
-                <a href="problem-solving.html">View Course</a>
-            </div>
-            <div class="course-box">
-                <img src="https://via.placeholder.com/70/0056b3/ffffff?text=CB" alt="Computer Basics Icon">
-                <h2>Computer Basics</h2>
-                <p>Understand the fundamentals of computers.</p>
-                <a href="https://bytecorecomputercentre.blogspot.com/p/computer.html">View Course</a>
-            </div>
-        </div>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">Bytecore Computer Centre</a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
     </div>
+  </header>
+  
+  <!-- Sidebar for Mobile -->
+  <div id="sidebar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  
+  <!-- Main Content -->
+  <div id="main-content">
+    <div class="container">
+      <div class="heading">
+        <h1>O-Level Course Details</h1>
+        <p>Explore professional courses at Bytecore Computer Centre</p>
+      </div>
+      <div class="courses">
+        <div class="course-box">
+          <img src="https://img.icons8.com/ios-filled/70/007bff/ms-word.png" alt="MS Word Icon">
+          <h2>MS Word</h2>
+          <p>Create professional documents.</p>
+          <a href="ms-word.html">View Course</a>
+        </div>
+        <div class="course-box">
+          <img src="https://img.icons8.com/ios-filled/70/007bff/ms-excel.png" alt="MS Excel Icon">
+          <h2>MS Excel</h2>
+          <p>Master data analysis tools.</p>
+          <a href="ms-excel.html">View Course</a>
+        </div>
+        <div class="course-box">
+          <img src="https://via.placeholder.com/70/0056b3/ffffff?text=P" alt="Photoshop Icon">
+          <h2>Photoshop</h2>
+          <p>Edit images like a pro.</p>
+          <a href="photoshop.html">View Course</a>
+        </div>
+        <div class="course-box">
+          <img src="https://via.placeholder.com/70/0056b3/ffffff?text=Py" alt="Python Icon">
+          <h2>Python</h2>
+          <p>Learn the basics of Python programming.</p>
+          <a href="python.html">View Course</a>
+        </div>
+        <div class="course-box">
+          <img src="https://via.placeholder.com/70/0056b3/ffffff?text=W" alt="Web Design Icon">
+          <h2>Web Design</h2>
+          <p>Design modern and responsive websites.</p>
+          <a href="web-design.html">View Course</a>
+        </div>
+        <div class="course-box">
+          <img src="https://via.placeholder.com/70/0056b3/ffffff?text=PS" alt="Problem Solving Icon">
+          <h2>Problem Solving</h2>
+          <p>Develop logical and analytical skills.</p>
+          <a href="problem-solving.html">View Course</a>
+        </div>
+        <div class="course-box">
+          <img src="https://via.placeholder.com/70/0056b3/ffffff?text=CB" alt="Computer Basics Icon">
+          <h2>Computer Basics</h2>
+          <p>Understand the fundamentals of computers.</p>
+          <a href="computer-basics.html">View Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript for Sidebar Toggle and Scroll Animations -->
+  <script>
+    // Toggle sidebar on mobile devices
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+    
+    // Intersection Observer for course-box scroll animations
+    const courseBoxes = document.querySelectorAll('.course-box');
+    const observerOptions = {
+      threshold: 0.2
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    courseBoxes.forEach(box => {
+      observer.observe(box);
+    });
+  </script>
 </body>
 </html>
