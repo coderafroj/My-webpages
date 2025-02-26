@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bytecore Computer Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bytecore Computer Centre - Advanced Courses in Hacking, Coding & More.">
+  <meta name="keywords" content="ADCA, O-Level, CCC, MDCA, Web Development, Python, Java, JavaScript, Ethical Hacking, Bytecore">
+  <meta name="author" content="Bytecore">
+
+  <!-- Google Fonts + Font Awesome -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google AdSense (Adjust as needed) -->
+  <script async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9740641810891672"
+    crossorigin="anonymous">
+  </script>
+
+  <style>
+    /****************************************
+     1) GLOBAL STYLES / RESET
+    ****************************************/
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #000; /* Dark background */
+      color: #fff;      /* Light text */
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    img {
+      display: block;
+    }
+    :root {
+      --primary-color: #00ffd5; /* Neon turquoise */
+      --secondary-color: #ff006e; /* Neon pinkish-red */
+      --bg-dark: #0d0d0d;
+      --card-bg: #1a1a1a;
+    }
+
+    /****************************************
+     2) HEADER (FIXED) + NAV
+    ****************************************/
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 80px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+    .logo {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .logo:hover {
+      text-shadow: 0 0 10px var(--primary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Desktop Nav */
+    nav.desktop {
+      display: flex;
+      gap: 2rem;
+    }
+    nav.desktop a {
+      font-size: 1rem;
+      font-weight: 500;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+    nav.desktop a:hover {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+
+    /* Mobile Dropdown */
+    .dropdown {
+      display: none;
+      position: relative;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      width: 150px;
+      border: 1px solid var(--primary-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .dropdown-content a:hover {
+      background: var(--primary-color);
+      color: #000;
+    }
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      nav.desktop {
+        display: none;
+      }
+      .dropdown {
+        display: block;
+      }
+    }
+
+    /****************************************
+     3) HERO SECTION
+    ****************************************/
+    .hero {
+      margin-top: 80px; /* offset for fixed header */
+      min-height: 70vh;
+      background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url("https://i.postimg.cc/CLd0kX20/undefined-Imgur-1.png") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #000;
+      background: var(--primary-color);
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .hero a:hover {
+      background: var(--secondary-color);
+      color: #fff;
+      text-shadow: 0 0 5px var(--secondary-color);
+    }
+
+    /****************************************
+     4) COURSES SECTION
+    ****************************************/
+    .courses {
+      background: #000;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .courses h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .course-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 800px) {
+      .course-categories {
+        grid-template-columns: 1fr;
+      }
+    }
+    .course-category {
+      background: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,255,213,0.1);
+    }
+    .course-category h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .course-box {
+      background: var(--card-bg);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.3s;
+      position: relative;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .course-box:hover {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 15px rgba(0,255,213,0.2);
+      transform: translateY(-5px);
+    }
+    .course-box img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .course-box:hover img {
+      transform: scale(1.05);
+    }
+    .course-content {
+      padding: 0.8rem;
+    }
+    .course-content h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    .course-content p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 0.8rem;
+    }
+    .view-btn {
+      display: inline-block;
+      margin: 0.5rem 0;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      background: var(--primary-color);
+      color: #000;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .view-btn:hover {
+      background: var(--secondary-color);
+      color: #fff;
+      text-shadow: 0 0 5px var(--secondary-color);
+    }
+
+    /****************************************
+     5) STUDENT SLIDER SECTION
+    ****************************************/
+    .student-slider {
+      width: 100%;
+      background: #111;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .student-slider h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+    .slider-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .slider-track {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.5s ease;
+    }
+    .slide {
+      min-width: 200px;
+      text-align: center;
+      background: #222;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 15px rgba(0,255,213,0.1);
+    }
+    .slide img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 0.8rem;
+    }
+    .slide h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
+    }
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      width: 40px; height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
+    .slider-arrow:hover {
+      background: var(--primary-color);
+      color: #000;
+    }
+
+    /****************************************
+     6) OTHER RESOURCES (3D FLIP CARDS)
+    ****************************************/
+    .resources {
+      background: #000;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .resources h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .resource-card {
+      background: #111;
+      perspective: 1000px; /* for 3D flip */
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,0,110,0.1);
+      transition: transform 0.6s;
+    }
+    .resource-inner {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .resource-card:hover .resource-inner {
+      transform: rotateY(180deg);
+    }
+    .resource-front,
+    .resource-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .resource-front {
+      background: #222;
+    }
+    .resource-front img {
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+    .resource-front h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .resource-back {
+      background: var(--secondary-color);
+      transform: rotateY(180deg);
+      color: #fff;
+      text-align: center;
+    }
+    .resource-back p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .resource-link {
+      background: #fff;
+      color: #000;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      transition: 0.3s;
+    }
+    .resource-link:hover {
+      background: var(--primary-color);
+      color: #000;
+    }
+
+    /****************************************
+     7) FOOTER (WITH CIRCUIT IMAGE BG)
+    ****************************************/
+    footer {
+      background: url("https://i.postimg.cc/CLd0kX20/undefined-Imgur-1.png") center/cover no-repeat;
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      color: #fff;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 0;
+    }
+    footer .footer-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    footer h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+    footer p,
+    footer a {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    footer a:hover {
+      color: var(--primary-color);
+    }
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .social-icons a {
+      font-size: 1.3rem;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: var(--primary-color);
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+    .copyright {
+      margin-top: 2rem;
+      color: #999;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ADSENSE (TOP) -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9740641810891672"
+       data-ad-slot="4450618570"
+       data-ad-format="auto"
+       data-full-width-responsive="true">
+  </ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">ByteCore Computer centre</div>
+    <!-- Desktop Nav -->
+    <nav class="desktop">
+      <a href="#home">Home</a>
+      <a href="https://bytecorecomputercentre.blogspot.com/2025/02/about-us.html">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <!-- Mobile Dropdown -->
+    <div class="dropdown" id="dropdown">
+      <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+      <div class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/about-us.html">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <h1>Welcome to ByteCore</h1>
+    <p>Where Hacking Meets Coding</p>
+    <a href="#courses">Explore Courses</a>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section class="courses" id="courses">
+    <h2>Our Advanced Courses</h2>
+    <div class="course-categories">
+      <!-- Diplomas & Certifications -->
+      <div class="course-category">
+        <h3>Diploma & Certification</h3>
+        <div class="course-list">
+          <!-- ADCA -->
+          <div class="course-box">
+            <img 
+              src="https://i.postimg.cc/htM5XYCD/5af5b02d-781b-438f-b7d4-06fdb99ab397.webp" 
+              alt="ADCA"
+            >
+            <div class="course-content">
+              <h4>ADCA</h4>
+              <p>Advanced Diploma in Computer Applications</p>
+              <a class="view-btn" href="https://bytecorecomputercentre.blogspot.com/p/adca-course-bytecore-computer-centre.html">View Course</a>
+            </div>
+          </div>
+          <!-- O-Level -->
+          <div class="course-box">
+            <img 
+              src="https://i.postimg.cc/5tzpBN1m/3512ad98-5ac0-4949-8f2c-89a000872505.jpg" 
+              alt="O-Level"
+            >
+            <div class="course-content">
+              <h4>O-Level</h4>
+              <p>Foundation Level Computer Certification</p>
+              <a class="view-btn" href="https://bytecorecomputercentre.blogspot.com/p/o-level-course-bytecore-computer-centre.html">View Course</a>
+            </div>
+          </div>
+          <!-- CCC -->
+          <div class="course-box">
+            <img 
+              src="https://i.postimg.cc/MG1X0gLB/0e082a2f-1968-41b5-9fc2-13a1d06e3d90.webp" 
+              alt="CCC"
+            >
+            <div class="course-content">
+              <h4>CCC</h4>
+              <p>Course on Computer Concepts</p>
+              <a class="view-btn" href="https://bytecorecomputercentre.blogspot.com/p/ccc-course-bytecore-computer-centre.html">View Course</a>
+            </div>
+          </div>
+          <!-- MDCA -->
+          <div class="course-box">
+            <img 
+              src="https://i.postimg.cc/xCgChngr/6bf27149-8144-4e84-8a49-5b959d76149a.webp" 
+              alt="MDCA"
+            >
+            <div class="course-content">
+              <h4>MDCA</h4>
+              <p>Master Diploma in Computer Applications</p>
+              <a class="view-btn" href="https://bytecorecomputercentre.blogspot.com/p/mdca-course-bytecore-computer-centre.html">View Course</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Programming & Tech -->
+      <div class="course-category">
+        <h3>Programming & Tech</h3>
+        <div class="course-list">
+          <!-- Web Dev -->
+          <div class="course-box">
+            <img 
+              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Web+Dev" 
+              alt="Web Development"
+            >
+            <div class="course-content">
+              <h4>Web Development</h4>
+              <p>HTML, CSS, JavaScript & modern frameworks</p>
+              <a class="view-btn" href="#">View Course</a>
+            </div>
+          </div>
+          <!-- Python -->
+          <div class="course-box">
+            <img 
+              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Python" 
+              alt="Python"
+            >
+            <div class="course-content">
+              <h4>Python Programming</h4>
+              <p>Master Python for Data Science, AI, Web, etc.</p>
+              <a class="view-btn" href="#">View Course</a>
+            </div>
+          </div>
+          <!-- Java -->
+          <div class="course-box">
+            <img 
+              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Java" 
+              alt="Java"
+            >
+            <div class="course-content">
+              <h4>Java Programming</h4>
+              <p>Build robust applications with OOP concepts</p>
+              <a class="view-btn" href="#">View Course</a>
+            </div>
+          </div>
+          <!-- JavaScript -->
+          <div class="course-box">
+            <img 
+              src="https://via.placeholder.com/300x120/000000/00ffd5?text=JavaScript" 
+              alt="JavaScript"
+            >
+            <div class="course-content">
+              <h4>JavaScript</h4>
+              <p>ES6+, front-end frameworks, back-end Node.js</p>
+              <a class="view-btn" href="#">View Course</a>
+            </div>
+          </div>
+          <!-- Ethical Hacking -->
+          <div class="course-box">
+            <img 
+              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Ethical+Hacking" 
+              alt="Ethical Hacking"
+            >
+            <div class="course-content">
+              <h4>Ethical Hacking</h4>
+              <p>Advanced hacking techniques & cyber security</p>
+              <a class="view-btn" href="#">View Course</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT SLIDER (ABOVE FOOTER) -->
+  <section class="student-slider" id="students">
+    <h2>Our Achievers</h2>
+    <div class="slider-container">
+      <div class="slider-track" id="sliderTrack">
+        <!-- Slide 1 -->
+        <div class="slide">
+          <img 
+            src="https://i.postimg.cc/jqzf8Pdj/undefined-Imgur-3.jpg" 
+            alt="Student 1"
+          >
+          <h4>Student 1</h4>
+          <p>Excelled in ADCA</p>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+          <img 
+            src="https://i.postimg.cc/hGHwMkzy/undefined-Imgur-5.jpg" 
+            alt="Student 2"
+          >
+          <h4>Student 2</h4>
+          <p>Now a Java Pro</p>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+          <img 
+            src="https://i.postimg.cc/yYjc67v9/1000097669-fotor-2025011519253.png" 
+            alt="Student 3"
+          >
+          <h4>Student 3</h4>
+          <p>Hacked the planet (Ethically!)</p>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+          <img 
+            src="https://i.ibb.co/whkj2LPW/IMG-20250222-215104-1.jpg" 
+            alt="Student 4"
+          >
+          <h4>Student 4</h4>
+          <p>Python Rockstar</p>
+        </div>
+        <!-- Slide 5 -->
+        <div class="slide">
+          <img 
+            src="https://i.ibb.co/zVkcrSNc/IMG-20250222-215219-1.jpg" 
+            alt="Student 5"
+          >
+          <h4>Student 5</h4>
+          <p>Full-stack Dev</p>
+        </div>
+      </div>
+      <!-- Arrows -->
+      <div class="slider-arrow arrow-left" id="arrowLeft">&#10094;</div>
+      <div class="slider-arrow arrow-right" id="arrowRight">&#10095;</div>
+    </div>
+  </section>
+
+  <!-- OTHER RESOURCES (3D FLIP CARDS) -->
+  <section class="resources" id="resources">
+    <h2>Other Resources</h2>
+    <div class="resource-grid">
+      <!-- Resource 1 -->
+      <div class="resource-card">
+        <div class="resource-inner">
+          <div class="resource-front">
+            <img src="https://i.postimg.cc/3rc8CJ5z/qr-code.png" alt="QR Code">
+            <h3>QR Code Generator</h3>
+          </div>
+          <div class="resource-back">
+            <p>Create custom QR codes with ease!</p>
+            <a class="resource-link" href="https://bytecorecomputercentre.blogspot.com/p/multiline-qr-code-generator-bytecore.html">Try Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Resource 2 -->
+      <div class="resource-card">
+        <div class="resource-inner">
+          <div class="resource-front">
+            <img src="https://i.postimg.cc/59zDHxgx/file.png" alt="Converter">
+            <h3>Bytecore Converter</h3>
+          </div>
+          <div class="resource-back">
+            <p>Convert files to various formats in seconds.</p>
+            <a class="resource-link" href="#">Use Converter</a>
+          </div>
+        </div>
+      </div>
+      <!-- Resource 3 -->
+      <div class="resource-card">
+        <div class="resource-inner">
+          <div class="resource-front">
+            <img src="https://i.postimg.cc/ZqLS2J9P/picture.png" alt="Bytecore Image">
+            <h3>Bytecore Image</h3>
+          </div>
+          <div class="resource-back">
+            <p>Access stock images or custom templates.</p>
+            <a class="resource-link" href="#">Browse Images</a>
+          </div>
+        </div>
+      </div>
+      <!-- Resource 4 -->
+      <div class="resource-card">
+        <div class="resource-inner">
+          <div class="resource-front">
+            <img src="https://i.postimg.cc/mrq7CWj4/certificate.png" alt="Diploma">
+            <h3>Find Diploma</h3>
+          </div>
+          <div class="resource-back">
+            <p>Download your course completion certificates.</p>
+            <a class="resource-link" href="https://bytecorecomputercentre.blogspot.com/p/certificate-download-bytecore-computer.html">Download</a>
+          </div>
+        </div>
+      </div>
+      <!-- Resource 5 -->
+      <div class="resource-card">
+        <div class="resource-inner">
+          <div class="resource-front">
+            <img src="https://i.postimg.cc/K8P08YVy/text-to-speech.png" alt="Text to Speech">
+            <h3>Text to Speech</h3>
+          </div>
+          <div class="resource-back">
+            <p>Convert text into natural voice audio.</p>
+            <a class="resource-link" href="#">Try It</a>
+          </div>
+        </div>
+      </div>
+      <!-- Resource 6 -->
+      <div class="resource-card">
+        <div class="resource-inner">
+          <div class="resource-front">
+            <img src="https://i.postimg.cc/C1mtLKRK/test.png" alt="Test">
+            <h3>Test</h3>
+          </div>
+          <div class="resource-back">
+            <p>Check your knowledge with our practice tests.</p>
+            <a class="resource-link" href="https://bytecorecomputercentre.blogspot.com/p/test.html">Start Test</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div>
+        <h3>About Us</h3>
+        <p>Bytecore Computer Centre is dedicated to providing advanced computer education in hacking, coding, and much more.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: bytecore.info@gmail.com</p>
+        <p>Phone: +916396835709</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="#home">Home</a></p>
+        <p><a href="https://bytecorecomputercentre.blogspot.com/2025/02/about-us.html">About</a></p>
+        <p><a href="#courses">Courses</a></p>
+        <p><a href="#resources">Resources</a></p>
+      </div>
+      <div>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/bytecore_computer_centre/"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/6396835709"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://in.linkedin.com/in/afroj-ahmad-6a626729a"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">
+      © 2025 Bytecore Computer Centre | All Rights Reserved
+    </p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // AdSense
+    (adsbygoogle = window.adsbygoogle || []).push({});
+
+    // Mobile Dropdown Toggle
+    const dropdown = document.getElementById('dropdown');
+    dropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('active');
+    });
+    document.addEventListener('click', (e) => {
+      if(!dropdown.contains(e.target)){
+        dropdown.classList.remove('active');
+      }
+    });
+
+    // Student Slider
+    const sliderTrack = document.getElementById('sliderTrack');
+    const arrowLeft = document.getElementById('arrowLeft');
+    const arrowRight = document.getElementById('arrowRight');
+    let currentIndex = 0;
+
+    arrowLeft.addEventListener('click', () => {
+      if(currentIndex > 0){
+        currentIndex--;
+        sliderTrack.style.transform = `translateX(-${currentIndex * 220}px)`;
+      }
+    });
+    arrowRight.addEventListener('click', () => {
+      // We want to ensure we don't go out of range
+      // "sliderTrack.children.length - 1" might not be enough 
+      // if we want to show partial slides. We'll do a simpler approach:
+      if(currentIndex < sliderTrack.children.length - 1){
+        currentIndex++;
+        sliderTrack.style.transform = `translateX(-${currentIndex * 220}px)`;
+      }
+    });
+  </script>
+</body>
+</html>
