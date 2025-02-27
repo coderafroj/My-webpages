@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LibreOffice Impress Guide - Bytecore Computer Center</title>
+  <meta name="description" content="Ek complete LibreOffice Impress Guide jisme sabhi important topics cover hue hain. CCC level ke users ke liye asaan aur samajhne layak.">
+  <!-- SEO aur responsive design ke liye meta tags -->
+  <style>
+    /* Base styling */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #d63384;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+    }
+    section {
+      background: #fff;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      color: #d63384;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .download-btn {
+      display: inline-block;
+      padding: 0.7rem 1.2rem;
+      background: #198754;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 1rem 0;
+      transition: background 0.3s ease;
+    }
+    .download-btn:hover {
+      background: #157347;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #d63384;
+      color: #fff;
+      margin-top: 2rem;
+    }
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      section {
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LibreOffice Impress Guide</h1>
+    <p>Bytecore Computer Center</p>
+  </header>
+  
+  <div class="container">
+    <!-- Parichay / Introduction -->
+    <section id="introduction">
+      <h2>Parichay</h2>
+      <p>LibreOffice Impress ek free aur open-source presentation software hai jo aapko visually appealing slides banane mein madad karta hai. Yeh guide beginners se lekar advanced users tak ke liye design ki gayi hai, taaki aap asaani se har feature ka upyog kar saken.</p>
+    </section>
+    
+    <!-- Basic Slide Creation -->
+    <section id="basic-slides">
+      <h2>Mool Features aur Basic Slide Creation</h2>
+      <p>Is section mein hum LibreOffice Impress ke basic tools aur slide design par roshni daalte hain:</p>
+      <ul>
+        <li><strong>Slide Layouts:</strong> Pre-designed layouts ka upyog karke attractive slides banayein.</li>
+        <li><strong>Text & Images:</strong> Slides par text, images aur shapes add karna.</li>
+        <li><strong>Backgrounds:</strong> Custom backgrounds aur themes ka istemal.</li>
+      </ul>
+    </section>
+    
+    <!-- Transitions & Animations -->
+    <section id="transitions-animations">
+      <h2>Transitions &amp; Animations</h2>
+      <p>Slides ko dynamic banane ke liye transitions aur animations ka istemal karein:</p>
+      <ul>
+        <li><strong>Slide Transitions:</strong> Smooth transition effects se presentations ko professional banayein.</li>
+        <li><strong>Animations:</strong> Text aur images ke liye entrance, exit, aur emphasis animations add karein.</li>
+        <li><strong>Timing &amp; Effects:</strong> Customize karein animation timing aur duration.</li>
+      </ul>
+    </section>
+    
+    <!-- Advanced Tools -->
+    <section id="advanced-tools">
+      <h2>Advanced Tools aur Features</h2>
+      <p>LibreOffice Impress ke kuch advanced features jo aapki presentations ko next level par le jate hain:</p>
+      <ul>
+        <li><strong>Master Slides:</strong> Consistent design ke liye master slides ka istemal.</li>
+        <li><strong>Custom Animations:</strong> Apne animations ko fully customize karein.</li>
+        <li><strong>Embed Multimedia:</strong> Videos aur audio files ko embed karke interactive slides banayein.</li>
+      </ul>
+    </section>
+    
+    <!-- Productivity Tips -->
+    <section id="shortcuts-tips">
+      <h2>Shortcuts aur Productivity Tips</h2>
+      <p>Yahan kuch important keyboard shortcuts aur tips diye gaye hain jo aapke kaam ko aur bhi asaan banayenge:</p>
+      <ul>
+        <li><strong>F5:</strong> Slideshow mode start karne ke liye.</li>
+        <li><strong>Ctrl+M:</strong> New slide add karne ke liye.</li>
+        <li><strong>Ctrl+Shift+C:</strong> Format painter ka upyog.</li>
+      </ul>
+    </section>
+    
+    <!-- PDF Download -->
+    <section id="pdf-download">
+      <h2>PDF Notes Download</h2>
+      <p>Pura content ek hi PDF file mein uplabdh hai. Neeche diye gaye button par click karke aap guide ka offline version download kar sakte hain.</p>
+      <a class="download-btn" href="libreoffice_impress_guide.pdf" download>PDF Download</a>
+    </section>
+    
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Center. Sabhi adhikar surakshit.</p>
+  </footer>
+  
+  <!-- JavaScript for additional animation effects -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section');
+      const revealSection = () => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            section.style.animationPlayState = 'running';
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSection);
+      revealSection();
+    });
+  </script>
+</body>
+</html>

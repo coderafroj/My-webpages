@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Execution Modes & Arithmetic Operations - Bytecore Computer Center</title>
+  <meta name="description" content="Detailed explanation of Python's execution modes and arithmetic operations with examples.">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      line-height: 1.6;
+    }
+    header {
+      background: #007acc;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      background: #252526;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      display: flex;
+      align-items: center;
+      color: #569cd6;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    h2 svg {
+      margin-right: 10px;
+    }
+    p, li {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .code-sample {
+      background: #1e1e1e;
+      color: #dcdcaa;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Consolas', monospace;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #007acc;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+    .download-btn:hover {
+      background: #005a9e;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007acc;
+      color: #fff;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 10px;
+      }
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Python Execution Modes & Arithmetic Operations</h1>
+    <p>Bytecore Computer Center</p>
+  </header>
+  
+  <div class="container">
+    <!-- Python Execution Modes Section -->
+    <section id="execution-modes">
+      <h2>
+        <!-- Inline SVG Icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5L3 12L8 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 5L21 12L16 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Python Execution Modes
+      </h2>
+      <p>Python ke do main execution modes hote hain:</p>
+      <ul>
+        <li>
+          <strong>IDLE (Interactive Mode):</strong> Python ke saath aata hai, jismein hum ek-ek line likh ke turant execute kar sakte hain.
+          <div class="code-sample">
+<pre>
+>>> print("Hello, Python!")
+</pre>
+          </div>
+          <p>Output:</p>
+          <div class="code-sample">
+<pre>
+Hello, Python!
+</pre>
+          </div>
+        </li>
+        <li>
+          <strong>Script Mode:</strong> Python script (<code>.py</code> file) likh ke complete programs run kar sakte hain.
+          <p><em>Example: Python First Program</em></p>
+          <div class="code-sample">
+<pre>
+# Pehla Python program
+print("Welcome to Python!")
+</pre>
+          </div>
+          <p>Is file ko <code>filename.py</code> naam se save karein aur terminal/command prompt mein run karein:</p>
+          <div class="code-sample">
+<pre>
+python filename.py
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+    <!-- String vs String Arithmetic Operations -->
+    <section id="string-string-ops">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5L3 12L8 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 5L21 12L16 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        String vs String Arithmetic Operations
+      </h2>
+      <p>Python mein strings sirf <code>+</code> operator ke saath concatenate hote hain:</p>
+      <div class="code-sample">
+<pre>
+print("Hello" + " World")
+</pre>
+      </div>
+      <p>Output:</p>
+      <div class="code-sample">
+<pre>
+Hello World
+</pre>
+      </div>
+      <p>Lekin agar hum <code>-</code>, <code>*</code>, ya <code>/</code> operators ka use karein toh error aayega:</p>
+      <div class="code-sample">
+<pre>
+print("Hello" - "World")  # Error
+print("Hello" * "World")  # Error
+print("Hello" / "World")  # Error
+</pre>
+      </div>
+    </section>
+    
+    <!-- String vs Integer Arithmetic Operations -->
+    <section id="string-integer-ops">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5L3 12L8 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 5L21 12L16 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        String vs Integer Arithmetic Operations
+      </h2>
+      <p>String aur integer ke beech <code>+</code> operator se error aayega:</p>
+      <div class="code-sample">
+<pre>
+print("Hello" + 5)  # TypeError
+</pre>
+      </div>
+      <p>Agar multiply (<code>*</code>) karein toh string repeat ho sakti hai:</p>
+      <div class="code-sample">
+<pre>
+print("Hello" * 3)
+</pre>
+      </div>
+      <p>Output:</p>
+      <div class="code-sample">
+<pre>
+HelloHelloHello
+</pre>
+      </div>
+      <p>Lekin <code>/</code> ya <code>-</code> operators ka use karne par error aayega:</p>
+      <div class="code-sample">
+<pre>
+print("Hello" - 3)  # Error
+print("Hello" / 3)  # Error
+</pre>
+      </div>
+    </section>
+    
+    <!-- PDF Download Section -->
+    <section id="pdf-download">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5L3 12L8 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 5L21 12L16 19" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        PDF Notes Download
+      </h2>
+      <p>Pura content ek hi PDF file mein uplabdh hai. Neeche diye gaye button par click karke aap detailed guide ka offline version download kar sakte hain.</p>
+      <a class="download-btn" href="python_execution_guide.pdf" download>PDF Download</a>
+    </section>
+    
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Center. Sabhi adhikar surakshit.</p>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section');
+      const revealSections = () => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            section.style.animationPlayState = 'running';
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSections);
+      revealSections();
+    });
+  </script>
+</body>
+</html>

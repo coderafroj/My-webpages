@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Python Programming Course - Bytecore Computer Centre</title>
+  <meta name="description" content="Complete Python Programming Course: Sabhi Python topics, basics se advanced, Data Types, OOP, Modules, Exception Handling, Libraries aur Projects - Bytecore Computer Centre.">
+  <meta name="keywords" content="Python, Python Course, Python Tutorial, Python Basics, Advanced Python, Data Types, OOP, Modules, Exception Handling, Python Libraries">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS for responsiveness -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Animate.css for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    a { color: #0dcaf0; }
+    .navbar {
+      background-color: #333;
+    }
+    .navbar-nav .nav-link {
+      color: #f1f1f1 !important;
+    }
+    .header {
+      background: url('python-bg.jpg') no-repeat center center/cover;
+      padding: 150px 0;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .header::after {
+      content: "";
+      position: absolute;
+      top:0; left:0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    .header h1, .header p {
+      position: relative;
+      z-index: 2;
+    }
+    .section {
+      padding: 60px 0;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #0dcaf0;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .card {
+      background-color: #2a2a2a;
+      border: none;
+      margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+    .btn-primary {
+      background-color: #0dcaf0;
+      border: none;
+    }
+    footer {
+      background-color: #333;
+      padding: 20px 0;
+      text-align: center;
+      color: #f1f1f1;
+    }
+    
+  </style>
+</head>
+<body>
+  
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">Bytecore Computer Centre</h1>
+      <p class="lead animate__animated animate__fadeInUp">Complete Python Programming Course</p>
+    </div>
+  </header>
+
+  <!-- Introduction Section -->
+  <section class="section" id="introduction" data-aos="fade-up">
+    <div class="container">
+      <h2>Python Programming - Parichay</h2>
+      <p>
+        Python ek versatile aur powerful programming language hai jo beginners se leke experts tak sabko empower karti hai. Is course mein aapko milenge sabhi topics – chhote se chhota detail jaise Data Types ke subtopics se lekar advanced programming techniques tak.
+      </p>
+    </div>
+  </section>
+
+  <!-- Installation Section -->
+  <section class="section bg-dark" id="installation" data-aos="fade-right">
+    <div class="container">
+      <h2>Python Installation &amp; Setup</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Windows, Mac aur Linux ke liye Installation</h4>
+          <p>
+            Python ke official website se installer download karein aur setup wizard follow karke install karein. PATH variable ko set karna na bhoolein!
+          </p>
+          <a href="https://www.python.org/downloads/" target="_blank" class="btn btn-primary">Download Python</a>
+        </div>
+        <div class="col-md-6">
+          <img src="installation.jpg" alt="Installation" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Python Basics: Data Types Section -->
+  <section class="section" id="datatypes" data-aos="fade-left">
+    <div class="container">
+      <h2>Data Types in Python</h2>
+      <div class="row">
+        <!-- Card: Numbers -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="numbers.jpg" class="card-img-top" alt="Numbers">
+            <div class="card-body">
+              <h5 class="card-title">Numbers</h5>
+              <p class="card-text">Integers, floats aur complex numbers ko samjhein.</p>
+              <a href="numbers.html" class="btn btn-primary">Explore Numbers</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Strings -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.2s">
+            <img src="strings.jpg" class="card-img-top" alt="Strings">
+            <div class="card-body">
+              <h5 class="card-title">Strings</h5>
+              <p class="card-text">Text data ko handle karne aur manipulate karne ke techniques.</p>
+              <a href="strings.html" class="btn btn-primary">Explore Strings</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Boolean -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.4s">
+            <img src="boolean.jpg" class="card-img-top" alt="Boolean">
+            <div class="card-body">
+              <h5 class="card-title">Boolean</h5>
+              <p class="card-text">True/False values aur logical operations ko samjhein.</p>
+              <a href="boolean.html" class="btn btn-primary">Explore Boolean</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- More Data Types -->
+      <div class="row mt-4">
+        <!-- Card: Lists -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="lists.jpg" class="card-img-top" alt="Lists">
+            <div class="card-body">
+              <h5 class="card-title">Lists</h5>
+              <p class="card-text">Ordered aur mutable collection of items.</p>
+              <a href="lists.html" class="btn btn-primary">Explore Lists</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Tuples -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.2s">
+            <img src="tuples.jpg" class="card-img-top" alt="Tuples">
+            <div class="card-body">
+              <h5 class="card-title">Tuples</h5>
+              <p class="card-text">Ordered lekin immutable collection of items.</p>
+              <a href="tuples.html" class="btn btn-primary">Explore Tuples</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Sets -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.4s">
+            <img src="sets.jpg" class="card-img-top" alt="Sets">
+            <div class="card-body">
+              <h5 class="card-title">Sets</h5>
+              <p class="card-text">Unordered collection of unique items.</p>
+              <a href="sets.html" class="btn btn-primary">Explore Sets</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Dictionaries -->
+        <div class="col-md-4 mt-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="dictionary.jpg" class="card-img-top" alt="Dictionaries">
+            <div class="card-body">
+              <h5 class="card-title">Dictionaries</h5>
+              <p class="card-text">Key-value pairs ke through data mapping.</p>
+              <a href="dictionaries.html" class="btn btn-primary">Explore Dictionaries</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Python Basics: Variables & Operators Section -->
+  <section class="section bg-dark" id="variables" data-aos="fade-right">
+    <div class="container">
+      <h2>Variables &amp; Operators</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Variables</h4>
+          <p>
+            Variables ko declare karke aap data ko store aur manipulate kar sakte hain. Yahan basic se advanced assignment techniques cover hoti hain.
+          </p>
+          <a href="variables.html" class="btn btn-primary">Explore Variables</a>
+        </div>
+        <div class="col-md-6">
+          <img src="variables-operators.jpg" alt="Variables &amp; Operators" class="img-fluid rounded">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <h4>Operators</h4>
+          <p>
+            Arithmetic, Comparison, Logical, Bitwise, Assignment aur Membership operators ke through aap data par operations perform kar sakte hain.
+          </p>
+          <a href="operators.html" class="btn btn-primary">Explore Operators</a>
+        </div>
+        <div class="col-md-6">
+          <img src="operators.jpg" alt="Operators" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Python Basics: Control Flow Section -->
+  <section class="section" id="controlflow" data-aos="fade-left">
+    <div class="container">
+      <h2>Control Flow</h2>
+      <div class="row">
+        <!-- Card: Conditional Statements -->
+        <div class="col-md-6">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="conditional.jpg" class="card-img-top" alt="Conditional Statements">
+            <div class="card-body">
+              <h5 class="card-title">Conditional Statements</h5>
+              <p class="card-text">if, elif, else ke through decisions kaise lein.</p>
+              <a href="conditionals.html" class="btn btn-primary">Explore Conditionals</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Loops -->
+        <div class="col-md-6">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.2s">
+            <img src="loops.jpg" class="card-img-top" alt="Loops">
+            <div class="card-body">
+              <h5 class="card-title">Loops</h5>
+              <p class="card-text">For aur while loops se repetition handle karna.</p>
+              <a href="loops.html" class="btn btn-primary">Explore Loops</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Functions Section -->
+  <section class="section bg-dark" id="functions" data-aos="fade-up">
+    <div class="container">
+      <h2>Functions</h2>
+      <p>
+        Functions se aap reusable code blocks bana sakte hain. Inme parameters, return values aur lambda functions shamil hote hain.
+      </p>
+      <a href="functions.html" class="btn btn-primary">Explore Functions</a>
+    </div>
+  </section>
+
+  <!-- Modules & Packages Section -->
+  <section class="section" id="modules" data-aos="fade-right">
+    <div class="container">
+      <h2>Modules &amp; Packages</h2>
+      <p>
+        Python ko modular banane ke liye modules aur packages ka upyog hota hai. Built-in modules ke alawa, third-party modules ko pip se install karein.
+      </p>
+      <a href="modules.html" class="btn btn-primary">Explore Modules</a>
+    </div>
+  </section>
+
+  <!-- File I/O Section -->
+  <section class="section bg-dark" id="fileio" data-aos="fade-left">
+    <div class="container">
+      <h2>File I/O</h2>
+      <p>
+        Files ko read aur write karne ke techniques. Text files, CSV aur JSON files ke saath operations explore karein.
+      </p>
+      <a href="fileio.html" class="btn btn-primary">Explore File I/O</a>
+    </div>
+  </section>
+
+  <!-- Exception Handling Section -->
+  <section class="section" id="exceptions" data-aos="fade-up">
+    <div class="container">
+      <h2>Exception Handling</h2>
+      <p>
+        Errors aur exceptions ko handle karne ke liye try, except, finally aur raise ka istemal karein. Custom exceptions bhi banayein.
+      </p>
+      <a href="exceptions.html" class="btn btn-primary">Explore Exception Handling</a>
+    </div>
+  </section>
+
+  <!-- Object-Oriented Programming Section -->
+  <section class="section bg-dark" id="oop" data-aos="fade-right">
+    <div class="container">
+      <h2>Object-Oriented Programming (OOP)</h2>
+      <p>
+        Classes, objects, inheritance, polymorphism, encapsulation aur advanced OOP techniques se Python ko aur powerful banayein.
+      </p>
+      <a href="oop.html" class="btn btn-primary">Explore OOP</a>
+    </div>
+  </section>
+
+  <!-- Advanced Topics Section -->
+  <section class="section" id="advanced-topics" data-aos="fade-left">
+    <div class="container">
+      <h2>Advanced Python Topics</h2>
+      <div class="row">
+        <!-- Card: Decorators -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="decorators.jpg" class="card-img-top" alt="Decorators">
+            <div class="card-body">
+              <h5 class="card-title">Decorators</h5>
+              <p class="card-text">Extend karein functions ki functionality bina code duplicate kare.</p>
+              <a href="decorators.html" class="btn btn-primary">Explore Decorators</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Generators -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.2s">
+            <img src="generators.jpg" class="card-img-top" alt="Generators">
+            <div class="card-body">
+              <h5 class="card-title">Generators</h5>
+              <p class="card-text">Lazy evaluation aur memory efficient iterations ke liye generators ka use.</p>
+              <a href="generators.html" class="btn btn-primary">Explore Generators</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: List Comprehensions -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.4s">
+            <img src="listcomp.jpg" class="card-img-top" alt="List Comprehensions">
+            <div class="card-body">
+              <h5 class="card-title">List Comprehensions</h5>
+              <p class="card-text">Concise syntax se list create karna aur manipulate karna.</p>
+              <a href="listcomp.html" class="btn btn-primary">Explore List Comprehensions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <!-- Card: Iterators -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="iterators.jpg" class="card-img-top" alt="Iterators">
+            <div class="card-body">
+              <h5 class="card-title">Iterators</h5>
+              <p class="card-text">Iteration ko simplify karne ke liye iterators ka use.</p>
+              <a href="iterators.html" class="btn btn-primary">Explore Iterators</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Context Managers -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.2s">
+            <img src="contextmanagers.jpg" class="card-img-top" alt="Context Managers">
+            <div class="card-body">
+              <h5 class="card-title">Context Managers</h5>
+              <p class="card-text">With statement ka upyog karke resources ko manage karein.</p>
+              <a href="contextmanagers.html" class="btn btn-primary">Explore Context Managers</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Multithreading -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.4s">
+            <img src="multithreading.jpg" class="card-img-top" alt="Multithreading">
+            <div class="card-body">
+              <h5 class="card-title">Multithreading</h5>
+              <p class="card-text">Concurrency achieve karne ke liye threads ka istemal.</p>
+              <a href="multithreading.html" class="btn btn-primary">Explore Multithreading</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Regular Expressions -->
+        <div class="col-md-4 mt-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="regex.jpg" class="card-img-top" alt="Regular Expressions">
+            <div class="card-body">
+              <h5 class="card-title">Regular Expressions</h5>
+              <p class="card-text">Text pattern matching ke liye regex ka istemal.</p>
+              <a href="regex.html" class="btn btn-primary">Explore Regex</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Libraries & Frameworks Section -->
+  <section class="section bg-dark" id="libraries" data-aos="fade-up">
+    <div class="container">
+      <h2>Libraries &amp; Frameworks</h2>
+      <div class="row">
+        <!-- Card: NumPy -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="numpy.jpg" class="card-img-top" alt="NumPy">
+            <div class="card-body">
+              <h5 class="card-title">NumPy</h5>
+              <p class="card-text">Scientific computing ke liye ek powerful library.</p>
+              <a href="numpy.html" class="btn btn-primary">Explore NumPy</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Pandas -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.2s">
+            <img src="pandas.jpg" class="card-img-top" alt="Pandas">
+            <div class="card-body">
+              <h5 class="card-title">Pandas</h5>
+              <p class="card-text">Data analysis aur manipulation ke liye essential.</p>
+              <a href="pandas.html" class="btn btn-primary">Explore Pandas</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Data Visualization -->
+        <div class="col-md-4">
+          <div class="card animate__animated animate__zoomIn" data-wow-delay="0.4s">
+            <img src="dataviz.jpg" class="card-img-top" alt="Data Visualization">
+            <div class="card-body">
+              <h5 class="card-title">Data Visualization</h5>
+              <p class="card-text">Matplotlib &amp; Seaborn ke sath data ko visually represent karein.</p>
+              <a href="dataviz.html" class="btn btn-primary">Explore Data Viz</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card: Web Frameworks -->
+        <div class="col-md-4 mt-4">
+          <div class="card animate__animated animate__zoomIn">
+            <img src="webframeworks.jpg" class="card-img-top" alt="Web Frameworks">
+            <div class="card-body">
+              <h5 class="card-title">Web Frameworks</h5>
+              <p class="card-text">Flask aur Django ke sath web development explore karein.</p>
+              <a href="webframeworks.html" class="btn btn-primary">Explore Web Frameworks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects" data-aos="fade-right">
+    <div class="container">
+      <h2>Projects &amp; Real-World Applications</h2>
+      <p>
+        Apne sikhe huye concepts ko projects ke through apply karein – chaahe simple calculator ho ya complex web application.
+      </p>
+      <a href="projects.html" class="btn btn-primary">Explore Projects</a>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="section bg-dark" id="resources" data-aos="fade-left">
+    <div class="container">
+      <h2>Additional Resources &amp; Further Learning</h2>
+      <p>
+        Python documentation, online tutorials, books, aur community forums ke links jisse aap aur gahrai se seekh sakein.
+      </p>
+      <a href="resources.html" class="btn btn-primary">Explore Resources</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Bytecore Computer Centre. Sabhi adhikar surakshit.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: jQuery, Popper, Bootstrap, AOS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'slide'
+    });
+  </script>
+</body>
+</html>

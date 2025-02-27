@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Syntax Guide - Bytecore Computer Center</title>
+  <meta name="description" content="Ek comprehensive guide jo Python ke basic structure, indentation, statements aur advanced syntax features ko deeply explain karti hai.">
+  <style>
+    /* Basic Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      line-height: 1.6;
+    }
+    header {
+      background: #007acc;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      background: #252526;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      display: flex;
+      align-items: center;
+      color: #569cd6;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    h2 svg {
+      margin-right: 10px;
+    }
+    p, li {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .code-sample {
+      background: #1e1e1e;
+      color: #dcdcaa;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Consolas', monospace;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007acc;
+      color: #fff;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 10px;
+      }
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Python Syntax Guide</h1>
+    <p>Bytecore Computer Center</p>
+  </header>
+  
+  <div class="container">
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+          <path d="M12 6V12L16 14" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Parichay
+      </h2>
+      <p>
+        Python syntax ka mool uddeshya code ko simple, readable aur efficient banana hai. Is guide mein hum Python ke basic structure, indentation, statements, aur advanced syntax features ko deeply cover karenge.
+      </p>
+    </section>
+    
+    <!-- Basic Structure -->
+    <section id="basic-structure">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#569cd6" stroke-width="2"/>
+        </svg>
+        Basic Structure
+      </h2>
+      <p>
+        Python programs sequentially execute hote hain. Har program mein statements ek certain order mein likhe jate hain. Yeh structure code ko asaani se follow karne layak banata hai.
+      </p>
+      <div class="code-sample">
+<pre>
+# Ek simple Python program
+print("Hello, World!")
+</pre>
+      </div>
+    </section>
+    
+    <!-- Indentation -->
+    <section id="indentation">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H20V20H4V4Z" stroke="#569cd6" stroke-width="2"/>
+        </svg>
+        Indentation
+      </h2>
+      <p>
+        Python mein indentation ka bahut mahatva hai. Code blocks ko define karne ke liye whitespace ka upyog kiya jata hai. Galat indentation se <code>IndentationError</code> aata hai.
+      </p>
+      <div class="code-sample">
+<pre>
+if 5 > 2:
+    print("5 is greater than 2")  # Sahi indentation
+else:
+    print("This will not print")
+</pre>
+      </div>
+    </section>
+    
+    <!-- Statements & Expressions -->
+    <section id="statements">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 22h20L12 2Z" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Statements &amp; Expressions
+      </h2>
+      <p>
+        Python code ka mool tatva statements hote hain. Har statement ek action ko represent karta hai. Expression se calculation ya logical operation perform hota hai.
+      </p>
+      <div class="code-sample">
+<pre>
+# Assignment statement
+x = 10
+
+# Expression statement
+x + 5
+
+# Conditional statement
+if x > 5:
+    print("x is greater than 5")
+</pre>
+      </div>
+    </section>
+    
+    <!-- Variables & Data Types -->
+    <section id="variables">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+        </svg>
+        Variables &amp; Data Types
+      </h2>
+      <p>
+        Python dynamically typed language hai jahan variable declare karne ke liye value assign karna hi kaafi hai. Alag-alag data types, jaise integer, float, string, list, etc., available hain.
+      </p>
+      <div class="code-sample">
+<pre>
+# Variable assignments
+num = 42            # Integer
+pi = 3.14159        # Floating-point
+greeting = "Hello"  # String
+</pre>
+      </div>
+    </section>
+    
+    <!-- Functions & Modules -->
+    <section id="functions">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" 
+                stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 12l2 2 4-4" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Functions &amp; Modules
+      </h2>
+      <p>
+        Functions code ko reusable blocks mein todte hain. <code>def</code> keyword ka use karke function banaya jata hai, jisse aap repetitive tasks ko modular tarike se perform kar sakte hain.
+      </p>
+      <div class="code-sample">
+<pre>
+def add(a, b):
+    """Do numbers ka sum return karta hai."""
+    return a + b
+
+print(add(5, 3))  # Output: 8
+</pre>
+      </div>
+    </section>
+    
+    <!-- Comments & Documentation -->
+    <section id="comments">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" 
+                stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Comments &amp; Documentation
+      </h2>
+      <p>
+        Code ko samjhane ke liye comments ka upyog kiya jata hai. Ek-line comments ke liye <code>#</code> aur multi-line comments ke liye triple quotes (<code>''' ... '''</code> ya <code>""" ... """</code>) ka use hota hai.
+      </p>
+      <div class="code-sample">
+<pre>
+# Yeh ek single-line comment hai
+
+"""
+Yeh ek multi-line comment hai.
+Iska upyog documentation ke liye hota hai.
+"""
+</pre>
+      </div>
+    </section>
+    
+    <!-- Advanced Syntax Features -->
+    <section id="advanced-syntax">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 22h20L12 2z" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Advanced Syntax Features
+      </h2>
+      <p>
+        Python mein list comprehensions, lambda functions, generator expressions jaise advanced features available hain, jo concise aur expressive code likhne mein madad karte hain.
+      </p>
+      <div class="code-sample">
+<pre>
+# List Comprehension Example
+squares = [x*x for x in range(1, 11)]
+print(squares)
+
+# Lambda Function Example
+multiply = lambda a, b: a * b
+print(multiply(3, 4))
+</pre>
+      </div>
+    </section>
+    
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+          <path d="M12 6v6l4 2" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Conclusion
+      </h2>
+      <p>
+        Python syntax ko samajhna code likhne ki kala ka mool hai. Is guide mein basic structure, indentation, statements, variables, functions aur advanced features cover kiye gaye hain. In concepts ki practice se hi aap ek efficient programmer ban sakte hain.
+      </p>
+    </section>
+    
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Center. Sabhi adhikar surakshit.</p>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section');
+      const revealSections = () => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            section.style.animationPlayState = 'running';
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSections);
+      revealSections();
+    });
+  </script>
+</body>
+</html>

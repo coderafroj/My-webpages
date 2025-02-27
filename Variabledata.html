@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables & Data Types - Bytecore Computer Center</title>
+  <meta name="description" content="Advanced guide on Python Variables & Data Types: numbers, strings, booleans, and type casting. Deep insights into dynamic typing and type conversions.">
+  <style>
+    /* Basic Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      line-height: 1.6;
+    }
+    header {
+      background: #007acc;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      background: #252526;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      display: flex;
+      align-items: center;
+      color: #569cd6;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    h2 svg {
+      margin-right: 10px;
+    }
+    p, li {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .code-sample {
+      background: #1e1e1e;
+      color: #dcdcaa;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Consolas', monospace;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007acc;
+      color: #fff;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 10px;
+      }
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Variables &amp; Data Types</h1>
+    <p>Bytecore Computer Center</p>
+  </header>
+  
+  <div class="container">
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+          <path d="M12 6V12L16 14" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Parichay
+      </h2>
+      <p>
+        Python ke programming model ka mool aadhaar hai variables aur unke sath associated data types. Is guide mein hum advanced level par numbers, strings, booleans, aur type casting ko deeply samjhenge, taaki aap apne code ko robust aur efficient bana sakein.
+      </p>
+    </section>
+    
+    <!-- Variables & Dynamic Typing -->
+    <section id="variables">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#569cd6" stroke-width="2"/>
+        </svg>
+        Variables &amp; Dynamic Typing
+      </h2>
+      <p>
+        Python ek dynamically typed language hai. Iska matlab hai ki aapko variable ka type explicitly declare karne ki zaroorat nahi; variable ko assigned value ke hisaab se hi type decide ho jata hai.
+      </p>
+      <div class="code-sample">
+<pre>
+# Dynamic typing example
+x = 10          # x is an integer
+x = "Hello"     # Now x becomes a string
+</pre>
+      </div>
+    </section>
+    
+    <!-- Numbers -->
+    <section id="numbers">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12h16" stroke="#569cd6" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 4v16" stroke="#569cd6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Numbers
+      </h2>
+      <p>
+        Python mein numbers alag-alag types ke hote hain:
+      </p>
+      <ul>
+        <li><strong>Integers:</strong> Purnank, jaise <code>10</code>, <code>-5</code>, <code>0</code>.</li>
+        <li><strong>Floating-point:</strong> Decimal numbers, jaise <code>3.14</code>, <code>-0.001</code>.</li>
+        <li><strong>Complex Numbers:</strong> Jisme real aur imaginary parts hote hain, jaise <code>2 + 3j</code>.</li>
+      </ul>
+      <div class="code-sample">
+<pre>
+# Number examples
+a = 15           # Integer
+b = 3.14         # Float
+c = 2 + 3j       # Complex number
+
+# Basic arithmetic
+sum = a + b
+product = a * b
+</pre>
+      </div>
+    </section>
+    
+    <!-- Strings -->
+    <section id="strings">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16v16H4V4z" stroke="#569cd6" stroke-width="2"/>
+        </svg>
+        Strings
+      </h2>
+      <p>
+        Strings text ko represent karte hain. Python mein strings immutable hoti hain, matlab ek baar create ho gayi to usme direct changes nahi kiye ja sakte. Aap concatenation, slicing, aur formatting se strings ko manipulate kar sakte hain.
+      </p>
+      <div class="code-sample">
+<pre>
+# String examples
+s1 = "Hello"
+s2 = "World"
+s3 = s1 + " " + s2       # Concatenation
+print(s3)               # Output: Hello World
+
+# Slicing
+print(s3[0:5])          # Output: Hello
+
+# Formatting using f-string
+name = "Alice"
+greeting = f"Welcome, {name}!"
+print(greeting)
+</pre>
+      </div>
+    </section>
+    
+    <!-- Booleans -->
+    <section id="booleans">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+          <path d="M8 12h8" stroke="#569cd6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Booleans
+      </h2>
+      <p>
+        Boolean data type keval do hi values leta hai: <code>True</code> aur <code>False</code>. Ye logical decisions, comparisons, aur control flow ke liye bahut important hote hain.
+      </p>
+      <div class="code-sample">
+<pre>
+# Boolean examples
+is_valid = True
+is_empty = False
+
+# Using booleans in conditions
+if is_valid:
+    print("Condition is True")
+</pre>
+      </div>
+    </section>
+    
+    <!-- Data Structures: List, Tuple, Dictionary, Set Section -->
+<section id="data-structures">
+  <h2>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4h16v16H4V4z" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Data Structures: List, Tuple, Dictionary, Set
+  </h2>
+  <p>
+    Python mein built-in data structures aapko complex data ko store aur manipulate karne mein madad karte hain.
+  </p>
+  <ul>
+    <li>
+      <strong>List:</strong> Ordered, mutable sequence of items.
+      <div class="code-sample">
+<pre>
+# List example
+my_list = [1, 2, 3, "Python", True]
+print(my_list)
+</pre>
+      </div>
+    </li>
+    <li>
+      <strong>Tuple:</strong> Ordered, immutable sequence of items.
+      <div class="code-sample">
+<pre>
+# Tuple example
+my_tuple = (1, 2, 3, "Python", True)
+print(my_tuple)
+</pre>
+      </div>
+    </li>
+    <li>
+      <strong>Dictionary:</strong> Unordered collection of key-value pairs.
+      <div class="code-sample">
+<pre>
+# Dictionary example
+my_dict = {"name": "Alice", "age": 30, "city": "Delhi"}
+print(my_dict)
+</pre>
+      </div>
+    </li>
+    <li>
+      <strong>Set:</strong> Unordered collection of unique items.
+      <div class="code-sample">
+<pre>
+# Set example
+my_set = {1, 2, 3, 3, 2}
+print(my_set)  # Output: {1, 2, 3}
+</pre>
+      </div>
+    </li>
+  </ul>
+</section>
+
+    
+    <!-- Type Casting -->
+    <section id="type-casting">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 12h10v10" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Type Casting
+      </h2>
+      <p>
+        Type casting se aap ek data type ko doosre data type mein convert kar sakte hain. Python mein built-in functions jaise <code>int()</code>, <code>float()</code>, <code>str()</code>, aur <code>bool()</code> ka istemal hota hai.
+      </p>
+      <div class="code-sample">
+<pre>
+# Converting a string to an integer and float
+num_str = "100"
+num_int = int(num_str)       # Converts to integer
+num_float = float(num_str)   # Converts to float
+
+# Converting numbers to a string
+text = str(num_int)
+
+# Boolean conversion
+val1 = bool(0)      # False
+val2 = bool(5)      # True
+</pre>
+      </div>
+    </section>
+    
+    <!-- Advanced Topic: Type Hints -->
+    <section id="advanced-type-hints">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" 
+                stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 12l2 2 4-4" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Advanced: Type Hints
+      </h2>
+      <p>
+        Python 3.5 se, type hints se aap apne code ke function parameters aur return types ko explicitly define kar sakte hain, jisse code ki readability aur debugging asaan ho jati hai.
+      </p>
+      <div class="code-sample">
+<pre>
+# Type hints example
+def add_numbers(a: int, b: int) -> int:
+    return a + b
+
+result: int = add_numbers(10, 20)
+print(result)  # Output: 30
+</pre>
+      </div>
+    </section>
+    
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+          <path d="M12 6v6l4 2" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Conclusion
+      </h2>
+      <p>
+        Variables aur data types Python ke programming model ka mool hissa hain. Inhein samajhne se aap complex data manipulations aur logical operations ko effectively implement kar sakte hain. Regular practice aur experimentation se aap in advanced concepts mein proficiency hasil kar sakte hain.
+      </p>
+    </section>
+    
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Center. Sabhi adhikar surakshit.</p>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section');
+      const revealSections = () => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            section.style.animationPlayState = 'running';
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSections);
+      revealSections();
+    });
+  </script>
+</body>
+</html>

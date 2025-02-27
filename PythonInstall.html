@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Installation Guide - Bytecore Computer Center</title>
+  <meta name="description" content="Complete guide to installing Python on Windows, macOS, Linux, and Android.">
+  <style>
+    /* Basic Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      line-height: 1.6;
+    }
+    header {
+      background: #007acc;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      background: #252526;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      display: flex;
+      align-items: center;
+      color: #569cd6;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    h2 svg {
+      margin-right: 10px;
+    }
+    p, li {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .code-sample {
+      background: #1e1e1e;
+      color: #dcdcaa;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Consolas', monospace;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #007acc;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+    .download-btn:hover {
+      background: #005a9e;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007acc;
+      color: #fff;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 10px;
+      }
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Python Installation Guide</h1>
+    <p>Bytecore Computer Center</p>
+  </header>
+  
+  <div class="container">
+    <!-- Parichay / Introduction -->
+    <section id="introduction">
+      <h2>
+        <!-- SVG Icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#569cd6" stroke-width="2"/>
+          <path d="M12 6V12L16 14" stroke="#569cd6" stroke-width="2" 
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Parichay
+      </h2>
+      <p>Python ek bahut hi lokpriya programming language hai. Is guide mein aapko bataya jayega ki kaise aap apne system par Python install kar sakte hain. Yeh guide Windows, macOS, Linux, aur Android sabhi platforms ke liye hai.</p>
+    </section>
+    
+    <!-- Windows Installation -->
+    <section id="windows-install">
+      <h2>
+        <!-- SVG Icon for Windows -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#569cd6" stroke-width="2"/>
+        </svg>
+        Windows Installation
+      </h2>
+      <p>Windows par Python install karne ke liye neeche diye gaye steps follow karein:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Python ki official website <a href="https://www.python.org/downloads/" target="_blank" style="color:#569cd6;">python.org/downloads</a> par jayein.</li>
+        <li><strong>Step 2:</strong> Windows installer (executable) download karein.</li>
+        <li><strong>Step 3:</strong> Installer run karte waqt "Add Python to PATH" option ko select karein.</li>
+        <li><strong>Step 4:</strong> Installation complete hone ke baad Command Prompt kholkar <code>python --version</code> command run karein.</li>
+      </ul>
+    </section>
+    
+    <!-- macOS Installation -->
+    <section id="macos-install">
+      <h2>
+        <!-- SVG Icon for macOS -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8 2 5 5 5 8v8c0 3 3 6 7 6s7-3 7-6V8c0-3-3-6-7-6z" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 15v7" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        macOS Installation
+      </h2>
+      <p>macOS par Python install karne ke liye neeche diye gaye steps follow karein:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Python ki official website se macOS installer download karein.</li>
+        <li><strong>Step 2:</strong> Installer package (<code>.pkg</code> file) ko open karke instructions follow karein.</li>
+        <li><strong>Step 3:</strong> Terminal kholkar <code>python3 --version</code> command run karein (kyunki macOS mein Python 2 bhi available hota hai, isliye <code>python3</code> ka upyog karein).</li>
+      </ul>
+    </section>
+    
+    <!-- Linux Installation -->
+    <section id="linux-install">
+      <h2>
+        <!-- SVG Icon for Linux -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H20V20H4V4Z" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 9H20" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Linux Installation
+      </h2>
+      <p>Linux distributions par Python install karne ke liye terminal commands ka upyog karein:</p>
+      <ul>
+        <li>
+          <strong>Debian/Ubuntu:</strong>
+          <div class="code-sample">
+<pre>
+sudo apt update
+sudo apt install python3
+</pre>
+          </div>
+        </li>
+        <li>
+          <strong>Fedora:</strong>
+          <div class="code-sample">
+<pre>
+sudo dnf install python3
+</pre>
+          </div>
+        </li>
+        <li>
+          <strong>Arch Linux:</strong>
+          <div class="code-sample">
+<pre>
+sudo pacman -S python
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+    <!-- Android Installation -->
+    <section id="android-install">
+      <h2>
+        <!-- SVG Icon for Android -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8 2 5 5 5 8v8c0 3 3 6 7 6s7-3 7-6V8c0-3-3-6-7-6z" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 14h6" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Android Installation
+      </h2>
+      <p>Android device par Python run karne ke liye do popular apps ka upyog kiya ja sakta hai:</p>
+      <ul>
+        <li>
+          <strong>Pydroid 3:</strong> Google Play Store se download karein. Yeh app ek complete Python IDE provide karta hai jisme aap directly Python scripts run kar sakte hain.
+        </li>
+        <li>
+          <strong>Termux:</strong> Termux app install karein, phir terminal mein <code>pkg install python</code> command run karein.
+        </li>
+      </ul>
+      <p>In apps ke through aap Python scripts ko directly apne Android device par execute kar sakte hain.</p>
+    </section>
+    
+    <!-- PDF Download Section -->
+    <section id="pdf-download">
+      <h2>
+        <!-- SVG Icon for PDF Download -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2V16" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 12L12 16L16 12" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 22H20" stroke="#569cd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        PDF Notes Download
+      </h2>
+      <p>Complete Python Installation guide ka offline version ek hi PDF file mein uplabdh hai. Neeche diye gaye button par click karke download karein.</p>
+      <a class="download-btn" href="python_installation_guide.pdf" download>PDF Download</a>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Center. Sabhi adhikar surakshit.</p>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section');
+      const revealSections = () => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            section.style.animationPlayState = 'running';
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSections);
+      revealSections();
+    });
+  </script>
+</body>
+</html>

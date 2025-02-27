@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Introduction - Bytecore Computer Center</title>
+  <meta name="description" content="Ek dam complete Python introduction page jisme Python ke itihaas, design philosophy, features, syntax, libraries aur use cases ka detailed vishleshan hai.">
+  <style>
+    /* Basic Reset and Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      line-height: 1.6;
+    }
+    header {
+      background: #007acc;
+      padding: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      background: #252526;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      color: #569cd6;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 10px;
+    }
+    p, li {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .code-sample {
+      background: #1e1e1e;
+      color: #dcdcaa;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Consolas', monospace;
+      overflow-x: auto;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #007acc;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+    .download-btn:hover {
+      background: #005a9e;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007acc;
+      color: #ffffff;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 10px;
+      }
+      section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Python Introduction</h1>
+    <p>Bytecore Computer Center</p>
+  </header>
+  
+  <div class="container">
+    <!-- Parichay / Introduction -->
+    <section id="introduction">
+      <h2>Parichay</h2>
+      <p>Python ek high-level, interpreted programming language hai jo simplicity, readability aur efficiency ke liye jaani jaati hai. Aaj ke digital yug mein, Python ka upyog web development, data science, automation, scripting, aur machine learning jaise kai kshetron mein hota hai.</p>
+    </section>
+    
+    <!-- Python ka Itihaas -->
+    <section id="history">
+      <h2>Python ka Itihaas</h2>
+      <p>Python ka janm 1980 ke antim dino mein hua, jab Guido van Rossum ne is language ko develop karna shuru kiya. 1991 mein iska pehla public release hua. Python ko design karte waqt mukhya uddeshya tha ek aisi language create karna jo asaan, readable aur powerful ho, jisse complex problems ko solve kiya ja sake.</p>
+      <p>Guido van Rossum ne chhuttiyon ke dauran bhi is language par kaam kiya, jisse iska design philosophy aur bhi prabhavit hui. Python ka itihaas modern programming paradigms ko dhyan mein rakhte hue evolve hua hai, aur aaj iska ecosystem bahut hi vast aur diversified hai.</p>
+    </section>
+    
+    <!-- Design Philosophy: Zen of Python -->
+    <section id="design-philosophy">
+      <h2>Design Philosophy: Zen of Python</h2>
+      <p>Python ki design philosophy ka mool mantra hai <strong>"Zen of Python"</strong>. Ismein kuch pramukh siddhant hain:</p>
+      <ul>
+        <li><strong>Simple is better than complex:</strong> Code ko simple aur asaan banaya jata hai.</li>
+        <li><strong>Explicit is better than implicit:</strong> Har functionality ko spast roop se vyakt kiya jata hai.</li>
+        <li><strong>Readability counts:</strong> Code likhne mein readability aur maintainability ko bahut mehatva diya jata hai.</li>
+        <li><strong>There should be one-- and preferably only one --obvious way to do it:</strong> Ek hi clear approach follow ki jati hai, jo beginners aur professionals dono ke liye asaan ho.</li>
+      </ul>
+    </section>
+    
+    <!-- Python ke Features -->
+    <section id="features">
+      <h2>Python ke Features</h2>
+      <ul>
+        <li><strong>Interpreted Language:</strong> Code ko bina compile kiye seedha run kiya ja sakta hai.</li>
+        <li><strong>Dynamic Typing:</strong> Variables ko dynamically assign kiya jata hai, jisse flexibility milti hai.</li>
+        <li><strong>Extensive Standard Library:</strong> Bahut saare built-in modules jo har tarah ke tasks mein madad karte hain.</li>
+        <li><strong>Object-Oriented Programming:</strong> Modular aur reusable code likhne ke liye classes aur objects ka upyog.</li>
+        <li><strong>Cross-Platform:</strong> Windows, macOS, Linux sabhi par seamlessly chalne wali language.</li>
+      </ul>
+    </section>
+    
+    <!-- Python Syntax aur Code Example -->
+    <section id="syntax">
+      <h2>Python Syntax aur Code Example</h2>
+      <p>Python ka syntax bahut hi clean aur understandable hai. Neeche ek chhota sa code snippet diya gaya hai jo Python ke basic syntax ko darshata hai:</p>
+      <div class="code-sample">
+<pre>
+# Yeh ek simple Python function hai
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Bytecore"))
+</pre>
+      </div>
+      <p>Is example mein, <code>greet</code> function ko define karke use call kiya gaya hai, jisse output mein greeting message milta hai.</p>
+    </section>
+    
+    <!-- Popular Libraries aur Frameworks -->
+    <section id="libraries">
+      <h2>Popular Libraries aur Frameworks</h2>
+      <p>Python ke paas ek vishal ecosystem hai jisme kai powerful libraries aur frameworks shamil hain, jo alag-alag domains mein use hote hain:</p>
+      <ul>
+        <li><strong>Django &amp; Flask:</strong> Web development ke liye.</li>
+        <li><strong>Pandas &amp; NumPy:</strong> Data analysis aur scientific computing ke liye.</li>
+        <li><strong>TensorFlow &amp; PyTorch:</strong> Machine learning aur deep learning ke liye.</li>
+        <li><strong>Matplotlib:</strong> Data visualization ke liye.</li>
+      </ul>
+    </section>
+    
+    <!-- Use Cases aur Applications -->
+    <section id="use-cases">
+      <h2>Use Cases aur Applications</h2>
+      <p>Python ka upyog kai alag-alag kshetron mein ho raha hai:</p>
+      <ul>
+        <li><strong>Web Development:</strong> Dynamic aur scalable websites banane ke liye.</li>
+        <li><strong>Data Science:</strong> Data processing, visualization, aur machine learning models develop karne ke liye.</li>
+        <li><strong>Automation:</strong> Scripting aur repetitive tasks ko automate karne ke liye.</li>
+        <li><strong>Scientific Computing:</strong> Research aur simulation projects ke liye.</li>
+        <li><strong>Game Development:</strong> Simple games se le kar complex simulations tak.</li>
+      </ul>
+    </section>
+    
+    <!-- Community aur Bhavishya -->
+    <section id="community">
+      <h2>Python Community aur Bhavishya</h2>
+      <p>Python community globally bahut hi active hai. Developers, researchers aur enthusiasts milkar is language ko aur behtar banane mein lagatar kaam kar rahe hain. Python ka bhavishya naye innovations aur technological advancements se bhara hua hai, jo programming aur software development ke naye dimensions kholenge.</p>
+    </section>
+    
+    <!-- PDF Download Section -->
+    <section id="pdf-download">
+      <h2>PDF Notes Download</h2>
+      <p>Is comprehensive Python introduction guide ka offline version ek hi PDF file mein uplabdh hai. Neeche diye gaye button par click karke aap is detailed guide ko download kar sakte hain.</p>
+      <a class="download-btn" href="python_introduction_guide.pdf" download>PDF Download</a>
+    </section>
+    
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Center. Sabhi adhikar surakshit.</p>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section');
+      const revealSections = () => {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            section.style.animationPlayState = 'running';
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSections);
+      revealSections();
+    });
+  </script>
+</body>
+</html>
