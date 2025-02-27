@@ -8,10 +8,10 @@
   <meta name="keywords" content="ADCA, O-Level, CCC, MDCA, Web Development, Python, Java, JavaScript, Ethical Hacking, Bytecore">
   <meta name="author" content="Bytecore">
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
+  <!-- Google Fonts + Font Awesome -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Google AdSense (Adjust as needed) -->
   <script async 
@@ -29,7 +29,7 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'orbitron', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: #000; /* Dark background */
       color: #fff;      /* Light text */
       overflow-x: hidden;
@@ -65,7 +65,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .logo {
-      font-size: 1rem;
+      font-size: .9rem;
       font-weight: bold;
       color: var(--primary-color);
       text-transform: uppercase;
@@ -74,7 +74,6 @@
     }
     .logo:hover {
       text-shadow: 0 0 10px var(--primary-color);
-      font-size: 1.2rem;
     }
 
     /* Desktop Nav */
@@ -229,7 +228,7 @@
       background: var(--card-bg);
       border: 2px solid transparent;
       border-radius: 8px;
-      overflow: hidden;
+      overflow: hidden; /* For the hover-zoom effect */
       transition: 0.3s;
       position: relative;
       min-height: 240px;
@@ -242,11 +241,12 @@
       box-shadow: 0 0 15px rgba(0,255,213,0.2);
       transform: translateY(-5px);
     }
+    /* FIX: let images show fully (no cropping) */
     .course-box img {
       width: 100%;
-      height: 120px;
-      object-fit: cover;
+      height: auto;
       transition: transform 0.5s;
+      display: block;
     }
     .course-box:hover img {
       transform: scale(1.05);
@@ -326,27 +326,6 @@
     .slide h4 {
       color: var(--primary-color);
       margin-bottom: 0.3rem;
-    }
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      width: 40px; height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 2;
-    }
-    .arrow-left { left: 10px; }
-    .arrow-right { right: 10px; }
-    .slider-arrow:hover {
-      background: var(--primary-color);
-      color: #000;
     }
 
     /****************************************
@@ -439,7 +418,7 @@
      7) FOOTER (WITH CIRCUIT IMAGE BG)
     ****************************************/
     footer {
-      background: url("https://i.postimg.cc/CLd0kX20/undefined-Imgur-1.png") center/cover no-repeat;
+      background: url("https://i.postimg.cc/1tjCSgsh/circuit-footer.jpg") center/cover no-repeat;
       padding: 3rem 2rem;
       text-align: center;
       position: relative;
@@ -512,7 +491,7 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">ByteCore Computer centre</div>
+    <div class="logo">ByteCore Computer Centre</div>
     <!-- Desktop Nav -->
     <nav class="desktop">
       <a href="#home">Home</a>
@@ -618,7 +597,7 @@
           <!-- Python -->
           <div class="course-box">
             <img 
-              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Python" 
+              src="https://i.ibb.co/mFTyzFTw/5f5130b4-e88d-4f1d-a778-c89cbf660776.webp?text=Python" 
               alt="Python"
             >
             <div class="course-content">
@@ -630,7 +609,7 @@
           <!-- Java -->
           <div class="course-box">
             <img 
-              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Java" 
+              src="https://i.ibb.co/6cmCzt35/f2058067-bd42-4257-96d1-3ac8e8e0feb6.webp?text=Java" 
               alt="Java"
             >
             <div class="course-content">
@@ -642,7 +621,7 @@
           <!-- JavaScript -->
           <div class="course-box">
             <img 
-              src="https://via.placeholder.com/300x120/000000/00ffd5?text=JavaScript" 
+              src="https://i.ibb.co/JFQcQ2kS/a5ceec41-0dfe-47d3-8142-15656db8103b.webp?text=JavaScript" 
               alt="JavaScript"
             >
             <div class="course-content">
@@ -654,7 +633,7 @@
           <!-- Ethical Hacking -->
           <div class="course-box">
             <img 
-              src="https://via.placeholder.com/300x120/000000/00ffd5?text=Ethical+Hacking" 
+              src="https://i.ibb.co/SwGD9v01/fa6e865c-aefa-4885-9b40-35c5e82cdf72.webp?text=Ethical+Hacking" 
               alt="Ethical Hacking"
             >
             <div class="course-content">
@@ -719,9 +698,6 @@
           <p>Full-stack Dev</p>
         </div>
       </div>
-      <!-- Arrows -->
-      <div class="slider-arrow arrow-left" id="arrowLeft">&#10094;</div>
-      <div class="slider-arrow arrow-right" id="arrowRight">&#10095;</div>
     </div>
   </section>
 
@@ -860,27 +836,16 @@
       }
     });
 
-    // Student Slider
+    // Student Slider Auto Slide
     const sliderTrack = document.getElementById('sliderTrack');
-    const arrowLeft = document.getElementById('arrowLeft');
-    const arrowRight = document.getElementById('arrowRight');
     let currentIndex = 0;
-
-    arrowLeft.addEventListener('click', () => {
-      if(currentIndex > 0){
-        currentIndex--;
-        sliderTrack.style.transform = `translateX(-${currentIndex * 220}px)`;
-      }
-    });
-    arrowRight.addEventListener('click', () => {
-      // We want to ensure we don't go out of range
-      // "sliderTrack.children.length - 1" might not be enough 
-      // if we want to show partial slides. We'll do a simpler approach:
-      if(currentIndex < sliderTrack.children.length - 1){
-        currentIndex++;
-        sliderTrack.style.transform = `translateX(-${currentIndex * 220}px)`;
-      }
-    });
+    const totalSlides = sliderTrack.children.length;
+    const slideWidth = 220; // Keeping the same slide width multiplier
+    // Auto slide every 3 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }, 3000);
   </script>
 </body>
 </html>
