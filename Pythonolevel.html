@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Python topics from Introduction to File Handling in-depth. Learn Python basics with Bytecore Computer Centre." />
+  <meta name="keywords" content="Python Basics, Python Course, O Level Python, File Handling, Bytecore Computer Centre" />
+  <meta name="author" content="Bytecore Computer Centre" />
+  <title>O-Level Python Course Topics | Bytecore Computer Centre</title>
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-color: #2c7a7b;
+      --secondary-color: #285e61;
+      --accent-color: #f6ad55;
+      --bg-color: #f7fafc;
+      --card-bg: #ffffff;
+      --font-family: 'Poppins', sans-serif;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-color);
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1em;
+    }
+
+    /* Navigation */
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 8px 16px;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: var(--accent-color);
+      color: #000;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 50px;
+    }
+    .section h2 {
+      font-size: 2em;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--secondary-color);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Topics Grid */
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+    .topic-box {
+      background: var(--card-bg);
+      border: 1px solid var(--primary-color);
+      border-radius: 10px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .topic-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .topic-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      background-attachment: skyblue;
+    }
+    .topic-box img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--secondary-color);
+    }
+    .topic-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+    .topic-desc {
+      font-size: 0.95em;
+      color: #555;
+      padding: 0 10px;
+    }
+
+    /* Download Button */
+    .download-btn {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .download-btn a {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    .download-btn a:hover {
+      background: var(--accent-color);
+      color: #000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+      nav a {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>O-Level Python Course</h1>
+    <p>Master the Basics from Introduction to File Handling</p>
+  </header>
+
+  <!-- Navigation (only one section needed) -->
+  <nav>
+    <a href="#basics">Python Basics</a>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Python Basics Section -->
+    <section id="basics" class="section">
+      <h2>Python Basics</h2>
+      <div class="topics">
+        <!-- Topic 1: Introduction -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/03/python-introduction.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Intro" alt="Introduction">
+          <div class="topic-title">Introduction to Python</div>
+          <div class="topic-desc">Overview, history, and core features of Python.</div>
+        </div>
+        </a>
+        <!-- Topic 2: Installing Python -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/python-installation.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Install" alt="Installation">
+          <div class="topic-title">Installing Python</div>
+          <div class="topic-desc">Step-by-step guide to set up your Python environment.</div>
+        </div>
+        </a>
+        <!-- Topic 3: Python Syntax -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/python-syntax.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Syntax" alt="Syntax">
+          <div class="topic-title">Python Syntax</div>
+          <div class="topic-desc">Learn the basic structure, indentation, and statements.</div>
+        </div>
+        </a>
+        <!-- Topic 4: Variables & Data Types -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/variable-and-data-types-in-python.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Vars" alt="Variables">
+          <div class="topic-title">Variables & Data Types</div>
+          <div class="topic-desc">Understanding numbers, strings, booleans, and type casting.</div>
+        </div>
+        </a>
+        <!-- Topic 5: Operators -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/operator-in-python.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Ops" alt="Operators">
+          <div class="topic-title">Operators</div>
+          <div class="topic-desc">Arithmetic, comparison, logical, and bitwise operators.</div>
+        </div>
+        </a>
+        <!-- Topic 6: Conditional Statements -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/conditional-statement-in-python.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Cond" alt="Conditional Statements">
+          <div class="topic-title">Conditional Statements</div>
+          <div class="topic-desc">Using if, elif, else, and nested conditions.</div>
+        </div>
+        </a>
+        <!-- Topic 7: Loops -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/02/loops-in-python.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Loops" alt="Loops">
+          <div class="topic-title">Loops</div>
+          <div class="topic-desc">For and while loops with loop control statements.</div>
+        </div>
+        </a>
+        <!-- Topic 8: Functions & Lambdas -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/03/function-and-recursion.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Func" alt="Functions">
+          <div class="topic-title">Functions & Lambdas</div>
+          <div class="topic-desc">Defining functions, calling them, and using lambda expressions.</div>
+        </div>
+        </a>
+        <!-- Topic 9: Modules & Packages -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/03/module-and-packages.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=Mod" alt="Modules">
+          <div class="topic-title">Modules & Packages</div>
+          <div class="topic-desc">Importing modules and creating reusable code packages.</div>
+        </div>
+        </a>
+        <!-- Topic 10: File Handling -->
+        <a href="https://bytecorecomputercentre.blogspot.com/2025/03/file-handling.html">
+        <div class="topic-box">
+          <img src="https://via.placeholder.com/70?text=File" alt="File Handling">
+          <div class="topic-title">File Handling</div>
+          <div class="topic-desc">Reading from and writing to files in Python.</div>
+        </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Download PDF Button -->
+    <div class="download-btn">
+      <a href="your-pdf-link-here.pdf" download>Download Course PDF Guide</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bytecore Computer Centre. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Fade-in Animation on Scroll -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const topicBoxes = document.querySelectorAll('.topic-box');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      topicBoxes.forEach(box => {
+        observer.observe(box);
+      });
+    });
+  </script>
+</body>
+</html>
